@@ -1,0 +1,482 @@
+# Category
+
+## Create category
+Endpoint: api/v3/category/create
+Method: POST
+Example request: 
+{
+    "data": {
+        "name": "Scaled metal models",
+        "image": "https://static.dev.alephexpress.com/api/file/get/e4586ac1-09cb-48cf-ab45-7341f04995d3/16ced3c00a1e550b79f7f7519a1f075e_1702474108.JPG",
+        "showOnMain": true
+    }
+}
+
+
+Field name
+Type
+Requirements
+Limitations
+name
+string
+Required
+Min - 1; max - 255
+image
+string (url)
+Optional 
+Min - 1; max - 255
+showOnMain
+boolean
+Required
+true, false
+
+
+Example response:
+{
+    "data": {
+        "id": 25,
+        "name": "Scaled metal models 2",
+        "slug": "scaled-metal-models-2",
+        "showOnMain": true,
+        "sortIndex": 24,
+        "itemsCount": 0,
+        "image": "https://static.dev.alephexpress.com/api/file/get/e4586ac1-09cb-48cf-ab45-7341f04995d3/16ced3c00a1e550b79f7f7519a1f075e_1702474108.JPG",
+        "metaTitle": null,
+        "metaDescription": null
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+Description
+id
+integer
+Required
+Bigint
+System identifier (auto increment)
+name
+string
+Required
+Min - 1; max - 255
+Value provided in request
+slug
+string
+Optional
+Min - 1; max - 255
+Descriptive unique text that identifies the category
+showOnMain
+boolean
+Required
+true, false
+Value provided in request;category displays on main page if true
+sortIndex
+integer
+Required
+Bigint
+Defines the item display order
+itemsCount
+integer
+Required
+Positive integer
+Quantity of products in the category
+image
+string (url)
+Optional 
+Min - 1; max - 255
+Value provided in request
+metaTitle
+string
+Optional 
+Min - 1; max - 60
+Available if SEO plugin is activated
+metaDescription
+string
+Optional 
+Min - 1; max - 160
+Available if SEO plugin is activated
+
+Update category
+Endpoint: api/v3/category/update
+Method: POST
+Example request: 
+{
+    "data": {
+        "id": "1",
+        "name": "Clothes",
+        "image": "img.jpg",
+        "showOnMain": true
+    }
+}
+
+
+Field name
+Type
+Requirements
+Limitations
+id
+integer
+Required
+Exists in the system
+name
+string
+Required
+Min - 1; max - 255
+image
+string (url)
+Optional
+Min - 1; max - 255
+showOnMain
+boolean
+Required
+true, false
+
+
+Example response:
+{
+    "data": {l
+        "id": 25,
+        "name": "Scaled metal models test",
+        "slug": "scaled-metal-models-2",
+        "showOnMain": false,
+        "sortIndex": 24,
+        "itemsCount": 0,
+        "image": "img.jpg",
+        "metaTitle": null,
+        "metaDescription": null
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+Description
+id
+integer
+Required
+Bigint
+System identifier (auto increment)
+name
+string
+Required
+Min - 1; max - 255
+Value provided in request
+slug
+string
+Optional
+Min - 1; max - 255
+Descriptive unique text that identifies the category
+showOnMain
+boolean
+Required
+true, false
+Value provided in request;category displays on main page if true
+sortIndex
+integer
+Required
+Bigint
+Defines the item display order
+itemsCount
+integer
+Required
+Positive integer
+Quantity of products in the category
+image
+string (url)
+Optional 
+Min - 1; max - 255
+Value provided in request
+metaTitle
+string
+Optional 
+Min - 1; max - 60
+Available if SEO plugin is activated
+metaDescription
+string
+Optional 
+Min - 1; max - 160
+Available if SEO plugin is activated
+
+Update Categories Order
+Endpoint: api/v3/category/update-order
+Method: POST
+Example request: 
+{
+    "data": {
+        "items": [
+{
+“id”: 1,
+“sortIndex” : 2
+},
+{
+“id”: 2,
+“sortIndex”: 1
+}
+]
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+items
+Array of objects
+Required
+Number of items is limited only by PHP logic
+id
+integer
+Required
+Exists in the system
+sortIndex
+integer
+Required
+Defines the item display order
+
+
+Example response:
+{}
+Empty object returns in case of successful categories order change
+Delete Categories
+Endpoint: api/v3/category/delete
+Method: POST
+Example request: 
+{
+    "data": {
+        "items": [1, 2]
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+items
+Array of integers
+Required
+Number of items is limited only by PHP logic
+
+
+Example response:
+{}
+Empty object returns in case of successful deletion
+Get Category
+Endpoint: api/v3/category/get
+Method: GET
+Example request: 
+{{baseUrl}}/api/v3/category/get?id=25&slug=scaled-metal-models-2
+
+Field name
+Type
+Requirements
+Limitations
+id
+integer
+Required
+Exists in the system
+slug
+string
+Optional
+Min - 1; max - 255
+
+
+Example response:
+{
+    "data": {
+        "id": 25,
+        "name": "Scaled metal models test",
+        "slug": "scaled-metal-models-2",
+        "showOnMain": false,
+        "sortIndex": 25,
+        "itemsCount": 0,
+        "image": "img.jpg",
+        "metaTitle": null,
+        "metaDescription": null
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+Description
+id
+integer
+Required
+Bigint
+System identifier (auto increment)
+name
+string
+Required
+Min - 1; max - 255
+Value provided in request
+slug
+string
+Optional
+Min - 1; max - 255
+Descriptive unique text that identifies the category
+showOnMain
+boolean
+Required
+true, false
+Value provided in request;category displays on main page if true
+sortIndex
+integer
+Required
+Bigint
+Defines the item display order
+itemsCount
+integer
+Required
+Positive integer
+Quantity of products in the category
+image
+string (url)
+Optional 
+Min - 1; max - 255
+Value provided in request
+metaTitle
+string
+Optional 
+Min - 1; max - 60
+Available if SEO plugin is activated
+metaDescription
+string
+Optional 
+Min - 1; max - 160
+Available if SEO plugin is activated
+
+Get all Categories
+Endpoint: api/v3/category/get-list
+Method: POST
+Example request: 
+{
+    "data": {
+        "page": 1,
+        "pageSize": 3,
+        "filter": {"searchTerm": "models"},
+        "sort": "name:asc"
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+Description
+page
+integer
+Optional
+bigint
+Number of the returned page with items
+pageSize
+integer
+Optional
+bigint
+Number of items per page
+filter
+object
+Optional
+Limited system values
+searchTerm performs search by name parameter
+sort
+string
+Optional
+id:asc, id:desc, name:asc, name:desc
+System sorting options
+
+Example response:
+{
+    "data": {
+        "items": [
+            {
+                "id": 2,
+                "name": "Scaled metal models",
+                "slug": "scaled-metal-models",
+                "showOnMain": true,
+                "sortIndex": 1,
+                "itemsCount": 14,
+                "image": "https://static.dev.alephexpress.com/api/file/get/8e571555-aa73-4cb2-b588-9cb5285795b2/5ca7826cdc9ac57a0c5528c6b056566b_1705051502.jpg",
+                "metaTitle": "Scaled metal models",
+                "metaDescription": "We sell scaled metal models of cars in 1/43 scale🚗🚙🚓🚕"
+            },
+            {
+                "id": 25,
+                "name": "Scaled metal models test",
+                "slug": "scaled-metal-models-2",
+                "showOnMain": false,
+                "sortIndex": 25,
+                "itemsCount": 0,
+                "image": "img.jpg",
+                "metaTitle": null,
+                "metaDescription": null
+            }
+        ],
+        "totalPages": 1,
+        "totalItems": 2
+    }
+}
+
+Field name
+Type
+Requirements
+Limitations
+Description
+id
+integer
+Required
+Bigint
+System identifier (auto increment)
+name
+string
+Required
+Min - 1; max - 255
+Value provided in request
+slug
+string
+Optional
+Min - 1; max - 255
+Descriptive unique text that identifies the category
+showOnMain
+boolean
+Required
+true, false
+Value provided in request;category displays on main page if true
+sortIndex
+integer
+Required
+Bigint
+Defines the item display order
+itemsCount
+integer
+Required
+Positive integer
+Quantity of products in the category
+image
+string (url)
+Optional 
+Min - 1; max - 255
+Value provided in request
+metaTitle
+string
+Optional 
+Min - 1; max - 60
+Available if SEO plugin is activated
+metaDescription
+string
+Optional 
+Min - 1; max - 160
+Available if SEO plugin is activated
+totalPages
+integer
+Required
+bigint
+Number of pages (groups of items), controlled with pageSize parameter
+totalItems
+integer
+Required
+bigint
+Total number of available items
+
