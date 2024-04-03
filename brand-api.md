@@ -295,12 +295,13 @@ This operation provides deletion of existing Brand.
 > **POST** api/v3/brand/delete<br/>
 > **Content-type**: application/json
 
-Example request: 
+```json
 {
     "data": {
         "items": [1, 2]
     }
 }
+```
 
 ### Output
 

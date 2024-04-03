@@ -1,5 +1,8 @@
 # Product entries
 
+- [Get all product entries](#get-all-products-entries-list),
+- [Get all product entries ids](#get-all-products-entries-ids)
+
 Product entries list is used to build link between product and promo (discount or coupon).
 
 ## Get all products entries list
