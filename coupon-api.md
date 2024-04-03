@@ -4,8 +4,8 @@
 - [Get all coupons](#get-all-coupons)
 - [Create coupon](#create-coupon)
 - [Update coupon](#update-coupon)
-- [Add product variations to Coupon]()
-- [Delete coupon]()
+- [Add product variations to Coupon](#add-product-variations-to-coupon)
+- [Delete coupon](#delete-coupon)
 
 ## Get coupon
 
@@ -17,7 +17,6 @@ This operation returns a specific coupon information.
 > **Authorization:** Bearer<br/>
 > **Content-type**: application/json
 
-
 ### Input
 
 **Path variables**
@@ -28,8 +27,7 @@ This operation returns a specific coupon information.
 
 #### Request example
 
-> **GET** api/v3/coupon/get?id=1<br/>
-> **Content-type**: application/json
+> **GET** api/v3/coupon/get?id=1
 
 ### Output
 
@@ -42,7 +40,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -84,7 +82,7 @@ This operation returns full list of coupons information.
 
 |**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
 |---|---|---|---|
-|filter|Object|Optional|searchTerm performs search by name parameter<br/>min length - 1; max length - 255|
+|filter|Object|Optional|searchTerm performs search by name parameter<br/>Min length - 1; max length - 255|
 
 #### Request example
 
@@ -110,7 +108,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -165,7 +163,7 @@ This operation creates new coupon.
 
 |**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Coupon code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -198,7 +196,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -239,7 +237,7 @@ This operation updates existing coupon.
 
 |**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Coupon code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -272,7 +270,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -314,7 +312,7 @@ This operation allows to link coupon and product variations.
 |**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|Coupon ID (exists in the system)|
-|productEntries|Array of integers|Mandatory|Product variation identifiers existing in the system.<br/>Could be retrieved on “Get all Products entries list” endpoint|
+|productEntries|Array of integers|Mandatory|Product variation identifiers existing in the system.<br/>Could be retrieved on [Get all Products entries list](https://github.com/mashafam/ae-api/blob/source-api-doc/product-entry-api.md#get-all-products-entries-list) endpoint|
 
 #### Request example
 
@@ -353,8 +351,7 @@ This operation provides deletion of existing coupon.
 
 #### Request Example
 
-> **POST** api/v3/coupon/delete<br/>
-> **Content-type**: application/json
+> **POST** api/v3/coupon/delete
 
 ```json
 {
