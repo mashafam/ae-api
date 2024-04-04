@@ -21,7 +21,7 @@ This operation allows to retrieve specific category.
 
 **Query parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
 |slug|String|Optional|Descriptive unique text that identifies the category<br/>Min length - 1; max length - 255|
@@ -35,7 +35,7 @@ This operation allows to retrieve specific category.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
 |name|String|Mandatory|Category name<br/>Value provided in request|
@@ -81,7 +81,7 @@ This operation allows to retrieve all existing categories.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Optional|Number of items per page|
@@ -106,7 +106,7 @@ This operation allows to retrieve all existing categories.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
 |name|String|Mandatory|Category name<br/>Value provided in request|
@@ -173,7 +173,7 @@ This operation provide creating of new category that can be used to group produc
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|Category name<br/>Min length - 1; max length - 255|
 |image|String (url)|Optional|Category image url<br/>Min length - 1; max length - 255|
@@ -195,7 +195,7 @@ Request should contain body with following content:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
 |name|String|Mandatory|Category name<br/>Value provided in request|
@@ -222,7 +222,7 @@ This operation provides updates for exsiting category.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
 |name|String|Mandatory|Category name<br/>Min length - 1; max length - 255|
@@ -246,7 +246,7 @@ Request should contain body with following content:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
 |name|String|Mandatory|Category name<br/>Value provided in request|
@@ -291,7 +291,7 @@ Using this operation, User sets the order display of categories in the list.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of category - order number pairs.<br/>Number of items is limited only by PHP logic|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
@@ -341,7 +341,7 @@ This operation performs category deletion. Also can be used for bulk deletion.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of category - order number pairs.<br/>Number of items is limited only by PHP logic|
 

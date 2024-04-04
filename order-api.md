@@ -22,7 +22,7 @@ This operation retrieves a specific Order.
 
 **Path variables**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 
@@ -34,7 +34,7 @@ This operation retrieves a specific Order.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
@@ -171,7 +171,7 @@ This operation retrieves list of Orders satisfying to the search term and filter
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|Entity unique identifier (auto increment)|
 |sort|String|Optional|System sorting options<br/>1. id:asc, id:desc,<br/>2. sortIndex:asc, sortIndex:desc|
@@ -181,7 +181,7 @@ This operation retrieves list of Orders satisfying to the search term and filter
 **Filter parameters:**
 
 |**Name**|**Value Type**|**Value Limitation**|
-|---|---|---|---|
+|---|---|---|
 |searchTerm|String|Perform filtration by Customer's full_name, phone_number, email,country, city, state, zip_postal, address<br/>Min length - 1, max length - 255|
 |customerId|Integer<br/>Positive integers|Perform filtration by Customer ids|
 |paymentStatus|Array of strings|Perform filtration by payment statuses<br/>PHP system limitations|
@@ -209,7 +209,7 @@ This operation retrieves list of Orders satisfying to the search term and filter
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of orders matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
@@ -420,7 +420,7 @@ This operation creates an Order.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
 |paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
@@ -558,7 +558,7 @@ This operation creates an Order.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
@@ -709,7 +709,7 @@ This operation updates an existing Order.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |updateCart|Boolean|Mandatory|Defines updates that causes cart update<br/>Possible values: *true, false*|
@@ -837,7 +837,7 @@ This operation updates an existing Order.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
@@ -972,7 +972,7 @@ This operation updates an existing Order.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |orderId|Integer<br/>(Bigint)|Required|ID of order which payment details should be retrieved|
 |cart|Array of objects|Required|Contains brief info about product item(s) in the cart<br/>Number of objects is limited only by PHP logic|
@@ -1013,7 +1013,7 @@ This operation updates an existing Order.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
 |total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
@@ -1076,7 +1076,7 @@ This operation allows to update the order delivery status (if delivery is provid
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |orderId|Integer|Required|ID of order which delivery status should be sent to the 3rd party system|
 |deliveryService|String|Required|Delivery service identifier<br/>Min length - 1, max length - 255|
@@ -1114,7 +1114,7 @@ This operation performs order deletion. Also can be used for bulk deletion.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of orders' IDs.<br/>Number of items is limited only by PHP logic|
 

@@ -18,7 +18,7 @@ Such operation returns mixed list of discounts and coupons.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|System defined list of keys<br/>Min length - 1; max length - 255|
 |filter.searchTerm|String|Optional|searchTerm performs search by name parameter<br/>Min length - 1; max length - 255|
@@ -53,7 +53,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains array of results<br/>Empty array returns in case if no match found|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of promo to be returned (automatically generated)|

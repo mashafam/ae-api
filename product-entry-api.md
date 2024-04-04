@@ -19,7 +19,7 @@ Request body can contain following structure:
 
 **Request parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Optional|Number of items per page|
@@ -28,7 +28,7 @@ Request body can contain following structure:
 
 **Product entries filter parameters**
 
-|**Filter Name**|**Type**|**Behavior in Request**|**Description**|
+|**Filter Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |collectionId|Integer|Optional|Perform filtration by assigned collection<br/>PHP system limitations|
 |productId|Integer|Optional|Perform filtration by product id|
@@ -56,7 +56,7 @@ Request body can contain following structure:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
@@ -157,7 +157,7 @@ This operation allow to retrieve identifiers of all product variations in the sy
 
 **Request parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Optional|Number of items per page|
@@ -166,7 +166,7 @@ This operation allow to retrieve identifiers of all product variations in the sy
 
 **Product entries filter parameters**
 
-|**Filter Name**|**Type**|**Behavior in Request**|**Description**|
+|**Filter Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |collectionId|Integer|Optional|Perform filtration by assigned collection<br/>PHP system limitations|
 |productId|Integer|Optional|Perform filtration by product id|
@@ -194,7 +194,7 @@ This operation allow to retrieve identifiers of all product variations in the sy
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Php system limitations|Array of variation ids matched filter criteria is returned|
 

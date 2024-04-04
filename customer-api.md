@@ -21,7 +21,7 @@ This operation returns specific Customer info.
 
 **Query parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|Customer unique ID. Exists in the system|
 
@@ -33,7 +33,7 @@ This operation returns specific Customer info.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
 |name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
@@ -81,7 +81,7 @@ Request body could contain following parameters:
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|searchTerm performs search by name parameter<br/>Limited system values|
 |sort|String|Optional|System sorting options<br/>1. id:asc, id:desc,<br/>2. name:asc, name:desc|
@@ -107,7 +107,7 @@ Request body could contain following parameters:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
@@ -175,7 +175,7 @@ Request body should contain following parameters:
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
@@ -209,7 +209,7 @@ Request body should contain following parameters:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
 |name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
@@ -257,7 +257,7 @@ Request body should contain following parameters:
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
 |name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
@@ -287,7 +287,7 @@ Request body should contain following parameters:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
 |name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
@@ -332,7 +332,7 @@ This operation performs check if Customer exists by his phone number.
 
 Request body should contain following parameters:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |phoneNumber|String|Required|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 
@@ -352,7 +352,7 @@ Request body should contain following parameters:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |customerId|Integer<br/>(Bigint)|Required|Customer unique identifier|
 
@@ -382,7 +382,7 @@ This operation performs product deletion. Also can be used for bulk deletion.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of customers' IDs.<br/>Number of items is limited only by PHP logic|
 

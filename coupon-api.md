@@ -21,7 +21,7 @@ This operation returns a specific coupon information.
 
 **Path variables**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|System identifier of coupon to be returned|
 
@@ -35,7 +35,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
@@ -80,7 +80,7 @@ This operation returns full list of coupons information.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|searchTerm performs search by name parameter<br/>Min length - 1; max length - 255|
 
@@ -102,7 +102,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Empty array returns in case if no match found|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
@@ -161,7 +161,7 @@ This operation creates new coupon.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
@@ -191,7 +191,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
@@ -235,7 +235,7 @@ This operation updates existing coupon.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
@@ -265,7 +265,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
@@ -309,7 +309,7 @@ This operation allows to link coupon and product variations.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|Coupon ID (exists in the system)|
 |productEntries|Array of integers|Mandatory|Product variation identifiers existing in the system.<br/>Could be retrieved on [Get all Products entries list](https://github.com/mashafam/ae-api/blob/source-api-doc/product-entry-api.md#get-all-products-entries-list) endpoint|
@@ -345,7 +345,7 @@ This operation provides deletion of existing coupon.
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|System identifier(s) of coupon to be deleted<br/>Number of items is limited only by PHP logic|
 

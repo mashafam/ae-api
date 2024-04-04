@@ -22,7 +22,7 @@ This operation returns a specific discount information.
 
 **Path variables**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|System identifier of discount to be returned|
 
@@ -37,7 +37,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
@@ -82,7 +82,7 @@ This operation returns full list of discounts information.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|searchTerm performs search by name parameter<br/>min length - 1; max length - 255|
 
@@ -104,7 +104,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Empty array returns in case if no match found|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
@@ -163,7 +163,7 @@ This operation creates new discount.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|discount code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
@@ -193,7 +193,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
@@ -237,7 +237,7 @@ This operation updates existing discount.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|discount code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
@@ -267,7 +267,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
@@ -311,7 +311,7 @@ This operation allows to link discount and product variations.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|discount ID (exists in the system)|
 |productEntries|Array of integers|Mandatory|Product variation identifiers existing in the system.<br/>Could be retrieved on “Get all Products entries list” endpoint|
@@ -347,7 +347,7 @@ This operation provides deletion of existing discount.
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|System identifier(s) of discount to be deleted<br/>Number of items is limited only by PHP logic|
 

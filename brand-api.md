@@ -23,7 +23,7 @@ This operation returns a specific brand information.
 
 **Path variables**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integers|Mandatory|System identifier of brand to be deleted|
 
@@ -38,7 +38,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of brand to be returned (automatically generated)|
 |name|String|Mandatory|Brand name|
@@ -81,7 +81,7 @@ Request can be modified by using special parameters to retirieve definite brands
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Oprional|Brand name|
@@ -110,7 +110,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|List of brand objects|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier(s) of brand(s) to be returned (automatically generated)|
@@ -165,7 +165,7 @@ This operation creates Brand that can be used to characterize Product.
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|Brand name <br/> min length - 1; max length - 255|
 |image|Href|Optional|Brand logo url <br/> min length - 1; max length - 255|
@@ -190,7 +190,7 @@ Success response code is 201 (Created); the response should include a body descr
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (automatically generated)|
 |name|String|Mandatory|Brand name provided in request|
@@ -225,7 +225,7 @@ This operation provides update of existing Brand.
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of brand to be updated (automatically generated)|
 |name|String|Mandatory|Brand name<br/> min length - 1; max length - 255|
@@ -252,7 +252,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (automatically generated)|
 |name|String|Mandatory|Brand name provided in request|
@@ -286,7 +286,7 @@ This operation provides deletion of existing Brand.
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|System identifier(s) of brand to be deleted<br/>Number of items is limited only by PHP logic|
 

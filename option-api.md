@@ -29,7 +29,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Array of options objects<br/>PHP system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
@@ -91,7 +91,7 @@ Request body is waiting for following content:
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
 
@@ -109,7 +109,7 @@ Request body is waiting for following content:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
@@ -145,7 +145,7 @@ Request body is waiting for following content:
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
@@ -168,7 +168,7 @@ Request body is waiting for following content:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
@@ -202,7 +202,7 @@ This operation provides deletion of existing custom option.
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Integers|Mandatory|System identifier of option to be deleted|
 

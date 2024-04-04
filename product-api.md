@@ -24,7 +24,7 @@ This operation allows to retrieve specific product.
 
 **Query parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Product unique identifier (auto increment)|
 |slug|String|Optional|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
@@ -38,7 +38,7 @@ This operation allows to retrieve specific product.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
@@ -127,7 +127,7 @@ This operation retrieves list of all products (including demo and blocked).
 
 **Request parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|Product unique identifier (auto increment)|
 |sort|String|Optional|System sorting options<br/>1. id:asc, id:desc,<br/>2. name:asc, name:desc<br/>3. sortIndex:asc, sortIndex:desc|
@@ -136,7 +136,7 @@ This operation retrieves list of all products (including demo and blocked).
 
 **Product entries filter parameters**
 
-|**Filter Name**|**Type**|**Behavior in Request**|**Description**|
+|**Filter Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |collectionIdList|Array of integers|Optional|Perform filtration by collections list<br/>PHP system limitations|
 |brandIdList|Array of integers|Optional|Perform filtration by brands list<br/>PHP system limitations|
@@ -162,7 +162,7 @@ This operation retrieves list of all products (including demo and blocked).
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
@@ -370,14 +370,14 @@ This operation allow to retrieve identifiers of all products in the system.
 
 **Request parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |filter|Object|Optional|Product unique identifier (auto increment)|
 |sort|String|Optional|System sorting options<br/>1. id:asc, id:desc,<br/>2. name:asc, name:desc<br/>3. sortIndex:asc, sortIndex:desc|
 
 **Product entries filter parameters**
 
-|**Filter Name**|**Type**|**Behavior in Request**|**Description**|
+|**Filter Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |collectionIdList|Array of integers|Optional|Perform filtration by collections list<br/>PHP system limitations|
 |brandIdList|Array of integers|Optional|Perform filtration by brands list<br/>PHP system limitations|
@@ -403,7 +403,7 @@ This operation allow to retrieve identifiers of all products in the system.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products' ids matched filter criteria is returned<br/>Php system limitations|
 
@@ -438,7 +438,7 @@ This operation allows to retrieve specific product.
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |collectionId|Integer|Optional|Exists in the system|
 |brandId|Integer|Optional|Exists in the system|
@@ -493,7 +493,7 @@ This operation allows to retrieve specific product.
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
@@ -584,7 +584,7 @@ This operation allow to create copy of existing product fo future use.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer|Mandatory|ID of Product to be duplicated|
 
@@ -604,7 +604,7 @@ Request should contain body with following content:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
@@ -692,7 +692,7 @@ This operation allows to update product.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |slug|String|Optional|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
@@ -769,7 +769,7 @@ Request should contain body with following content:
 
 Success response comes with HTTP code 200 (OK) and include following body stucture:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
 |slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
@@ -857,7 +857,7 @@ This operation allows to set custom order for products' displaying in Online sho
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of products - order number pairs.<br/>Number of items is limited only by PHP logic|
 |id|Integer<br/>(Bigint)|Mandatory|Product unique identifier (auto increment)|
@@ -909,7 +909,7 @@ This operation performs product deletion. Also can be used for bulk deletion.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of products' IDs.<br/>Number of items is limited only by PHP logic|
 
