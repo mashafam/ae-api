@@ -180,7 +180,7 @@ This operation retrieves list of Orders satisfying to the search term and filter
 
 **Filter parameters:**
 
-|**Name**|**Value Type**|**Value Limitation**|**Description**|
+|**Name**|**Value Type**|**Value Limitation**|
 |---|---|---|---|
 |searchTerm|String|Perform filtration by Customer's full_name, phone_number, email,country, city, state, zip_postal, address<br/>Min length - 1, max length - 255|
 |customerId|Integer<br/>Positive integers|Perform filtration by Customer ids|
@@ -976,7 +976,7 @@ This operation updates an existing Order.
 |---|---|---|---|
 |orderId|Integer<br/>(Bigint)|Required|ID of order which payment details should be retrieved|
 |cart|Array of objects|Required|Contains brief info about product item(s) in the cart<br/>Number of objects is limited only by PHP logic|
-|cart.id|Integer<br/>(Bigint)|Required||
+|cart.id|Integer<br/>(Bigint)|Required|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart||cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
 |cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
 |cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
