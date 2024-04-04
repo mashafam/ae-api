@@ -6,7 +6,7 @@
 - [Update Order](#update-order)
 - [Get Orders payment details](#get-orders-payment-details)
 - [Update External Order Delivery Status](#update-external-order-delivery-status)
-- [Delete Orders]
+- [Delete Orders](#delete-orders)
 
 ## Get Order
 
