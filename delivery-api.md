@@ -8,7 +8,7 @@
   - [Connect 3rd party delivery system](#example-request-for-shiip-type)
 - [Update Delivery option](#update-delivery-option)
 - [Update Delivery options order](#update-delivery-options-order)
-- [Delete Delivery option]()
+- [Delete Delivery option](#delete-delivery-option)
 
 ## Get Delivery option
 
@@ -218,7 +218,7 @@ Request body could include following parameters:
 
 #### Request example
 
-> **GET** api/v3/delivery/create
+> **POST** api/v3/delivery/create
 
 ##### Example request for *delivery* type
 
@@ -385,7 +385,7 @@ Success response comes with HTTP code 200 (OK) and include following body stuctu
        "state": "NY",
        "address": "NY",
        "sortIndex": 3,
-       "secretKey": "ssk_799aa242d**************************16ce244c7faa6",
+       "secretKey": "hBUvTVTGyhIUhUI798&89",
        "userName": "John Brown",
        "phone": "+1233456789",
        "email": "test@test.com",
@@ -431,7 +431,7 @@ Request body could include following parameters:
 
 #### Request example
 
-> **GET** api/v3/delivery/create
+> **POST** api/v3/delivery/create
 
 ##### Example request for *delivery* type
 
@@ -595,7 +595,7 @@ Success response comes with HTTP code 200 (OK) and include following body stuctu
        "state": "NY",
        "address": "NY",
        "sortIndex": 3,
-       "secretKey": "ssk_799aa242d**************************16ce244c7faa6",
+       "secretKey": "hBUvTVTGyhIUhUI798&*89",
        "userName": "John Brown",
        "phone": "+1233456789",
        "email": "test@test.com",
@@ -618,7 +618,7 @@ This operation allows to set custom order for delivery options' displaying in On
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|Contains the array of delivery options' ids - order number pairs.<br/>Number of items is limited only by PHP logic|
 |id|Integer<br/>(Bigint)|Mandatory|Delivery option unique identifier (auto increment)|
@@ -660,7 +660,7 @@ Success response comes with HTTP code 200 (OK). Empty object returns in case of 
 
 ### Description
 
-This operation performs product deletion. Also can be used for bulk deletion.
+This operation performs delivery option deletion. Also can be used for bulk deletion.
 
 > **POST** api/v3/delivery/delete<br/>
 > **Authorization:** Bearer<br/>
@@ -670,9 +670,9 @@ This operation performs product deletion. Also can be used for bulk deletion.
 
 Request should contain body with following content:
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|items|Array of objects|Mandatory|Contains the array of product options' IDs.<br/>Number of items is limited only by PHP logic|
+|items|Array of objects|Mandatory|Contains the array of delivery options' IDs.<br/>Number of items is limited only by PHP logic|
 
 #### Request example
 
