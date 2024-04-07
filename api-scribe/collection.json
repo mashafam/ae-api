@@ -1,0 +1,4358 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/store-api.express.test"
+        }
+    ],
+    "info": {
+        "name": "B2B whitelabel documentation",
+        "_postman_id": "69c708e7-1cad-4b1d-8938-733ee68c9de8",
+        "description": "B2B Whitelabel API documentation",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Advertising",
+            "description": "",
+            "item": [
+                {
+                    "name": "Update products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/advertising\/update\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/advertising\/update\/products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "11152111-2222-3333-4444-555e23017555"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Brand",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Brand",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/brand\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/brand\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"Nike\",\"image\":\"img.jpg\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Brand",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/brand\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/brand\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"Nike\",\"image\":\"img.jpg\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Brand",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/brand\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/brand\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Brand",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/brand\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the brand.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/brand\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Brands",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/brand\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/brand\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"page\":1,\"pageSize\":3,\"filter\":{\"searchTerm\":\"\\\"\\\"\"},\"sort\":\"name:asc\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\"error\":{\"message\":\"Data key is required\",\"code\":400}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Category",
+            "description": "",
+            "item": [
+                {
+                    "name": "Update Categories Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/category\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/category\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Categories",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/category\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/category\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/category\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the category.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "slug",
+                                    "value": "clothes",
+                                    "description": "The slug of the category.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/category\/get?id=1&slug=clothes"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Coupon",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Coupon",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/coupon\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/coupon\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"COUPONNAME\",\"percentage\":30,\"permanent\":true,\"startDate\":\"2023-01-05T14:48:00.000Z\",\"endDate\":\"2023-10-05T14:48:00.000Z\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Coupon",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/coupon\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/coupon\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"COUPONNAME\",\"percentage\":30,\"permanent\":true,\"startDate\":\"2023-01-05T14:48:00.000Z\",\"endDate\":\"2023-10-05T14:48:00.000Z\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Coupon",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/coupon\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the Coupon.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/coupon\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Coupons",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/coupon\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/coupon\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"searchTerm\":\"\\\"\\\"\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Coupons",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/coupon\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/coupon\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add Product Variations to Coupon",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/coupon\/add-product-entries",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/coupon\/add-product-entries"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"productEntries\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Customer",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Customer",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/customer\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/customer\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"John Doe\",\"phoneNumber\":\"+44777777777\",\"email\":\"test@example.com\",\"country\":\"NG\",\"city\":\"Manchester\",\"state\":\"MAN\",\"zipPostal\":\"M4U678\",\"address\":\"Some str. 123\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Customer",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/customer\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the Customer.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/customer\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Customer",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/customer\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/customer\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"John Doe\",\"phoneNumber\":\"+44777777777\",\"email\":\"test@example.com\",\"country\":\"NG\",\"city\":\"Manchester\",\"state\":\"MAN\",\"zipPostal\":\"M4U678\",\"address\":\"Some str. 123\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Customers",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/customer\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/customer\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"searchTerm\":\"\\\"\\\"\"},\"sort\":\"name:asc\",\"page\":1,\"pageSize\":10}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Customers",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/customer\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/customer\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Check Customer Exists",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/customer\/exists",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/customer\/exists"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"phoneNumber\":\"\\\"447777777\\\"\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\"error\":{\"message\":\"Data key is required\",\"code\":400}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Delivery",
+            "description": "",
+            "item": [
+                {
+                    "name": "[type:delivery] Create Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"Quick Delivery\",\"type\":\"delivery\",\"price\":\"18.00\",\"useBusinessAddress\":true,\"isGlobal\":true,\"description\":\"Quick delivery\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:pickup] Create Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"Quick Delivery\",\"type\":\"pickup\",\"price\":\"0\",\"useBusinessAddress\":true,\"country\":\"NG\",\"zipPostal\":\"16\",\"city\":\"Manchester\",\"state\":\"Manchester\",\"address\":\"Some str. 123\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:shiip] Create Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"Quick Delivery\",\"type\":\"shiip\",\"price\":\"0\",\"useBusinessAddress\":true,\"description\":\"Some test doc description\",\"country\":\"NG\",\"zipPostal\":\"16\",\"city\":\"Manchester\",\"state\":\"Manchester\",\"address\":\"Some str. 123\",\"defaultWeight\":\"3.85\",\"secretKey\":\"hBUvTVTGyhIUhUI798&*89\",\"userName\":\"John Brown\",\"phone\":\"+1233456789\",\"email\":\"test@test.com\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:delivery] Update Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":null,\"name\":\"Quick Delivery\",\"type\":\"delivery\",\"price\":\"18.00\",\"useBusinessAddress\":true,\"isGlobal\":true,\"description\":\"Quick delivery\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:pickup] Update Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"Quick Delivery\",\"type\":\"pickup\",\"price\":\"0\",\"useBusinessAddress\":true,\"country\":\"NG\",\"zipPostal\":\"16\",\"city\":\"Manchester\",\"state\":\"Manchester\",\"address\":\"Some str. 123\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:shiip] Update Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"Quick Delivery\",\"type\":\"shiip\",\"price\":\"0\",\"useBusinessAddress\":true,\"description\":\"Some test doc description\",\"country\":\"NG\",\"zipPostal\":\"16\",\"city\":\"Manchester\",\"state\":\"Manchester\",\"address\":\"Some str. 123\",\"defaultWeight\":\"3.85\",\"secretKey\":\"hBUvTVTGyhIUhUI798&*89\",\"userName\":\"John Brown\",\"phone\":\"+1233456789\",\"email\":\"test@test.com\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Delivery Method",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the Delivery Method.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Delivery Methods",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Delivery Methods Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Delivery Methods",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/delivery\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/delivery\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Discount",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Discount",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/discount\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/discount\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"DISCOUNTNAME\",\"percentage\":30,\"permanent\":true,\"startDate\":\"2023-01-05T14:48:00.000Z\",\"endDate\":\"2023-10-05T14:48:00.000Z\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Discount",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/discount\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/discount\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"DISCOUNTNAME\",\"percentage\":30,\"permanent\":true,\"startDate\":\"2023-01-05T14:48:00.000Z\",\"endDate\":\"2023-10-05T14:48:00.000Z\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Discount",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/discount\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the Discount.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/discount\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Discounts",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/discount\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/discount\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add Product Variations to Discount",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/discount\/add-product-entries",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/discount\/add-product-entries"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"productEntries\":null}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "FAQ",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all FAQ items",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/faq\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/faq\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create FAQ item",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/faq\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/faq\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"question\":\"question\",\"answer\":\"answer\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update FAQ item",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/faq\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/faq\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"question\":\"question\",\"answer\":\"answer\",\"sortIndex\":0}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update FAQ Items Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/faq\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/faq\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v3\/faq\/delete",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/faq\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/faq\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Feedback",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Feedback",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/feedback\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/feedback\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"rating\":5,\"content\":\"Best app ever!\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Init",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get global list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/init\/globals",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/init\/globals"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get state list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/init\/state",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/init\/state"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Option",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Option",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/option\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/option\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"Size\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Option",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/option\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/option\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":\"1\",\"name\":\"Clothes\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Option",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/option\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/option\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"customerId\":null,\"customerDetails\":{\"name\":\"John Doe\",\"phoneNumber\":\"+44777777777\",\"email\":\"test@example.com\",\"country\":\"GB\",\"city\":\"Manchester\",\"state\":\"MAN\",\"zipPostal\":\"M4U678\",\"address\":\"Some str. 123\"},\"cart\":[{\"id\":null,\"quantity\":1}],\"cartDiscount\":{\"type\":\"cash\",\"value\":\"1\",\"reason\":\"cart discount\"},\"couponId\":null,\"deliveryOptionId\":null,\"salesChannel\":\"my_shop\",\"paymentId\":null,\"deliveryStatus\":\"open\",\"paymentStatus\":\"unpaid\",\"note\":\"test note\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"updateCart\":false,\"customerId\":1,\"customerDetails\":{\"name\":\"John Doe\",\"phoneNumber\":\"+44777777777\",\"email\":\"test@example.com\",\"country\":\"GB\",\"city\":\"Manchester\",\"state\":\"MAN\",\"zipPostal\":\"M4U678\",\"address\":\"Some str. 123\"},\"cart\":[{\"id\":1,\"quantity\":1}],\"cartDiscount\":{\"type\":\"cash\",\"value\":\"5\",\"reason\":\"cart discount\"},\"couponId\":1,\"deliveryOptionId\":1,\"salesChannel\":\"my_shop\",\"paymentId\":1,\"deliveryStatus\":\"open\",\"paymentStatus\":\"unpaid\",\"note\":\"test note\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the Order.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Orders List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"page\":1,\"pageSize\":10,\"filter\":{\"searchTerm\":\"aut\",\"paymentStatus\":\"unpaid\",\"deliveryStatuses\":\"open\",\"salesChannels\":\"my_shop\",\"customerId\":0,\"startDate\":\"\\\"2023-06-14T15:32:55.000Z\\\"\",\"endDate\":\"\\\"2023-06-15T09:12:14.000Z\\\"\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Orders",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Order Payment Details",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/get-payment-details",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/get-payment-details"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"orderId\":1,\"cart\":[{\"id\":1,\"quantity\":1}],\"cartDiscount\":{\"type\":\"cash\",\"value\":\"5\",\"reason\":\"cart discount\"},\"couponId\":1,\"deliveryOptionId\":1}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update External Order Delivery Status",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/order\/update-external-delivery-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/order\/update-external-delivery-status"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"orderId\":1,\"deliveryService\":\"shiip\",\"deliveryStatus\":\"booked\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Page",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Page",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"isVisible\":false,\"name\":\"name page\",\"description\":\"description\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Page",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"isVisible\":true,\"id\":10,\"name\":\"name page\",\"type\":\"custom\",\"description\":\"description\",\"sortIndex\":1}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Page",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Page",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Pages",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"page\":1,\"pageSize\":3,\"filter\":{\"searchTerm\":\"\\\"\\\"\"},\"sort\":\"name:asc\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Pages Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Page visibility",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/page\/:id\/update-visibility",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/page\/:id\/update-visibility",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Payment",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get Payment",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/payment\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the Payment Option.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/payment\/get?id=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Payments",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/payment\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/payment\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Payment",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/payment\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/payment\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"name\":\"Cash\",\"description\":\"Only Cash\",\"type\":\"custom\",\"connected\":true,\"sortIndex\":0,\"config\":{\"secretKey\":\"sk_test_d29a70d7b4d9672d3e207c67aaa3\"},\"image\":\"cashImage.img\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Payments Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/payment\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/payment\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Payments Status",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/payment\/update-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/payment\/update-status"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"isActive\":true}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Plugin",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all Plugins",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Plugin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/get\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/get\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "reviews",
+                                    "description": "Plugin slug."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Plugin Status",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/update-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/update-status"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"0\":[],\"type\":\"reviews\",\"status\":\"inactive\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:chat_widget] Update Plugin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"type\":\"chat_widget\",\"settings\":{\"display\":null,\"customize\":{\"position\":\"bottomLeft\",\"iconSize\":\"medium\",\"iconColor\":null},\"channels\":[{\"type\":\"whatsapp\",\"value\":\"some_wa_link\"}]}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:google_search_console] Update Plugin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"type\":\"google_search_console\",\"settings\":{\"id\":null}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:google_analytics] Update Plugin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"type\":\"google_analytics\",\"settings\":{\"id\":null}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:seo_settings] Update Plugin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/plugin\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/plugin\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"type\":\"seo_settings\",\"settings\":{\"product\":{\"metaTitle\":null,\"metaDescription\":null},\"collection\":{\"metaTitle\":null,\"metaDescription\":null},\"homePage\":{\"metaTitle\":null,\"metaDescription\":null}}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create product",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"collectionId\":null,\"brandId\":1,\"name\":\"product_name\",\"description\":\"description\",\"unlimited\":true,\"variations\":[{\"availability\":true,\"price\":\"1.23\",\"weight\":\"1.00\",\"quantity\":1,\"images\":[[\"path\\\/image.jpg\"]],\"options\":[{\"id\":null,\"name\":null,\"value\":null}]}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\"status\": \"down\", \"services\": {\"database\": \"up\", \"redis\": \"down\"}}",
+                            "name": "Service is unhealthy"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update product",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":1,\"collectionId\":null,\"brandId\":1,\"name\":\"product_name\",\"description\":\"description\",\"unlimited\":true,\"published\":true,\"variations\":[{\"id\":1,\"availability\":true,\"price\":\"1.23\",\"weight\":\"1.0\",\"quantity\":1,\"images\":[[\"path\\\/image.jpg\"]],\"options\":[{\"id\":null,\"name\":null,\"value\":null}]}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Products Ids",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/get-ids-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/get-ids-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"searchTerm\":\"Apple\",\"collectionIdList\":null,\"brandIdList\":null,\"inStock\":true,\"isBlocked\":false},\"sort\":\"name:asc\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"searchTerm\":\"Apple\",\"collectionIdList\":null,\"brandIdList\":null,\"inStock\":true,\"isBlocked\":false},\"sort\":\"name:asc\",\"page\":1,\"pageSize\":3}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Products Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Product",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product\/get",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "slug",
+                                    "value": "Apple",
+                                    "description": "The slug of the product.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/product\/get?id=1&slug=Apple"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Product Entry",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all Products entries list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product-entries\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product-entries\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"page\":1,\"pageSize\":10,\"sort\":\"name:asc\",\"filter\":{\"collectionId\":1,\"productId\":1,\"searchTerm\":\"Test\",\"idList\":[],\"discountId\":1,\"couponId\":1}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Products entries Ids",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/product-entries\/get-ids-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/product-entries\/get-ids-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"sort\":\"name:asc\",\"filter\":{\"collectionId\":1,\"productId\":1,\"searchTerm\":\"Test\",\"inStock\":true,\"idList\":[],\"discountId\":1,\"couponId\":1}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Promo",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all Promos",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/promo\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/promo\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"searchTerm\":\"\\\"\\\"\",\"type\":[\"discount\"],\"endDate\":\"\\\"2023-01-05T14:48:00.000Z\\\"\",\"startDate\":\"\\\"2023-10-05T14:48:00.000Z\\\"\"},\"page\":1,\"pageSize\":10}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Shop",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get Auth Code",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/auth\/code",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/auth\/code"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:theme] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"theme\":{\"btnColor\":\"#000000\",\"bgImage\":\"some img\",\"bgColor\":\"#F2F4F7\",\"useBgImage\":true,\"fontSize\":16,\"bgImageOpacity\":0,\"adultPopup\":false,\"adultPopupTitle\":\"Warning! Adult content!\",\"adultPopupDescription\":\"You must be older than 18 years old to watch our stuff\",\"cookiePopup\":true,\"favicon\":\"https:\\\/\\\/static.alephexpress.com\\\/api\\\/file\\\/get\\\/default\\\/logo-shop.svg\",\"headingFont\":\"Roboto\",\"paragraphFont\":\"Roboto\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:header] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"header\":{\"bgColor\":\"#FFFFFF\",\"logoSize\":2,\"logoFont\":\"Montserrat\",\"logoFontColor\":\"#000000\",\"logoImageUrl\":\"https:\\\/\\\/static.alephexpress.com\\\/api\\\/file\\\/get\\\/default\\\/logo-shop.svg\",\"logoTextValue\":\"Shop Brand\",\"searchDisplayMode\":\"icon\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:footer] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"footer\":{\"bgColor\":\"#FFFFFF\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:mainProducts] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"mainProducts\":{\"bgColor\":\"#FFFFFF\",\"title\":\"Popular Products\",\"collectionId\":null,\"slider\":false,\"aspectRatio\":\"3:4\",\"oneClick\":false}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:mainCollections] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"mainCollections\":{\"bgColor\":\"transparent\",\"slider\":false,\"aspectRatio\":\"3:4\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:homeSections] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"homeSections\":{\"items\":[{\"type\":\"slider\",\"sortable\":false,\"active\":true}]}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:slider] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"slider\":{\"bgColor\":\"#FFFFFF\",\"stretchedImage\":false}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:textAndImage] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"textAndImage\":{\"image\":null,\"title\":null,\"description\":null,\"imagePosition\":\"left\",\"bgColor\":\"#F2F4F7\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:mainVideo] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"mainVideo\":{\"youTubeUrl\":null,\"title\":null,\"description\":null,\"videoPosition\":\"center\",\"bgColor\":\"#F2F4F7\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:faq] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"faq\":{\"title\":null,\"description\":null,\"position\":\"center\",\"bgColor\":\"#F2F4F7\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "[type:catalogSection] Update shop config",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/update-config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/update-config"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"catalogSection\":{\"aspectRatio\":\"3:4\",\"useBorders\":false,\"displayMode\":\"smallTiles\",\"showAddToCard\":false,\"stretchedImage\":true}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get shop configuration",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/config",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/config"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "possimus"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get main products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/get-main-products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/get-main-products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "aperiam"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Products list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/product\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/product\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"searchTerm\":\"Apple\",\"collectionIdList\":null},\"sort\":\"name:asc\",\"page\":1,\"pageSize\":3}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get related products by slug",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/product\/get-related-list\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/product\/get-related-list\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "quam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "corrupti"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Product Entries",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/product\/get-entries",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/product\/get-entries"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "repellendus"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"idList\":null}}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Slides",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/slide\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/slide\/get-list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "voluptate"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Shop state",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/state",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/state"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "123-345-445"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Shop Plugins",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/plugin\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/plugin\/get-list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "123-345-445"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/order\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/order\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "hic"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"customerDetails\":{\"name\":\"John Doe\",\"phoneNumber\":\"+44777777777\",\"email\":\"test@example.com\",\"country\":\"GB\",\"city\":\"Manchester\",\"state\":\"MAN\",\"zipPostal\":\"M4U678\",\"address\":\"Some str. 123\"},\"cart\":[{\"id\":1,\"name\":\"Product name\",\"amount\":1,\"price\":\"100.00\",\"weight\":\"1.00\"}],\"coupon\":\"SALE\",\"deliveryOptionId\":1,\"salesChannel\":\"my_shop\",\"paymentId\":1,\"isOneClick\":true,\"note\":\"test note\",\"rate\":[[]]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get full product information by slug",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/product\/get\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/product\/get\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "cupiditate",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Order Payment Details",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/order\/calculate",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/order\/calculate"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "cumque"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"cart\":[{\"id\":1,\"name\":\"Product name\",\"amount\":1,\"price\":\"100.00\",\"weight\":\"1.00\"}],\"coupon\":\"SALE\",\"deliveryOptionId\":1,\"salesChannel\":\"my_shop\",\"paymentId\":1,\"rate\":[[]]}}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Page by slug",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/page\/get\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/page\/get\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "test",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "aut"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Email order unsubscribe",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/email\/unsubscribe",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/email\/unsubscribe"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "numquam"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"token\":\"jwt_token\",\"types\":[\"order\"]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all FAQ items",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/faq\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/faq\/get-list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "omnis"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Sitemap",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/sitemap\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/sitemap\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Uuid",
+                                "value": "quas"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"type\":\"index\",\"page\":1}}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get store uuid by domain",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/uuid"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Domain",
+                                "value": "neque"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Access Token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/shop\/auth\/token",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/shop\/auth\/token"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"code\":\"e1231b4702922bc874a6972b212ef0d6f564b390\"}}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Slide",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create Slide",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/slide\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/slide\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"isVisible\":true,\"title\":\"name slide\",\"description\":\"description\",\"useBgImage\":false,\"bgImage\":\"img.jpg\",\"bgImageOpacity\":0.5,\"bgColor\":\"#000000\",\"fontColor\":\"#000000\",\"sortIndex\":0,\"useLink\":true,\"linkObjectType\":\"product|collection|page\",\"linkObjectId\":17,\"linkObjectName\":\"laudantium\",\"linkObjectSlug\":\"placeat\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Slide",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/slide\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/slide\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":3,\"isVisible\":false,\"title\":\"name slide\",\"description\":\"description\",\"useBgImage\":true,\"bgImage\":\"img.jpg\",\"bgImageOpacity\":0.5,\"bgColor\":\"#000000\",\"fontColor\":\"#000000\",\"sortIndex\":0,\"useLink\":true,\"linkObjectType\":\"product|collection\",\"linkObjectId\":8,\"linkObjectName\":\"aut\",\"linkObjectSlug\":\"asperiores\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete slides with list of id",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/slide\/delete",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/slide\/delete"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[1,2]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Slides",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/slide\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/slide\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"page\":1,\"pageSize\":3,\"filter\":{\"searchTerm\":\"\\\"\\\"\"},\"sort\":\"name:asc\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Slides Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/slide\/update-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/slide\/update-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Store",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get country settings list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/country-settings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/country-settings"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Check if user's Store exists",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/exists",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/exists"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get store details",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/details",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/details"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unpublish store",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/unpublish",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/unpublish"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get language list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/languages",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/languages"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update store settings",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/update-settings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/update-settings"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"shopLanguageCode\":\"BD-en\",\"currency\":\"USD\",\"timezoneId\":1}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Change Own Domain",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/domain\/change\/own",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/domain\/change\/own"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"domain\":\"purrli.com\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Check Sub Domain",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/domain\/check\/sub",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/domain\/check\/sub"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"domain\":\"subdomainname\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Check Own Domain",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/domain\/check\/own",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/domain\/check\/own"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"domain\":\"purrli.com\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Cancel Domain change",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/domain\/change\/cancel",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/domain\/change\/cancel"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get info",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/info",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/info"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update info",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/update-info",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/update-info"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"name\":\"My store\",\"description\":\"My first store\",\"contacts\":[{\"type\":\"phone, email, messenger, whatsapp, telegram\",\"value\":\"email@email.com\",\"sortIndex\":1}],\"useBusinessAddress\":true,\"country\":\"US\",\"zipPostal\":\"123456789\",\"city\":\"NY\",\"state\":\"NY state\",\"address\":\"Address\",\"socialLinks\":[{\"type\":\"facebook, instagram, youtube, tiktok, snapchat, pinterest\",\"value\":\"https:\\\/\\\/www.instagram.com\\\/my_store\\\/\",\"sortIndex\":8}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Contacts Order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/update-contacts-order",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/update-contacts-order"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"items\":[{\"id\":1,\"sortIndex\":2}]}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get analytics",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/analytics\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/analytics\/get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"filter\":{\"startDate\":\"\\\"2023-03-05T14:48:00.000Z\\\"\",\"endDate\":\"\\\"2023-05-05T14:48:00.000Z\\\"\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get onboarding",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/onboarding\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/onboarding\/get"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update onboarding",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/onboarding\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/onboarding\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"productCreated\":true,\"paymentMethodAdded\":true,\"deliveryMethodCreated\":false,\"storePublished\":false,\"messagingStarted\":false,\"advertisingStarted\":false}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Change Sub Domain",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/domain\/change\/sub",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/domain\/change\/sub"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"domain\":\"subdomainname\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Stores (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"page\":1,\"pageSize\":3,\"filter\":{\"searchTerm\":\"\\\"aleph\\\"\",\"status\":[\"active\"],\"toReview\":[0,1],\"advertisingStatus\":[\"launched\",\"no_launched\"],\"startUpdatedAt\":\"\\\"2023-06-14T15:32:55.000Z\\\"\",\"endUpdatedAt\":\"\\\"2023-06-15T09:12:14.000Z\\\"\"}}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Change Review Store status (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/change-review-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/change-review-status"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"uuid\":\"00a4319c-4edd-4f5b-bfef-8b1ae24339e0\",\"toReview\":0}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Change Store status (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/change-status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/change-status"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"uuid\":\"00a4319c-4edd-4f5b-bfef-8b1ae24339e0\",\"status\":\"blocked\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Store (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/get",
+                            "query": [
+                                {
+                                    "key": "uuid",
+                                    "value": "00a4319c-4edd-4f5b-bfef-8b1ae24339e0",
+                                    "description": "The UUID of the owner uuid.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/get?uuid=00a4319c-4edd-4f5b-bfef-8b1ae24339e0"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Store Products (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/product\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/product\/get-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"uuid\":\"4b384d0e-e2e9-4251-87b9-713fa73742c4\",\"filter\":{\"searchTerm\":\"Apple\"},\"sort\":\"name:asc\",\"page\":1,\"pageSize\":3}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Block Store Product (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/product\/block",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/product\/block"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"uuid\":\"4b384d0e-e2e9-4251-87b9-713fa73742c4\",\"productId\":123}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unblock Store Product (need backoffice permissions)",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/store\/product\/unblock",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/store\/product\/unblock"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"uuid\":\"4b384d0e-e2e9-4251-87b9-713fa73742c4\",\"productId\":123}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Tax",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get Tax",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/tax\/get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/tax\/get"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Tax",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/tax\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/tax\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"active\":true,\"priceInclude\":true,\"tax\":\"4.5\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Theme",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get all Themes",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/theme\/get-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/theme\/get-list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Apply Theme",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v3\/theme\/apply",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v3\/theme\/apply"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"id\":7}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "access_token",
+                "type": "string"
+            }
+        ]
+    }
+}

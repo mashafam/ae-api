@@ -1,0 +1,5825 @@
+openapi: 3.0.3
+info:
+  title: 'B2B whitelabel documentation'
+  description: 'B2B Whitelabel API documentation'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://store-api.express.test'
+paths:
+  /api/v3/advertising/update/products:
+    get:
+      summary: 'Update products'
+      operationId: updateProducts
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: 11152111-2222-3333-4444-555e23017555
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Advertising
+  /api/v3/brand/create:
+    post:
+      summary: 'Create Brand'
+      operationId: createBrand
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Brand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: Nike
+                    image:
+                      type: string
+                      description: ''
+                      example: img.jpg
+              required:
+                - data
+  /api/v3/brand/update:
+    post:
+      summary: 'Update Brand'
+      operationId: updateBrand
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Brand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: Nike
+                    image:
+                      type: string
+                      description: ''
+                      example: img.jpg
+              required:
+                - data
+  /api/v3/brand/delete:
+    post:
+      summary: 'Delete Brand'
+      operationId: deleteBrand
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Brand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/brand/get:
+    get:
+      summary: 'Get Brand'
+      operationId: getBrand
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the brand.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the brand.'
+            example: 1
+      responses: {  }
+      tags:
+        - Brand
+  /api/v3/brand/get-list:
+    post:
+      summary: 'Get all Brands'
+      operationId: getAllBrands
+      description: ''
+      parameters: []
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error:
+                    message: 'Data key is required'
+                    code: 400
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: 'Data key is required'
+                      code:
+                        type: integer
+                        example: 400
+      tags:
+        - Brand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '""'
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+              required:
+                - data
+  /api/v3/category/update-order:
+    post:
+      summary: 'Update Categories Order'
+      operationId: updateCategoriesOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: []
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/category/delete:
+    post:
+      summary: 'Delete Categories'
+      operationId: deleteCategories
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/category/get:
+    get:
+      summary: 'Get Category'
+      operationId: getCategory
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the category.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the category.'
+            example: 1
+        -
+          in: query
+          name: slug
+          description: 'The slug of the category.'
+          example: clothes
+          required: false
+          schema:
+            type: string
+            description: 'The slug of the category.'
+            example: clothes
+      responses: {  }
+      tags:
+        - Category
+  /api/v3/coupon/create:
+    post:
+      summary: 'Create Coupon'
+      operationId: createCoupon
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Coupon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: COUPONNAME
+                    percentage:
+                      type: integer
+                      description: ''
+                      example: 30
+                    permanent:
+                      type: boolean
+                      description: ''
+                      example: true
+                    startDate:
+                      type: string
+                      description: optional
+                      example: '2023-01-05T14:48:00.000Z'
+                    endDate:
+                      type: string
+                      description: optional
+                      example: '2023-10-05T14:48:00.000Z'
+              required:
+                - data
+  /api/v3/coupon/update:
+    post:
+      summary: 'Update Coupon'
+      operationId: updateCoupon
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Coupon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: COUPONNAME
+                    percentage:
+                      type: integer
+                      description: ''
+                      example: 30
+                    permanent:
+                      type: boolean
+                      description: ''
+                      example: true
+                    startDate:
+                      type: string
+                      description: optional
+                      example: '2023-01-05T14:48:00.000Z'
+                    endDate:
+                      type: string
+                      description: optional
+                      example: '2023-10-05T14:48:00.000Z'
+              required:
+                - data
+  /api/v3/coupon/get:
+    get:
+      summary: 'Get Coupon'
+      operationId: getCoupon
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the Coupon.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the Coupon.'
+            example: 1
+      responses: {  }
+      tags:
+        - Coupon
+  /api/v3/coupon/get-list:
+    post:
+      summary: 'Get all Coupons'
+      operationId: getAllCoupons
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Coupon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '""'
+              required:
+                - data
+  /api/v3/coupon/delete:
+    post:
+      summary: 'Delete Coupons'
+      operationId: deleteCoupons
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Coupon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/coupon/add-product-entries:
+    post:
+      summary: 'Add Product Variations to Coupon'
+      operationId: addProductVariationsToCoupon
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Coupon
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    productEntries:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+                    rules:
+                      type: object
+                      description: ''
+                      example:
+                        all: false
+                      properties:
+                        all:
+                          type: boolean
+                          description: optional
+                          example: false
+              required:
+                - data
+  /api/v3/customer/create:
+    post:
+      summary: 'Create Customer'
+      operationId: createCustomer
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: 'John Doe'
+                    phoneNumber:
+                      type: string
+                      description: ''
+                      example: '+44777777777'
+                    email:
+                      type: string
+                      description: ''
+                      example: test@example.com
+                    country:
+                      type: string
+                      description: ''
+                      example: NG
+                    city:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    state:
+                      type: string
+                      description: ''
+                      example: MAN
+                    zipPostal:
+                      type: string
+                      description: ''
+                      example: M4U678
+                    address:
+                      type: string
+                      description: ''
+                      example: 'Some str. 123'
+              required:
+                - data
+  /api/v3/customer/get:
+    get:
+      summary: 'Get Customer'
+      operationId: getCustomer
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the Customer.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the Customer.'
+            example: 1
+      responses: {  }
+      tags:
+        - Customer
+  /api/v3/customer/update:
+    post:
+      summary: 'Update Customer'
+      operationId: updateCustomer
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: 'John Doe'
+                    phoneNumber:
+                      type: string
+                      description: ''
+                      example: '+44777777777'
+                    email:
+                      type: string
+                      description: ''
+                      example: test@example.com
+                    country:
+                      type: string
+                      description: ''
+                      example: NG
+                    city:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    state:
+                      type: string
+                      description: ''
+                      example: MAN
+                    zipPostal:
+                      type: string
+                      description: ''
+                      example: M4U678
+                    address:
+                      type: string
+                      description: ''
+                      example: 'Some str. 123'
+              required:
+                - data
+  /api/v3/customer/get-list:
+    post:
+      summary: 'Get all Customers'
+      operationId: getAllCustomers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '""'
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 10
+              required:
+                - data
+  /api/v3/customer/delete:
+    post:
+      summary: 'Delete Customers'
+      operationId: deleteCustomers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/customer/exists:
+    post:
+      summary: 'Check Customer Exists'
+      operationId: checkCustomerExists
+      description: ''
+      parameters: []
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error:
+                    message: 'Data key is required'
+                    code: 400
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: 'Data key is required'
+                      code:
+                        type: integer
+                        example: 400
+      tags:
+        - Customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    phoneNumber:
+                      type: string
+                      description: ''
+                      example: '"447777777"'
+              required:
+                - data
+  /api/v3/delivery/create-type--delivery:
+    post:
+      summary: '[type:delivery] Create Delivery Method'
+      operationId: typedeliveryCreateDeliveryMethod
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: 'Quick Delivery'
+                    type:
+                      type: string
+                      description: ''
+                      example: delivery
+                    price:
+                      type: string
+                      description: ''
+                      example: '18.00'
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    isGlobal:
+                      type: boolean
+                      description: ''
+                      example: true
+                    description:
+                      type: string
+                      description: ''
+                      example: 'Quick delivery'
+              required:
+                - data
+  /api/v3/delivery/create-type--pickup:
+    post:
+      summary: '[type:pickup] Create Delivery Method'
+      operationId: typepickupCreateDeliveryMethod
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: 'Quick Delivery'
+                    type:
+                      type: string
+                      description: ''
+                      example: pickup
+                    price:
+                      type: string
+                      description: ''
+                      example: '0'
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    country:
+                      type: string
+                      description: ''
+                      example: NG
+                    zipPostal:
+                      type: string
+                      description: ''
+                      example: '16'
+                    city:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    state:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    address:
+                      type: string
+                      description: ''
+                      example: 'Some str. 123'
+              required:
+                - data
+  /api/v3/delivery/create-type--shiip:
+    post:
+      summary: '[type:shiip] Create Delivery Method'
+      operationId: typeshiipCreateDeliveryMethod
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: 'Quick Delivery'
+                    type:
+                      type: string
+                      description: ''
+                      example: shiip
+                    price:
+                      type: string
+                      description: ''
+                      example: '0'
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    description:
+                      type: string
+                      description: ''
+                      example: 'Some test doc description'
+                    country:
+                      type: string
+                      description: ''
+                      example: NG
+                    zipPostal:
+                      type: string
+                      description: ''
+                      example: '16'
+                    city:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    state:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    address:
+                      type: string
+                      description: ''
+                      example: 'Some str. 123'
+                    defaultWeight:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: '3.85'
+                    secretKey:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: 'hBUvTVTGyhIUhUI798&*89'
+                    userName:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: 'John Brown'
+                    phone:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: '+1233456789'
+                    email:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: test@test.com
+              required:
+                - data
+  /api/v3/delivery/update-type--delivery:
+    post:
+      summary: '[type:delivery] Update Delivery Method'
+      operationId: typedeliveryUpdateDeliveryMethod
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: null
+                    name:
+                      type: string
+                      description: ''
+                      example: 'Quick Delivery'
+                    type:
+                      type: string
+                      description: ''
+                      example: delivery
+                    price:
+                      type: string
+                      description: ''
+                      example: '18.00'
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    isGlobal:
+                      type: boolean
+                      description: ''
+                      example: true
+                    description:
+                      type: string
+                      description: ''
+                      example: 'Quick delivery'
+              required:
+                - data
+  /api/v3/delivery/update-type--pickup:
+    post:
+      summary: '[type:pickup] Update Delivery Method'
+      operationId: typepickupUpdateDeliveryMethod
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: 'Quick Delivery'
+                    type:
+                      type: string
+                      description: ''
+                      example: pickup
+                    price:
+                      type: string
+                      description: ''
+                      example: '0'
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    country:
+                      type: string
+                      description: ''
+                      example: NG
+                    zipPostal:
+                      type: string
+                      description: ''
+                      example: '16'
+                    city:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    state:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    address:
+                      type: string
+                      description: ''
+                      example: 'Some str. 123'
+              required:
+                - data
+  /api/v3/delivery/update-type--shiip:
+    post:
+      summary: '[type:shiip] Update Delivery Method'
+      operationId: typeshiipUpdateDeliveryMethod
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: 'Quick Delivery'
+                    type:
+                      type: string
+                      description: ''
+                      example: shiip
+                    price:
+                      type: string
+                      description: ''
+                      example: '0'
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    description:
+                      type: string
+                      description: ''
+                      example: 'Some test doc description'
+                    country:
+                      type: string
+                      description: ''
+                      example: NG
+                    zipPostal:
+                      type: string
+                      description: ''
+                      example: '16'
+                    city:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    state:
+                      type: string
+                      description: ''
+                      example: Manchester
+                    address:
+                      type: string
+                      description: ''
+                      example: 'Some str. 123'
+                    defaultWeight:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: '3.85'
+                    secretKey:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: 'hBUvTVTGyhIUhUI798&*89'
+                    userName:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: 'John Brown'
+                    phone:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: '+1233456789'
+                    email:
+                      type: string
+                      description: 'Parameter for Shiip only'
+                      example: test@test.com
+              required:
+                - data
+  /api/v3/delivery/get:
+    get:
+      summary: 'Get Delivery Method'
+      operationId: getDeliveryMethod
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the Delivery Method.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the Delivery Method.'
+            example: 1
+      responses: {  }
+      tags:
+        - Delivery
+  /api/v3/delivery/get-list:
+    post:
+      summary: 'Get all Delivery Methods'
+      operationId: getAllDeliveryMethods
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+  /api/v3/delivery/update-order:
+    post:
+      summary: 'Update Delivery Methods Order'
+      operationId: updateDeliveryMethodsOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/delivery/delete:
+    post:
+      summary: 'Delete Delivery Methods'
+      operationId: deleteDeliveryMethods
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/discount/create:
+    post:
+      summary: 'Create Discount'
+      operationId: createDiscount
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Discount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: DISCOUNTNAME
+                    percentage:
+                      type: integer
+                      description: ''
+                      example: 30
+                    permanent:
+                      type: boolean
+                      description: ''
+                      example: true
+                    startDate:
+                      type: string
+                      description: optional
+                      example: '2023-01-05T14:48:00.000Z'
+                    endDate:
+                      type: string
+                      description: optional
+                      example: '2023-10-05T14:48:00.000Z'
+              required:
+                - data
+  /api/v3/discount/update:
+    post:
+      summary: 'Update Discount'
+      operationId: updateDiscount
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Discount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: DISCOUNTNAME
+                    percentage:
+                      type: integer
+                      description: ''
+                      example: 30
+                    permanent:
+                      type: boolean
+                      description: ''
+                      example: true
+                    startDate:
+                      type: string
+                      description: optional
+                      example: '2023-01-05T14:48:00.000Z'
+                    endDate:
+                      type: string
+                      description: optional
+                      example: '2023-10-05T14:48:00.000Z'
+              required:
+                - data
+  /api/v3/discount/get:
+    get:
+      summary: 'Get Discount'
+      operationId: getDiscount
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the Discount.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the Discount.'
+            example: 1
+      responses: {  }
+      tags:
+        - Discount
+  /api/v3/discount/delete:
+    post:
+      summary: 'Delete Discounts'
+      operationId: deleteDiscounts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Discount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/discount/add-product-entries:
+    post:
+      summary: 'Add Product Variations to Discount'
+      operationId: addProductVariationsToDiscount
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Discount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    productEntries:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: integer
+                    rules:
+                      type: object
+                      description: ''
+                      example:
+                        all: false
+                      properties:
+                        all:
+                          type: boolean
+                          description: optional
+                          example: false
+              required:
+                - data
+  /api/v3/faq/get-list:
+    post:
+      summary: 'Get all FAQ items'
+      operationId: getAllFAQItems
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - FAQ
+  /api/v3/faq/create:
+    post:
+      summary: 'Create FAQ item'
+      operationId: createFAQItem
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - FAQ
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    question:
+                      type: string
+                      description: ''
+                      example: question
+                    answer:
+                      type: string
+                      description: ''
+                      example: answer
+              required:
+                - data
+  /api/v3/faq/update:
+    post:
+      summary: 'Update FAQ item'
+      operationId: updateFAQItem
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - FAQ
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    question:
+                      type: string
+                      description: ''
+                      example: question
+                    answer:
+                      type: string
+                      description: ''
+                      example: answer
+                    sortIndex:
+                      type: integer
+                      description: ''
+                      example: 0
+              required:
+                - data
+  /api/v3/faq/update-order:
+    post:
+      summary: 'Update FAQ Items Order'
+      operationId: updateFAQItemsOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - FAQ
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/faq/delete:
+    post:
+      summary: ''
+      operationId: postApiV3FaqDelete
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - FAQ
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/feedback/create:
+    post:
+      summary: 'Create Feedback'
+      operationId: createFeedback
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Feedback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    rating:
+                      type: integer
+                      description: ''
+                      example: 5
+                    content:
+                      type: string
+                      description: ''
+                      example: 'Best app ever!'
+              required:
+                - data
+  /api/v3/init/globals:
+    get:
+      summary: 'Get global list'
+      operationId: getGlobalList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Init
+      security: []
+  /api/v3/init/state:
+    get:
+      summary: 'Get state list'
+      operationId: getStateList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Init
+  /api/v3/option/create:
+    post:
+      summary: 'Create Option'
+      operationId: createOption
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Option
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: ''
+                      example: Size
+              required:
+                - data
+  /api/v3/option/update:
+    post:
+      summary: 'Update Option'
+      operationId: updateOption
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Option
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: string
+                      description: ''
+                      example: '1'
+                    name:
+                      type: string
+                      description: ''
+                      example: Clothes
+              required:
+                - data
+  /api/v3/option/delete:
+    post:
+      summary: 'Delete Option'
+      operationId: deleteOption
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Option
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+              required:
+                - data
+  /api/v3/order/create:
+    post:
+      summary: 'Create Order'
+      operationId: createOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    customerId:
+                      type: integer
+                      description: ''
+                      example: null
+                    customerDetails:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        name:
+                          type: string
+                          description: ''
+                          example: 'John Doe'
+                        phoneNumber:
+                          type: string
+                          description: ''
+                          example: '+44777777777'
+                        email:
+                          type: string
+                          description: ''
+                          example: test@example.com
+                        country:
+                          type: string
+                          description: ''
+                          example: GB
+                        city:
+                          type: string
+                          description: ''
+                          example: Manchester
+                        state:
+                          type: string
+                          description: ''
+                          example: MAN
+                        zipPostal:
+                          type: string
+                          description: ''
+                          example: M4U678
+                        address:
+                          type: string
+                          description: ''
+                          example: 'Some str. 123'
+                    cart:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        id:
+                          type: integer
+                          description: ''
+                          example: null
+                        quantity:
+                          type: integer
+                          description: ''
+                          example: 1
+                    cartDiscount:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        type:
+                          type: string
+                          description: ''
+                          example: cash
+                        value:
+                          type: string
+                          description: ''
+                          example: '1'
+                        reason:
+                          type: string
+                          description: ''
+                          example: 'cart discount'
+                    couponId:
+                      type: integer
+                      description: ''
+                      example: null
+                    deliveryOptionId:
+                      type: integer
+                      description: ''
+                      example: null
+                    salesChannel:
+                      type: string
+                      description: ''
+                      example: my_shop
+                    paymentId:
+                      type: integer
+                      description: ''
+                      example: null
+                    deliveryStatus:
+                      type: string
+                      description: ''
+                      example: open
+                    paymentStatus:
+                      type: string
+                      description: ''
+                      example: unpaid
+                    note:
+                      type: string
+                      description: ''
+                      example: 'test note'
+              required:
+                - data
+  /api/v3/order/update:
+    post:
+      summary: 'Update Order'
+      operationId: updateOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    updateCart:
+                      type: boolean
+                      description: ''
+                      example: false
+                    customerId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    customerDetails:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        name:
+                          type: string
+                          description: ''
+                          example: 'John Doe'
+                        phoneNumber:
+                          type: string
+                          description: ''
+                          example: '+44777777777'
+                        email:
+                          type: string
+                          description: ''
+                          example: test@example.com
+                        country:
+                          type: string
+                          description: ''
+                          example: GB
+                        city:
+                          type: string
+                          description: ''
+                          example: Manchester
+                        state:
+                          type: string
+                          description: ''
+                          example: MAN
+                        zipPostal:
+                          type: string
+                          description: ''
+                          example: M4U678
+                        address:
+                          type: string
+                          description: ''
+                          example: 'Some str. 123'
+                    cart:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        id:
+                          type: integer
+                          description: ''
+                          example: 1
+                        quantity:
+                          type: integer
+                          description: ''
+                          example: 1
+                    cartDiscount:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        type:
+                          type: string
+                          description: ''
+                          example: cash
+                        value:
+                          type: string
+                          description: ''
+                          example: '5'
+                        reason:
+                          type: string
+                          description: ''
+                          example: 'cart discount'
+                    couponId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    deliveryOptionId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    salesChannel:
+                      type: string
+                      description: ''
+                      example: my_shop
+                    paymentId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    deliveryStatus:
+                      type: string
+                      description: ''
+                      example: open
+                    paymentStatus:
+                      type: string
+                      description: ''
+                      example: unpaid
+                    note:
+                      type: string
+                      description: ''
+                      example: 'test note'
+              required:
+                - data
+  /api/v3/order/get:
+    get:
+      summary: 'Get Order'
+      operationId: getOrder
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the Order.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the Order.'
+            example: 1
+      responses: {  }
+      tags:
+        - Order
+  /api/v3/order/get-list:
+    post:
+      summary: 'Get Orders List'
+      operationId: getOrdersList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 10
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string.
+                          description: "Can be specified customer's full_name, phone_number, email, country, city, state, zip_postal, address"
+                          example: aut
+                        paymentStatus:
+                          type: array
+                          description: ''
+                          example: unpaid
+                          items:
+                            type: strings
+                        deliveryStatuses:
+                          type: array
+                          description: ''
+                          example: open
+                          items:
+                            type: strings
+                        salesChannels:
+                          type: array
+                          description: ''
+                          example: my_shop
+                          items:
+                            type: strings
+                        customerId:
+                          type: integer
+                          description: ''
+                          example: 0
+                        startDate:
+                          type: string
+                          description: ''
+                          example: '"2023-06-14T15:32:55.000Z"'
+                        endDate:
+                          type: string
+                          description: ''
+                          example: '"2023-06-15T09:12:14.000Z"'
+              required:
+                - data
+  /api/v3/order/delete:
+    post:
+      summary: 'Delete Orders'
+      operationId: deleteOrders
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/order/get-payment-details:
+    post:
+      summary: 'Get Order Payment Details'
+      operationId: getOrderPaymentDetails
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    orderId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    cart:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        id:
+                          type: integer
+                          description: ''
+                          example: 1
+                        quantity:
+                          type: integer
+                          description: ''
+                          example: 1
+                    cartDiscount:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        type:
+                          type: string
+                          description: ''
+                          example: cash
+                        value:
+                          type: string
+                          description: ''
+                          example: '5'
+                        reason:
+                          type: string
+                          description: ''
+                          example: 'cart discount'
+                    couponId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    deliveryOptionId:
+                      type: integer
+                      description: ''
+                      example: 1
+              required:
+                - data
+  /api/v3/order/update-external-delivery-status:
+    post:
+      summary: 'Update External Order Delivery Status'
+      operationId: updateExternalOrderDeliveryStatus
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    orderId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    deliveryService:
+                      type: string
+                      description: ''
+                      example: shiip
+                    deliveryStatus:
+                      type: string
+                      description: ''
+                      example: booked
+              required:
+                - data
+  /api/v3/page/create:
+    post:
+      summary: 'Create Page'
+      operationId: createPage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    isVisible:
+                      type: boolean
+                      description: ''
+                      example: false
+                    name:
+                      type: string
+                      description: ''
+                      example: 'name page'
+                    description:
+                      type: string
+                      description: nullable
+                      example: description
+              required:
+                - data
+  /api/v3/page/update:
+    post:
+      summary: 'Update Page'
+      operationId: updatePage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    isVisible:
+                      type: boolean
+                      description: ''
+                      example: true
+                    id:
+                      type: integer
+                      description: ''
+                      example: 10
+                    name:
+                      type: string
+                      description: ''
+                      example: 'name page'
+                    type:
+                      type: string
+                      description: ''
+                      example: custom
+                    description:
+                      type: string
+                      description: nullable
+                      example: description
+                    sortIndex:
+                      type: integer
+                      description: ''
+                      example: 1
+              required:
+                - data
+  /api/v3/page/delete:
+    post:
+      summary: 'Delete Page'
+      operationId: deletePage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/page/get:
+    get:
+      summary: 'Get Page'
+      operationId: getPage
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: ''
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: ''
+            example: 1
+      responses: {  }
+      tags:
+        - Page
+  /api/v3/page/get-list:
+    post:
+      summary: 'Get all Pages'
+      operationId: getAllPages
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '""'
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+              required:
+                - data
+  /api/v3/page/update-order:
+    post:
+      summary: 'Update Pages Order'
+      operationId: updatePagesOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  '/api/v3/page/{id}/update-visibility':
+    post:
+      summary: 'Update Page visibility'
+      operationId: updatePageVisibility
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Page
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v3/payment/get:
+    get:
+      summary: 'Get Payment'
+      operationId: getPayment
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the Payment Option.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the Payment Option.'
+            example: 1
+      responses: {  }
+      tags:
+        - Payment
+  /api/v3/payment/get-list:
+    post:
+      summary: 'Get all Payments'
+      operationId: getAllPayments
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Payment
+  /api/v3/payment/update:
+    post:
+      summary: 'Update Payment'
+      operationId: updatePayment
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: Cash
+                    description:
+                      type: string
+                      description: optional
+                      example: 'Only Cash'
+                    type:
+                      type: string
+                      description: ''
+                      example: custom
+                    connected:
+                      type: boolean
+                      description: ''
+                      example: true
+                    sortIndex:
+                      type: integer
+                      description: ''
+                      example: 0
+                    config:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        secretKey:
+                          type: string
+                          description: 'Parameter for paystack type only.'
+                          example: sk_test_d29a70d7b4d9672d3e207c67aaa3
+                    image:
+                      type: string
+                      description: ''
+                      example: cashImage.img
+              required:
+                - data
+  /api/v3/payment/update-order:
+    post:
+      summary: 'Update Payments Order'
+      operationId: updatePaymentsOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/payment/update-status:
+    post:
+      summary: 'Update Payments Status'
+      operationId: updatePaymentsStatus
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          isActive:
+                            type: boolean
+                            description: ''
+                            example: true
+                        required:
+                          - id
+                          - isActive
+              required:
+                - data
+  /api/v3/plugin/get-list:
+    post:
+      summary: 'Get all Plugins'
+      operationId: getAllPlugins
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+  '/api/v3/plugin/get/{slug}':
+    get:
+      summary: 'Get Plugin'
+      operationId: getPlugin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+    parameters:
+      -
+        in: path
+        name: slug
+        description: 'Plugin slug.'
+        example: reviews
+        required: true
+        schema:
+          type: string
+  /api/v3/plugin/update-status:
+    post:
+      summary: 'Update Plugin Status'
+      operationId: updatePluginStatus
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  description: ''
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        description: ''
+                        example: reviews
+                      status:
+                        type: string
+                        description: ''
+                        example: inactive
+                    required:
+                      - type
+                      - status
+              required:
+                - data
+  /api/v3/plugin/update-type--chat-widget:
+    post:
+      summary: '[type:chat_widget] Update Plugin'
+      operationId: typechatWidgetUpdatePlugin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    type:
+                      type: string
+                      description: ''
+                      example: chat_widget
+                    settings:
+                      type: object
+                      description: ''
+                      example: null
+                      properties:
+                        display:
+                          type: boolean
+                          description: ''
+                          example: null
+                        customize:
+                          type: object
+                          description: ''
+                          example: null
+                          properties:
+                            position:
+                              type: string
+                              description: ''
+                              example: bottomLeft
+                            iconSize:
+                              type: string
+                              description: ''
+                              example: medium
+                            iconColor:
+                              type: string
+                              description: ''
+                              example: null
+                        channels:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: object
+                            properties:
+                              type:
+                                type: string
+                                description: ''
+                                example: whatsapp
+                              value:
+                                type: string
+                                description: ''
+                                example: some_wa_link
+              required:
+                - data
+  /api/v3/plugin/update-type--google-search-console:
+    post:
+      summary: '[type:google_search_console] Update Plugin'
+      operationId: typegoogleSearchConsoleUpdatePlugin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    type:
+                      type: string
+                      description: ''
+                      example: google_search_console
+                    settings:
+                      type: object
+                      description: ''
+                      example: null
+                      properties:
+                        id:
+                          type: string
+                          description: ''
+                          example: null
+              required:
+                - data
+  /api/v3/plugin/update-type--google-analytics:
+    post:
+      summary: '[type:google_analytics] Update Plugin'
+      operationId: typegoogleAnalyticsUpdatePlugin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    type:
+                      type: string
+                      description: ''
+                      example: google_analytics
+                    settings:
+                      type: object
+                      description: ''
+                      example: null
+                      properties:
+                        id:
+                          type: string
+                          description: ''
+                          example: null
+              required:
+                - data
+  /api/v3/plugin/update-type--seo-settings:
+    post:
+      summary: '[type:seo_settings] Update Plugin'
+      operationId: typeseoSettingsUpdatePlugin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Plugin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    type:
+                      type: string
+                      description: ''
+                      example: seo_settings
+                    settings:
+                      type: object
+                      description: ''
+                      example: null
+                      properties:
+                        product:
+                          type: object
+                          description: ''
+                          example: null
+                          properties:
+                            metaTitle:
+                              type: string
+                              description: ''
+                              example: null
+                            metaDescription:
+                              type: string
+                              description: ''
+                              example: null
+                        collection:
+                          type: object
+                          description: ''
+                          example: null
+                          properties:
+                            metaTitle:
+                              type: string
+                              description: ''
+                              example: null
+                            metaDescription:
+                              type: string
+                              description: ''
+                              example: null
+                        homePage:
+                          type: object
+                          description: ''
+                          example: null
+                          properties:
+                            metaTitle:
+                              type: string
+                              description: ''
+                              example: null
+                            metaDescription:
+                              type: string
+                              description: ''
+                              example: null
+              required:
+                - data
+  /api/v3/product/create:
+    post:
+      summary: 'Create product'
+      operationId: createProduct
+      description: ''
+      parameters: []
+      responses:
+        400:
+          description: 'Service is unhealthy'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: down
+                  services:
+                    database: up
+                    redis: down
+                properties:
+                  status:
+                    type: string
+                    example: down
+                  services:
+                    type: object
+                    properties:
+                      database:
+                        type: string
+                        example: up
+                      redis:
+                        type: string
+                        example: down
+      tags:
+        - Product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    collectionId:
+                      type: integer
+                      description: ''
+                      example: null
+                    brandId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: product_name
+                    description:
+                      type: string
+                      description: ''
+                      example: description
+                    unlimited:
+                      type: boolean
+                      description: 'Default is true.'
+                      example: true
+                    variations:
+                      type: array
+                      description: ''
+                      example:
+                        - []
+                      items:
+                        type: object
+                        properties:
+                          availability:
+                            type: boolean
+                            description: 'Default is true.'
+                            example: true
+                          price:
+                            type: string
+                            description: ''
+                            example: '1.23'
+                          weight:
+                            type: string
+                            description: '(in kilos)'
+                            example: '1.00'
+                          quantity:
+                            type: integer
+                            description: ''
+                            example: 1
+                          'images[]':
+                            type: array
+                            description: ''
+                            example:
+                              - path/image.jpg
+                            items:
+                              type: string
+                          options:
+                            type: array
+                            description: ''
+                            example:
+                              - []
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  description: ''
+                                  example: null
+                                name:
+                                  type: string
+                                  description: ''
+                                  example: null
+                                value:
+                                  type: string
+                                  description: ''
+                                  example: null
+                        required:
+                          - availability
+                          - price
+                          - quantity
+                          - options
+              required:
+                - data
+  /api/v3/product/update:
+    post:
+      summary: 'Update product'
+      operationId: updateProduct
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 1
+                    collectionId:
+                      type: integer
+                      description: ''
+                      example: null
+                    brandId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    name:
+                      type: string
+                      description: ''
+                      example: product_name
+                    description:
+                      type: string
+                      description: ''
+                      example: description
+                    unlimited:
+                      type: boolean
+                      description: ''
+                      example: true
+                    published:
+                      type: boolean
+                      description: ''
+                      example: true
+                    variations:
+                      type: array
+                      description: ''
+                      example:
+                        - []
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          availability:
+                            type: boolean
+                            description: 'Default is true.'
+                            example: true
+                          price:
+                            type: string
+                            description: ''
+                            example: '1.23'
+                          weight:
+                            type: string
+                            description: '(in kilos)'
+                            example: '1.0'
+                          quantity:
+                            type: integer
+                            description: ''
+                            example: 1
+                          'images[]':
+                            type: array
+                            description: ''
+                            example:
+                              - path/image.jpg
+                            items:
+                              type: string
+                          options:
+                            type: array
+                            description: ''
+                            example:
+                              - []
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  description: ''
+                                  example: null
+                                name:
+                                  type: string
+                                  description: ''
+                                  example: null
+                                value:
+                                  type: string
+                                  description: ''
+                                  example: null
+                        required:
+                          - availability
+                          - price
+                          - quantity
+                          - options
+              required:
+                - data
+  /api/v3/product/get-ids-list:
+    post:
+      summary: 'Get all Products Ids'
+      operationId: getAllProductsIds
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: Apple
+                        collectionIdList:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: integer
+                        brandIdList:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: integer
+                        inStock:
+                          type: boolean
+                          description: ''
+                          example: true
+                        isBlocked:
+                          type: boolean
+                          description: ''
+                          example: false
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+              required:
+                - data
+  /api/v3/product/get-list:
+    post:
+      summary: 'Get all Products'
+      operationId: getAllProducts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Product
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: Apple
+                        collectionIdList:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: integer
+                        brandIdList:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: integer
+                        inStock:
+                          type: boolean
+                          description: ''
+                          example: true
+                        isBlocked:
+                          type: boolean
+                          description: ''
+                          example: false
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+  /api/v3/product/delete:
+    post:
+      summary: 'Delete Products'
+      operationId: deleteProducts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/product/update-order:
+    post:
+      summary: 'Update Products Order'
+      operationId: updateProductsOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/product/get:
+    get:
+      summary: 'Get Product'
+      operationId: getProduct
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: 'The ID of the product.'
+          example: 1
+          required: true
+          schema:
+            type: integer
+            description: 'The ID of the product.'
+            example: 1
+        -
+          in: query
+          name: slug
+          description: 'The slug of the product.'
+          example: Apple
+          required: true
+          schema:
+            type: string
+            description: 'The slug of the product.'
+            example: Apple
+      responses: {  }
+      tags:
+        - Product
+  /api/v3/product-entries/get-list:
+    post:
+      summary: 'Get all Products entries list'
+      operationId: getAllProductsEntriesList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Product Entry'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 10
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        collectionId:
+                          type: integer
+                          description: ''
+                          example: 1
+                        productId:
+                          type: integer
+                          description: ''
+                          example: 1
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: Test
+                        idList:
+                          type: array
+                          description: ''
+                          example: []
+                          items:
+                            type: integer
+                        discountId:
+                          type: integer
+                          description: ''
+                          example: 1
+                        couponId:
+                          type: integer
+                          description: ''
+                          example: 1
+              required:
+                - data
+  /api/v3/product-entries/get-ids-list:
+    post:
+      summary: 'Get all Products entries Ids'
+      operationId: getAllProductsEntriesIds
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Product Entry'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        collectionId:
+                          type: integer
+                          description: ''
+                          example: 1
+                        productId:
+                          type: integer
+                          description: ''
+                          example: 1
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: Test
+                        inStock:
+                          type: boolean
+                          description: ''
+                          example: true
+                        idList:
+                          type: array
+                          description: ''
+                          example: []
+                          items:
+                            type: string
+                        discountId:
+                          type: integer
+                          description: ''
+                          example: 1
+                        couponId:
+                          type: integer
+                          description: ''
+                          example: 1
+              required:
+                - data
+  /api/v3/promo/get-list:
+    post:
+      summary: 'Get all Promos'
+      operationId: getAllPromos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Promo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '""'
+                        type:
+                          type: array
+                          description: ''
+                          example:
+                            - discount
+                          items:
+                            type: string
+                        endDate:
+                          type: string
+                          description: ''
+                          example: '"2023-01-05T14:48:00.000Z"'
+                        startDate:
+                          type: string
+                          description: ''
+                          example: '"2023-10-05T14:48:00.000Z"'
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 10
+              required:
+                - data
+  /api/v3/shop/auth/code:
+    post:
+      summary: 'Get Auth Code'
+      operationId: getAuthCode
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+  /api/v3/shop/update-config-type--theme:
+    post:
+      summary: '[type:theme] Update shop config'
+      operationId: typethemeUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    theme:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        btnColor:
+                          type: string
+                          description: ''
+                          example: '#000000'
+                        bgImage:
+                          type: string
+                          description: ''
+                          example: 'some img'
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#F2F4F7'
+                        useBgImage:
+                          type: boolean
+                          description: ''
+                          example: true
+                        fontSize:
+                          type: integer
+                          description: ''
+                          example: 16
+                        bgImageOpacity:
+                          type: number
+                          description: ''
+                          example: 0.0
+                        adultPopup:
+                          type: boolean
+                          description: ''
+                          example: false
+                        adultPopupTitle:
+                          type: string
+                          description: ''
+                          example: 'Warning! Adult content!'
+                        adultPopupDescription:
+                          type: string
+                          description: ''
+                          example: 'You must be older than 18 years old to watch our stuff'
+                        cookiePopup:
+                          type: boolean
+                          description: ''
+                          example: true
+                        favicon:
+                          type: string
+                          description: ''
+                          example: 'https://static.alephexpress.com/api/file/get/default/logo-shop.svg'
+                        headingFont:
+                          type: string
+                          description: ''
+                          example: Roboto
+                        paragraphFont:
+                          type: string
+                          description: ''
+                          example: Roboto
+              required:
+                - data
+  /api/v3/shop/update-config-type--header:
+    post:
+      summary: '[type:header] Update shop config'
+      operationId: typeheaderUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    header:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#FFFFFF'
+                        logoSize:
+                          type: integer
+                          description: ''
+                          example: 2
+                        logoFont:
+                          type: string
+                          description: ''
+                          example: Montserrat
+                        logoFontColor:
+                          type: string
+                          description: ''
+                          example: '#000000'
+                        logoImageUrl:
+                          type: string
+                          description: ''
+                          example: 'https://static.alephexpress.com/api/file/get/default/logo-shop.svg'
+                        logoTextValue:
+                          type: string
+                          description: ''
+                          example: 'Shop Brand'
+                        searchDisplayMode:
+                          type: string
+                          description: ''
+                          example: icon
+              required:
+                - data
+  /api/v3/shop/update-config-type--footer:
+    post:
+      summary: '[type:footer] Update shop config'
+      operationId: typefooterUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    footer:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#FFFFFF'
+              required:
+                - data
+  /api/v3/shop/update-config-type--mainProducts:
+    post:
+      summary: '[type:mainProducts] Update shop config'
+      operationId: typemainProductsUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    mainProducts:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#FFFFFF'
+                        title:
+                          type: string
+                          description: ''
+                          example: 'Popular Products'
+                        collectionId:
+                          type: integer
+                          description: ''
+                          example: null
+                        slider:
+                          type: boolean
+                          description: ''
+                          example: false
+                        aspectRatio:
+                          type: string
+                          description: ''
+                          example: '3:4'
+                        oneClick:
+                          type: boolean
+                          description: ''
+                          example: false
+              required:
+                - data
+  /api/v3/shop/update-config-type--mainCollections:
+    post:
+      summary: '[type:mainCollections] Update shop config'
+      operationId: typemainCollectionsUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    mainCollections:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: transparent
+                        slider:
+                          type: boolean
+                          description: ''
+                          example: false
+                        aspectRatio:
+                          type: string
+                          description: ''
+                          example: '3:4'
+              required:
+                - data
+  /api/v3/shop/update-config-type--homeSections:
+    post:
+      summary: '[type:homeSections] Update shop config'
+      operationId: typehomeSectionsUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    homeSections:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        items:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: object
+                            properties:
+                              type:
+                                type: string
+                                description: ''
+                                example: slider
+                              sortable:
+                                type: boolean
+                                description: ''
+                                example: false
+                              active:
+                                type: boolean
+                                description: ''
+                                example: true
+                            required:
+                              - type
+                              - sortable
+                              - active
+              required:
+                - data
+  /api/v3/shop/update-config-type--slider:
+    post:
+      summary: '[type:slider] Update shop config'
+      operationId: typesliderUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    slider:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#FFFFFF'
+                        stretchedImage:
+                          type: boolean
+                          description: ''
+                          example: false
+              required:
+                - data
+  /api/v3/shop/update-config-type--textAndImage:
+    post:
+      summary: '[type:textAndImage] Update shop config'
+      operationId: typetextAndImageUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    textAndImage:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        image:
+                          type: string
+                          description: ''
+                          example: null
+                        title:
+                          type: string
+                          description: ''
+                          example: null
+                        description:
+                          type: string
+                          description: ''
+                          example: null
+                        imagePosition:
+                          type: string
+                          description: ''
+                          example: left
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#F2F4F7'
+              required:
+                - data
+  /api/v3/shop/update-config-type--mainVideo:
+    post:
+      summary: '[type:mainVideo] Update shop config'
+      operationId: typemainVideoUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    mainVideo:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        youTubeUrl:
+                          type: string
+                          description: ''
+                          example: null
+                        title:
+                          type: string
+                          description: ''
+                          example: null
+                        description:
+                          type: string
+                          description: ''
+                          example: null
+                        videoPosition:
+                          type: string
+                          description: ''
+                          example: center
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#F2F4F7'
+              required:
+                - data
+  /api/v3/shop/update-config-type--faq:
+    post:
+      summary: '[type:faq] Update shop config'
+      operationId: typefaqUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    faq:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        title:
+                          type: string
+                          description: ''
+                          example: null
+                        description:
+                          type: string
+                          description: ''
+                          example: null
+                        position:
+                          type: string
+                          description: ''
+                          example: center
+                        bgColor:
+                          type: string
+                          description: ''
+                          example: '#F2F4F7'
+              required:
+                - data
+  /api/v3/shop/update-config-type--catalogSection:
+    post:
+      summary: '[type:catalogSection] Update shop config'
+      operationId: typecatalogSectionUpdateShopConfig
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    catalogSection:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        aspectRatio:
+                          type: string
+                          description: ''
+                          example: '3:4'
+                        useBorders:
+                          type: boolean
+                          description: ''
+                          example: false
+                        displayMode:
+                          type: string
+                          description: ''
+                          example: smallTiles
+                        showAddToCard:
+                          type: boolean
+                          description: ''
+                          example: false
+                        stretchedImage:
+                          type: boolean
+                          description: ''
+                          example: true
+              required:
+                - data
+  /api/v3/shop/config:
+    get:
+      summary: 'Get shop configuration'
+      operationId: getShopConfiguration
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: possimus
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/get-main-products:
+    get:
+      summary: 'Get main products'
+      operationId: getMainProducts
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: aperiam
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/product/get-list:
+    post:
+      summary: 'Get Products list'
+      operationId: getProductsList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: null
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: Apple
+                        collectionIdList:
+                          type: array
+                          description: ''
+                          example: null
+                          items:
+                            type: string
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+              required:
+                - data
+  '/api/v3/shop/product/get-related-list/{slug}':
+    get:
+      summary: 'Get related products by slug'
+      operationId: getRelatedProductsBySlug
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: corrupti
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+    parameters:
+      -
+        in: path
+        name: slug
+        description: ''
+        example: quam
+        required: true
+        schema:
+          type: string
+  /api/v3/shop/product/get-entries:
+    post:
+      summary: 'Get Product Entries'
+      operationId: getProductEntries
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: repellendus
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    idList:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: integer
+              required:
+                - data
+      security: []
+  /api/v3/shop/slide/get-list:
+    get:
+      summary: 'Get all Slides'
+      operationId: getAllSlides
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: voluptate
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/state:
+    get:
+      summary: 'Shop state'
+      operationId: shopState
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: 123-345-445
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/plugin/get-list:
+    get:
+      summary: 'Get Shop Plugins'
+      operationId: getShopPlugins
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: 123-345-445
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/order/create:
+    post:
+      summary: 'Create Order'
+      operationId: createOrder
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: hic
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    customerDetails:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        name:
+                          type: string
+                          description: ''
+                          example: 'John Doe'
+                        phoneNumber:
+                          type: string
+                          description: ''
+                          example: '+44777777777'
+                        email:
+                          type: string
+                          description: nullable
+                          example: test@example.com
+                        country:
+                          type: string
+                          description: nullable
+                          example: GB
+                        city:
+                          type: string
+                          description: nullable
+                          example: Manchester
+                        state:
+                          type: string
+                          description: nullable
+                          example: MAN
+                        zipPostal:
+                          type: string
+                          description: nullable
+                          example: M4U678
+                        address:
+                          type: string
+                          description: nullable
+                          example: 'Some str. 123'
+                    cart:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        id:
+                          type: integer
+                          description: ''
+                          example: 1
+                        name:
+                          type: string
+                          description: ''
+                          example: 'Product name'
+                        amount:
+                          type: integer
+                          description: ''
+                          example: 1
+                        price:
+                          type: string
+                          description: ''
+                          example: '100.00'
+                        weight:
+                          type: string
+                          description: nullable
+                          example: '1.00'
+                    coupon:
+                      type: string
+                      description: nullable
+                      example: SALE
+                    deliveryOptionId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    salesChannel:
+                      type: string
+                      description: ''
+                      example: my_shop
+                    paymentId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    isOneClick:
+                      type: boolean
+                      description: ''
+                      example: true
+                    note:
+                      type: string
+                      description: ''
+                      example: 'test note'
+                    'rate[]':
+                      type: object
+                      description: nullable
+                      example: []
+                      properties: {  }
+                    rate:
+                      type: object
+                      description: ''
+                      example:
+                        jwt: qui
+                      properties:
+                        jwt:
+                          type: string
+                          description: nullable
+                          example: qui
+                        name:
+                          type: string
+                          description: nullable
+                          example: eius
+                        estimatedDays:
+                          type: string
+                          description: nullable
+                          example: hic
+                        amount:
+                          type: integer
+                          description: nullable
+                          example: 5
+              required:
+                - data
+  '/api/v3/shop/product/get/{slug}':
+    get:
+      summary: 'Get full product information by slug'
+      operationId: getFullProductInformationBySlug
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+    parameters:
+      -
+        in: path
+        name: slug
+        description: ''
+        example: cupiditate
+        required: true
+        schema:
+          type: string
+  /api/v3/shop/order/calculate:
+    post:
+      summary: 'Get Order Payment Details'
+      operationId: getOrderPaymentDetails
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: cumque
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    cart:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        id:
+                          type: integer
+                          description: ''
+                          example: 1
+                        name:
+                          type: string
+                          description: ''
+                          example: 'Product name'
+                        amount:
+                          type: integer
+                          description: ''
+                          example: 1
+                        price:
+                          type: string
+                          description: ''
+                          example: '100.00'
+                        weight:
+                          type: string
+                          description: nullable
+                          example: '1.00'
+                    coupon:
+                      type: string
+                      description: nullable
+                      example: SALE
+                    deliveryOptionId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    salesChannel:
+                      type: string
+                      description: ''
+                      example: my_shop
+                    paymentId:
+                      type: integer
+                      description: ''
+                      example: 1
+                    'rate[]':
+                      type: object
+                      description: nullable
+                      example: []
+                      properties: {  }
+                    rate:
+                      type: object
+                      description: ''
+                      example:
+                        jwt: magni
+                      properties:
+                        jwt:
+                          type: string
+                          description: nullable
+                          example: magni
+                        name:
+                          type: string
+                          description: nullable
+                          example: hic
+                        estimatedDays:
+                          type: string
+                          description: nullable
+                          example: quia
+                        amount:
+                          type: integer
+                          description: nullable
+                          example: 5
+              required:
+                - data
+      security: []
+  '/api/v3/shop/page/get/{slug}':
+    get:
+      summary: 'Get Page by slug'
+      operationId: getPageBySlug
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: aut
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+    parameters:
+      -
+        in: path
+        name: slug
+        description: ''
+        example: test
+        required: true
+        schema:
+          type: string
+  /api/v3/shop/email/unsubscribe:
+    post:
+      summary: 'Email order unsubscribe'
+      operationId: emailOrderUnsubscribe
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: numquam
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    token:
+                      type: string
+                      description: ''
+                      example: jwt_token
+                    types:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        -
+                          type: string
+                          description: ''
+                          example: order
+              required:
+                - data
+  /api/v3/shop/faq/get-list:
+    get:
+      summary: 'Get all FAQ items'
+      operationId: getAllFAQItems
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: omnis
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/sitemap/get:
+    post:
+      summary: 'Get Sitemap'
+      operationId: getSitemap
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Uuid
+          description: ''
+          example: quas
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    type:
+                      type: string
+                      description: ''
+                      example: index
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+              required:
+                - data
+      security: []
+  /api/v3/shop/uuid:
+    get:
+      summary: 'Get store uuid by domain'
+      operationId: getStoreUuidByDomain
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Domain
+          description: ''
+          example: neque
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Shop
+      security: []
+  /api/v3/shop/auth/token:
+    post:
+      summary: 'Get Access Token'
+      operationId: getAccessToken
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Shop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    code:
+                      type: string
+                      description: ''
+                      example: e1231b4702922bc874a6972b212ef0d6f564b390
+              required:
+                - data
+      security: []
+  /api/v3/slide/create:
+    post:
+      summary: 'Create Slide'
+      operationId: createSlide
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Slide
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    isVisible:
+                      type: boolean
+                      description: ''
+                      example: true
+                    title:
+                      type: string
+                      description: ''
+                      example: 'name slide'
+                    description:
+                      type: string
+                      description: ''
+                      example: description
+                    useBgImage:
+                      type: boolean
+                      description: ''
+                      example: false
+                    bgImage:
+                      type: string
+                      description: ''
+                      example: img.jpg
+                    bgImageOpacity:
+                      type: number
+                      description: ''
+                      example: 0.5
+                    bgColor:
+                      type: string
+                      description: ''
+                      example: '#000000'
+                    fontColor:
+                      type: string
+                      description: ''
+                      example: '#000000'
+                    sortIndex:
+                      type: integer
+                      description: ''
+                      example: 0
+                    useLink:
+                      type: boolean
+                      description: ''
+                      example: true
+                    linkObjectType:
+                      type: string
+                      description: ''
+                      example: product|collection|page
+                    linkObjectId:
+                      type: integer
+                      description: ''
+                      example: 17
+                    linkObjectName:
+                      type: string
+                      description: ''
+                      example: laudantium
+                    linkObjectSlug:
+                      type: string
+                      description: ''
+                      example: placeat
+              required:
+                - data
+  /api/v3/slide/update:
+    post:
+      summary: 'Update Slide'
+      operationId: updateSlide
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Slide
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 3
+                    isVisible:
+                      type: boolean
+                      description: ''
+                      example: false
+                    title:
+                      type: string
+                      description: ''
+                      example: 'name slide'
+                    description:
+                      type: string
+                      description: ''
+                      example: description
+                    useBgImage:
+                      type: boolean
+                      description: ''
+                      example: true
+                    bgImage:
+                      type: string
+                      description: ''
+                      example: img.jpg
+                    bgImageOpacity:
+                      type: number
+                      description: ''
+                      example: 0.5
+                    bgColor:
+                      type: string
+                      description: ''
+                      example: '#000000'
+                    fontColor:
+                      type: string
+                      description: ''
+                      example: '#000000'
+                    sortIndex:
+                      type: integer
+                      description: ''
+                      example: 0
+                    useLink:
+                      type: boolean
+                      description: ''
+                      example: true
+                    linkObjectType:
+                      type: string
+                      description: ''
+                      example: product|collection
+                    linkObjectId:
+                      type: integer
+                      description: ''
+                      example: 8
+                    linkObjectName:
+                      type: string
+                      description: ''
+                      example: aut
+                    linkObjectSlug:
+                      type: string
+                      description: ''
+                      example: asperiores
+              required:
+                - data
+  /api/v3/slide/delete:
+    post:
+      summary: 'Delete slides with list of id'
+      operationId: deleteSlidesWithListOfId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Slide
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example:
+                        - 1
+                        - 2
+                      items:
+                        type: integer
+              required:
+                - data
+  /api/v3/slide/get-list:
+    post:
+      summary: 'Get all Slides'
+      operationId: getAllSlides
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Slide
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '""'
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+              required:
+                - data
+  /api/v3/slide/update-order:
+    post:
+      summary: 'Update Slides Order'
+      operationId: updateSlidesOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Slide
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: null
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/store/country-settings:
+    get:
+      summary: 'Get country settings list'
+      operationId: getCountrySettingsList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/exists:
+    get:
+      summary: "Check if user's Store exists"
+      operationId: checkIfUsersStoreExists
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/details:
+    get:
+      summary: 'Get store details'
+      operationId: getStoreDetails
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/unpublish:
+    get:
+      summary: 'Unpublish store'
+      operationId: unpublishStore
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/languages:
+    get:
+      summary: 'Get language list'
+      operationId: getLanguageList
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/update-settings:
+    post:
+      summary: 'Update store settings'
+      operationId: updateStoreSettings
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    shopLanguageCode:
+                      type: string
+                      description: ''
+                      example: BD-en
+                    currency:
+                      type: string
+                      description: ''
+                      example: USD
+                    timezoneId:
+                      type: integer
+                      description: ''
+                      example: 1
+              required:
+                - data
+  /api/v3/store/domain/change/own:
+    post:
+      summary: 'Change Own Domain'
+      operationId: changeOwnDomain
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    domain:
+                      type: string
+                      description: ''
+                      example: purrli.com
+              required:
+                - data
+  /api/v3/store/domain/check/sub:
+    post:
+      summary: 'Check Sub Domain'
+      operationId: checkSubDomain
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    domain:
+                      type: string
+                      description: ''
+                      example: subdomainname
+              required:
+                - data
+  /api/v3/store/domain/check/own:
+    post:
+      summary: 'Check Own Domain'
+      operationId: checkOwnDomain
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    domain:
+                      type: string
+                      description: ''
+                      example: purrli.com
+              required:
+                - data
+  /api/v3/store/domain/change/cancel:
+    get:
+      summary: 'Cancel Domain change'
+      operationId: cancelDomainChange
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/info:
+    get:
+      summary: 'Get info'
+      operationId: getInfo
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/update-info:
+    post:
+      summary: 'Update info'
+      operationId: updateInfo
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    name:
+                      type: string
+                      description: optional
+                      example: 'My store'
+                    description:
+                      type: string
+                      description: optional
+                      example: 'My first store'
+                    contacts:
+                      type: array
+                      description: ''
+                      example:
+                        - []
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            description: ''
+                            example: 'phone, email, messenger, whatsapp, telegram'
+                          value:
+                            type: string
+                            description: ''
+                            example: email@email.com
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 1
+                    useBusinessAddress:
+                      type: boolean
+                      description: ''
+                      example: true
+                    country:
+                      type: optional
+                      description: string
+                      example: US
+                    zipPostal:
+                      type: optional
+                      description: string
+                      example: '123456789'
+                    city:
+                      type: optional
+                      description: string
+                      example: NY
+                    state:
+                      type: optional
+                      description: string
+                      example: 'NY state'
+                    address:
+                      type: optional
+                      description: string
+                      example: Address
+                    socialLinks:
+                      type: array
+                      description: ''
+                      example:
+                        - []
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            description: ''
+                            example: 'facebook, instagram, youtube, tiktok, snapchat, pinterest'
+                          value:
+                            type: string
+                            description: ''
+                            example: 'https://www.instagram.com/my_store/'
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 8
+              required:
+                - data
+  /api/v3/store/update-contacts-order:
+    post:
+      summary: 'Update Contacts Order'
+      operationId: updateContactsOrder
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    items:
+                      type: array
+                      description: ''
+                      example: []
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            description: ''
+                            example: 1
+                          sortIndex:
+                            type: integer
+                            description: ''
+                            example: 2
+                        required:
+                          - id
+                          - sortIndex
+              required:
+                - data
+  /api/v3/store/analytics/get:
+    post:
+      summary: 'Get analytics'
+      operationId: getAnalytics
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        startDate:
+                          type: string
+                          description: ''
+                          example: '"2023-03-05T14:48:00.000Z"'
+                        endDate:
+                          type: string
+                          description: ''
+                          example: '"2023-05-05T14:48:00.000Z"'
+              required:
+                - data
+  /api/v3/store/onboarding/get:
+    get:
+      summary: 'Get onboarding'
+      operationId: getOnboarding
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/onboarding/update:
+    post:
+      summary: 'Update onboarding'
+      operationId: updateOnboarding
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    productCreated:
+                      type: boolean
+                      description: ''
+                      example: true
+                    paymentMethodAdded:
+                      type: boolean
+                      description: ''
+                      example: true
+                    deliveryMethodCreated:
+                      type: boolean
+                      description: ''
+                      example: false
+                    storePublished:
+                      type: boolean
+                      description: ''
+                      example: false
+                    messagingStarted:
+                      type: boolean
+                      description: ''
+                      example: false
+                    advertisingStarted:
+                      type: boolean
+                      description: ''
+                      example: false
+              required:
+                - data
+  /api/v3/store/domain/change/sub:
+    post:
+      summary: 'Change Sub Domain'
+      operationId: changeSubDomain
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    domain:
+                      type: string
+                      description: ''
+                      example: subdomainname
+              required:
+                - data
+  /api/v3/store/get-list:
+    post:
+      summary: 'Get all Stores (need backoffice permissions)'
+      operationId: getAllStoresneedBackofficePermissions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: '"aleph"'
+                        status:
+                          type: array
+                          description: ''
+                          example:
+                            - active
+                          items:
+                            type: strings
+                        toReview:
+                          type: array
+                          description: ''
+                          example:
+                            - 0
+                            - 1
+                          items:
+                            type: integer
+                        advertisingStatus:
+                          type: array
+                          description: ''
+                          example:
+                            - launched
+                            - no_launched
+                          items:
+                            type: string
+                        startUpdatedAt:
+                          type: string
+                          description: ''
+                          example: '"2023-06-14T15:32:55.000Z"'
+                        endUpdatedAt:
+                          type: string
+                          description: ''
+                          example: '"2023-06-15T09:12:14.000Z"'
+              required:
+                - data
+  /api/v3/store/change-review-status:
+    post:
+      summary: 'Change Review Store status (need backoffice permissions)'
+      operationId: changeReviewStoreStatusneedBackofficePermissions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    uuid:
+                      type: required
+                      description: 'The UUID of the owner uuid.'
+                      example: 00a4319c-4edd-4f5b-bfef-8b1ae24339e0
+                    toReview:
+                      type: integer
+                      description: ''
+                      example: 0
+              required:
+                - data
+  /api/v3/store/change-status:
+    post:
+      summary: 'Change Store status (need backoffice permissions)'
+      operationId: changeStoreStatusneedBackofficePermissions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    uuid:
+                      type: required
+                      description: 'The UUID of the owner uuid.'
+                      example: 00a4319c-4edd-4f5b-bfef-8b1ae24339e0
+                    status:
+                      type: string
+                      description: ''
+                      example: blocked
+              required:
+                - data
+  /api/v3/store/get:
+    get:
+      summary: 'Get Store (need backoffice permissions)'
+      operationId: getStoreneedBackofficePermissions
+      description: ''
+      parameters:
+        -
+          in: query
+          name: uuid
+          description: 'The UUID of the owner uuid.'
+          example: 00a4319c-4edd-4f5b-bfef-8b1ae24339e0
+          required: true
+          schema:
+            type: string
+            description: 'The UUID of the owner uuid.'
+            example: 00a4319c-4edd-4f5b-bfef-8b1ae24339e0
+      responses: {  }
+      tags:
+        - Store
+  /api/v3/store/product/get-list:
+    post:
+      summary: 'Get all Store Products (need backoffice permissions)'
+      operationId: getAllStoreProductsneedBackofficePermissions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    uuid:
+                      type: string
+                      description: ''
+                      example: 4b384d0e-e2e9-4251-87b9-713fa73742c4
+                    filter:
+                      type: object
+                      description: ''
+                      example: []
+                      properties:
+                        searchTerm:
+                          type: string
+                          description: ''
+                          example: Apple
+                    sort:
+                      type: string
+                      description: ''
+                      example: 'name:asc'
+                    page:
+                      type: integer
+                      description: ''
+                      example: 1
+                    pageSize:
+                      type: integer
+                      description: ''
+                      example: 3
+  /api/v3/store/product/block:
+    post:
+      summary: 'Block Store Product (need backoffice permissions)'
+      operationId: blockStoreProductneedBackofficePermissions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    uuid:
+                      type: string
+                      description: ''
+                      example: 4b384d0e-e2e9-4251-87b9-713fa73742c4
+                    productId:
+                      type: integer
+                      description: ''
+                      example: 123
+  /api/v3/store/product/unblock:
+    post:
+      summary: 'Unblock Store Product (need backoffice permissions)'
+      operationId: unblockStoreProductneedBackofficePermissions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Store
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    uuid:
+                      type: string
+                      description: ''
+                      example: 4b384d0e-e2e9-4251-87b9-713fa73742c4
+                    productId:
+                      type: integer
+                      description: ''
+                      example: 123
+  /api/v3/tax/get:
+    get:
+      summary: 'Get Tax'
+      operationId: getTax
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Tax
+  /api/v3/tax/update:
+    post:
+      summary: 'Update Tax'
+      operationId: updateTax
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Tax
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    active:
+                      type: boolean
+                      description: ''
+                      example: true
+                    priceInclude:
+                      type: boolean
+                      description: ''
+                      example: true
+                    tax:
+                      type: string
+                      description: ''
+                      example: '4.5'
+              required:
+                - data
+  /api/v3/theme/get-list:
+    get:
+      summary: 'Get all Themes'
+      operationId: getAllThemes
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Theme
+  /api/v3/theme/apply:
+    post:
+      summary: 'Apply Theme'
+      operationId: applyTheme
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Theme
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  properties:
+                    id:
+                      type: integer
+                      description: ''
+                      example: 7
+              required:
+                - data
+tags:
+  -
+    name: Advertising
+    description: ''
+  -
+    name: Brand
+    description: ''
+  -
+    name: Category
+    description: ''
+  -
+    name: Coupon
+    description: ''
+  -
+    name: Customer
+    description: ''
+  -
+    name: Delivery
+    description: ''
+  -
+    name: Discount
+    description: ''
+  -
+    name: FAQ
+    description: ''
+  -
+    name: Feedback
+    description: ''
+  -
+    name: Init
+    description: ''
+  -
+    name: Option
+    description: ''
+  -
+    name: Order
+    description: ''
+  -
+    name: Page
+    description: ''
+  -
+    name: Payment
+    description: ''
+  -
+    name: Plugin
+    description: ''
+  -
+    name: Product
+    description: ''
+  -
+    name: 'Product Entry'
+    description: ''
+  -
+    name: Promo
+    description: ''
+  -
+    name: Shop
+    description: ''
+  -
+    name: Slide
+    description: ''
+  -
+    name: Store
+    description: ''
+  -
+    name: Tax
+    description: ''
+  -
+    name: Theme
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Sign In (Generate API token)</b>.'
+security:
+  -
+    default: []
