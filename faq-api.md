@@ -2,6 +2,12 @@
 
 Used in Online Shop. User is able to set up FAQ section in Online Shop.
 
+- [Get All FAQ items](#get-all-faq-items)
+- [Create FAQ item](#create-faq-item)
+- [Update FAQ item](#update-faq-item)
+- [Update FAQ Items Order](#update-faq-items-order)
+- [Delete FAQ items](#delete-faq-items)
+
 ## Get All FAQ items
 
 Returns the list of FAQ items.
