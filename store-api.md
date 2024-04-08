@@ -1,5 +1,23 @@
 # Store
 
+- [Get country settings list](#get-country-settings-list)
+- [Check if User’s store exists](#check-if-users-store-exists)
+- [Get store details](#get-store-details)
+- [Unpublish store](#unpublish-store)
+- [Get languages list](#get-languages-list)
+- [Update store settings](#update-store-settings)
+- [Change Own Domain](#change-own-domain)
+- [Change Sub Domain](#change-sub-domain)
+- [Check Own Domain](#check-own-domain)
+- [Check Sub Domain](#check-sub-domain)
+- [Cancel domain change](#cancel-domain-change)
+- [Get Info](#get-info)
+- [Update Info](#update-info)
+- [Update Contacts Order](#update-contacts-order)
+- [Get analytics](#get-analytics)
+- [Get onboarding](#get-onboarding)
+- [Update onboarding](#update-onboarding)
+
 ## Get country settings list
 
 This operation returns the country of business settins list.
