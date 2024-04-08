@@ -27,7 +27,7 @@ This operation allows to retrieve specific product.
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Product unique identifier (auto increment)|
-|slug|String|Optional|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Optional|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 
 #### Request example
 
@@ -36,35 +36,35 @@ This operation allows to retrieve specific product.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 |sortIndex|Integer<br/>(Bigint)|Mandatory|Defines the item display order|
 |published|Boolean|Mandatory|Displays whether shop is published or not<br/>Possible values: *true, false*|
 |brandId|Integer<br/>(Bigint)|Mandatory|Identifier of product brand|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Mandatory|Description of the product<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Mandatory|Description of the product<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |blockedAt|Timestamp|Mandatory|Has *NULL* value if product isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
-|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |variations.availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
-|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
+|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |variations.discountId|Integer|Mandatory|Has *NULL* value by default (if no discounts were applied)|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Mandatory|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |variations.options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |variations.blockedAt|Timestamp|Mandatory|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 
 
@@ -140,7 +140,7 @@ This operation retrieves list of all products (including demo and blocked).
 |---|---|---|---|
 |collectionIdList|Array of integers|Optional|Perform filtration by collections list<br/>PHP system limitations|
 |brandIdList|Array of integers|Optional|Perform filtration by brands list<br/>PHP system limitations|
-|searchTerm|String|Optional|Perform filtration by product name<br/>Min length - 1, max length - 255|
+|searchTerm|String|Optional|Perform filtration by product name<br/>Min lenght - 1, max lenght - 255|
 |inStock|Boolean|Optional|Perform filtration by availability of products<br/>Possible values: *true*, *false*|
 
 #### Request example
@@ -160,36 +160,36 @@ This operation retrieves list of all products (including demo and blocked).
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 |sortIndex|Integer<br/>(Bigint)|Mandatory|Defines the item display order|
 |published|Boolean|Mandatory|Displays whether shop is published or not<br/>Possible values: *true, false*|
 |brandId|Integer<br/>(Bigint)|Mandatory|Identifier of product brand|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Mandatory|Description of the product<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Mandatory|Description of the product<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |blockedAt|Timestamp|Mandatory|Has *NULL* value if product isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
-|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |variations.availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
-|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
+|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |variations.discountId|Integer|Mandatory|Has *NULL* value by default (if no discounts were applied)|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Mandatory|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |variations.options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |variations.blockedAt|Timestamp|Mandatory|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |totalPages|Integer<br/>(Positive integer)|Mandatory|Number of pages in response|
 |totalItems|Integer<br/>(Positive integer)|Mandatory|Quantity of products in the list|
@@ -381,7 +381,7 @@ This operation allow to retrieve identifiers of all products in the system.
 |---|---|---|---|
 |collectionIdList|Array of integers|Optional|Perform filtration by collections list<br/>PHP system limitations|
 |brandIdList|Array of integers|Optional|Perform filtration by brands list<br/>PHP system limitations|
-|searchTerm|String|Optional|Perform filtration by product name<br/>Min length - 1, max length - 255|
+|searchTerm|String|Optional|Perform filtration by product name<br/>Min lenght - 1, max lenght - 255|
 |inStock|Boolean|Optional|Perform filtration by availability of products<br/>Possible values: *true*, *false*|
 
 ### Request example
@@ -401,7 +401,7 @@ This operation allow to retrieve identifiers of all products in the system.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
@@ -442,18 +442,18 @@ This operation allows to retrieve specific product.
 |---|---|---|---|
 |collectionId|Integer|Optional|Exists in the system|
 |brandId|Integer|Optional|Exists in the system|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Optional|Product description<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Optional|Product description<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Optional|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 
 #### Request example
 
@@ -491,36 +491,36 @@ This operation allows to retrieve specific product.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 |sortIndex|Integer<br/>(Bigint)|Mandatory|Defines the item display order|
 |published|Boolean|Mandatory|Displays whether shop is published or not<br/>Possible values: *true, false*|
 |brandId|Integer<br/>(Bigint)|Mandatory|Identifier of product brand|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Mandatory|Description of the product<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Mandatory|Description of the product<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |blockedAt|Timestamp|Mandatory|Has *NULL* value if product isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
-|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |variations.availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
-|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
+|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |variations.discountId|Integer|Mandatory|Has *NULL* value by default (if no discounts were applied)|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Mandatory|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |variations.options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |variations.blockedAt|Timestamp|Mandatory|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |totalPages|Integer<br/>(Positive integer)|Mandatory|Number of pages in response|
 |totalItems|Integer<br/>(Positive integer)|Mandatory|Quantity of products in the list|
@@ -602,35 +602,35 @@ Request should contain body with following content:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 |sortIndex|Integer<br/>(Bigint)|Mandatory|Defines the item display order|
 |published|Boolean|Mandatory|Displays whether shop is published or not<br/>Possible values: *true, false*|
 |brandId|Integer<br/>(Bigint)|Mandatory|Identifier of product brand|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Mandatory|Description of the product<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Mandatory|Description of the product<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |blockedAt|Timestamp|Mandatory|Has *NULL* value if product isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
-|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |variations.availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
-|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
+|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |variations.discountId|Integer|Mandatory|Has *NULL* value by default (if no discounts were applied)|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Mandatory|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |variations.options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |variations.blockedAt|Timestamp|Mandatory|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 
 #### Response example
@@ -695,30 +695,30 @@ Request should contain body with following content:
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|slug|String|Optional|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Optional|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 |sortIndex|Integer<br/>(Bigint)|Mandatory|Defines the item display order|
 |published|Boolean|Mandatory|Displays whether shop is published or not<br/>Possible values: *true, false*|
 |brandId|Integer<br/>(Bigint)|Optional|Identifier of product brand|
 |collectionId|Integer<br/>(Bigint)|Optional|Identifier of product collection|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Optional|Description of the product<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Optional|Description of the product<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |blockedAt|Timestamp|Optional|Has *NULL* value if product isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
-|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |variations.availability|Boolean|Optional|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Optional|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
-|variations.discountPrice|String<br/>(Numeric)|Optional|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Optional|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
+|variations.discountPrice|String<br/>(Numeric)|Optional|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |variations.discountId|Integer|Optional|Has *NULL* value by default (if no discounts were applied)|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Optional|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |variations.options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |variations.blockedAt|Timestamp|Optional|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 
 #### Request example
@@ -767,35 +767,35 @@ Request should contain body with following content:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
+|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
 |sortIndex|Integer<br/>(Bigint)|Mandatory|Defines the item display order|
 |published|Boolean|Mandatory|Displays whether shop is published or not<br/>Possible values: *true, false*|
 |brandId|Integer<br/>(Bigint)|Mandatory|Identifier of product brand|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
-|description|String|Mandatory|Description of the product<br/>Min length - 1; max length - 5000|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
+|description|String|Mandatory|Description of the product<br/>Min lenght - 1; max lenght - 5000|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |blockedAt|Timestamp|Mandatory|Has *NULL* value if product isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
-|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Mandatory|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |variations|Array of objects|Mandatory|Variations of the products by options (e.g.,colour)<br/>Number of variations is limited only by PHP logic|
 |variations.id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |variations.availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
-|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|variations.price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|variations.weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
+|variations.discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |variations.discountId|Integer|Mandatory|Has *NULL* value by default (if no discounts were applied)|
 |variations.quantity|Integer|Mandatory|Quantity of products in variation|
 |variations.images|Array of Strings (url)|Mandatory|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |variations.options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |variations.blockedAt|Timestamp|Mandatory|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 
 #### Response example

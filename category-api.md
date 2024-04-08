@@ -24,7 +24,7 @@ This operation allows to retrieve specific category.
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
-|slug|String|Optional|Descriptive unique text that identifies the category<br/>Min length - 1; max length - 255|
+|slug|String|Optional|Descriptive unique text that identifies the category<br/>Min lenght - 1; max lenght - 255|
 
 #### Request example
 
@@ -33,7 +33,7 @@ This operation allows to retrieve specific category.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
@@ -44,8 +44,8 @@ Success response comes with HTTP code 200 (OK) and include following body stuctu
 |showOnMain|Boolean|Mandatory|Determines whether the category will be displayed on the main page of Online Shop or not.<br/>Possible values: *true*, *false*|
 |itemsCount|Integer<br/>Positive Integer|Mandatory|Quantity of products in the category|
 |image|String (url)|Optional|Category logo url<br/>Value provided in request|
-|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 
 #### Response example
 
@@ -104,7 +104,7 @@ This operation allows to retrieve all existing categories.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
@@ -115,8 +115,8 @@ Success response comes with HTTP code 200 (OK) and include following body stuctu
 |showOnMain|Boolean|Mandatory|Determines whether the category will be displayed on the main page of Online Shop or not.<br/>Possible values: *true*, *false*|
 |itemsCount|Integer<br/>Positive Integer|Mandatory|Quantity of products in the category|
 |image|String (url)|Optional|Category logo url<br/>Value provided in request|
-|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 |totalPages|Integer<br/>(Bigint)|Mandatory|Number of pages (groups of items), controlled with pageSize
 parameter|
 |totalItems|Integer<br/>(Bigint)|Mandatory|Total number of available items|
@@ -175,8 +175,8 @@ Request should contain body with following content:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Category name<br/>Min length - 1; max length - 255|
-|image|String (url)|Optional|Category image url<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Category name<br/>Min lenght - 1; max lenght - 255|
+|image|String (url)|Optional|Category image url<br/>Min lenght - 1; max lenght - 255|
 |showOnMain|Boolean|Mandatory|Determines whether the category will be displayed on the main page of Online Shop or not.<br/>Possible values: *true*, *false*|
 
 #### Request example
@@ -193,7 +193,7 @@ Request should contain body with following content:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
@@ -204,8 +204,8 @@ Success response comes with HTTP code 200 (OK) and include following body stuctu
 |showOnMain|Boolean|Mandatory|Determines whether the category will be displayed on the main page of Online Shop or not.<br/>Possible values: *true*, *false*|
 |itemsCount|Integer<br/>Positive Integer|Mandatory|Quantity of products in the category|
 |image|String (url)|Optional|Category logo url<br/>Value provided in request|
-|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 
 
 ### Update category
@@ -225,8 +225,8 @@ Request should contain body with following content:
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Category unique identifier (auto increment)|
-|name|String|Mandatory|Category name<br/>Min length - 1; max length - 255|
-|image|String (url)|Optional|Category image url<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Category name<br/>Min lenght - 1; max lenght - 255|
+|image|String (url)|Optional|Category image url<br/>Min lenght - 1; max lenght - 255|
 |showOnMain|Boolean|Mandatory|Determines whether the category will be displayed on the main page of Online Shop or not.<br/>Possible values: *true*, *false*|
 
 #### Request example
@@ -244,7 +244,7 @@ Request should contain body with following content:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
@@ -255,8 +255,8 @@ Success response comes with HTTP code 200 (OK) and include following body stuctu
 |showOnMain|Boolean|Mandatory|Determines whether the category will be displayed on the main page of Online Shop or not.<br/>Possible values: *true*, *false*|
 |itemsCount|Integer<br/>Positive Integer|Mandatory|Quantity of products in the category|
 |image|String (url)|Optional|Category logo url<br/>Value provided in request|
-|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 60|
-|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min length - 1; max length - 160|
+|metaTitle|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 60|
+|metaDescription|String|Optional|Available if SEO plugin is activated<br/>Min lenght - 1; max lenght - 160|
 
 #### Response example
 

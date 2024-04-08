@@ -32,7 +32,7 @@ Request body can contain following structure:
 |---|---|---|---|
 |collectionId|Integer|Optional|Perform filtration by assigned collection<br/>PHP system limitations|
 |productId|Integer|Optional|Perform filtration by product id|
-|searchTerm|String|Optional|Perform filtration by product name<br/>Min length - 1, max length - 255|
+|searchTerm|String|Optional|Perform filtration by product name<br/>Min lenght - 1, max lenght - 255|
 |idList|Array of integers|Optional|Perform filtration by list of variation ids<br/>PHP system limitations|
 |discountId|Integer|Integer<br/>(Bigint)|Optional|Perform filtration by discount id|
 |couponId|integer|Integer<br/>(Bigint)|Optional|Perform filtration by coupon id|
@@ -54,28 +54,28 @@ Request body can contain following structure:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of variations belonging to the product (auto increment)|
 |collectionId|Integer<br/>(Bigint)|Mandatory|Identifier of product collection|
 |brandId|Integer<br/>(Bigint)|Mandatory|Identifier of product brand|
-|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min length - 1; max length - 255|
-|name|String|Mandatory|Product name<br/>Min length - 1; max length - 255|
+|slug|String|Mandatory|Descriptive unique text that identifies the product<br/>Min lenght - 1; max lenght - 255|
+|name|String|Mandatory|Product name<br/>Min lenght - 1; max lenght - 255|
 |unlimited|Boolean|Mandatory|Displays if store has unlimited quantity of such products or not<br/>Possible values: *true, false*|
 |productId|Integer<br/>(Bigint)|Mandatory|System identifier of product (auto increment)|
 |availability|Boolean|Mandatory|Displays if variation of the product is available or not<br/>Possible values: *true, false*|
-|weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min length - 1; max length - 18|
+|weight|String<br/>(Numeric)|Mandatory|Weight of the product (kg). Used for delivery integration<br/>Default value: 0.5<br/>Min lenght - 1; max lenght - 18|
 |discountId|Integer|Mandatory|Has *NULL* value by default (if no discounts were applied)|
-|price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min length - 1; max length - 18|
-|discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min length - 1; max length - 18|
+|price|String<br/>(Numeric)|Mandatory|Product variation price<br/>Min lenght - 1; max lenght - 18|
+|discountPrice|String<br/>(Numeric)|Mandatory|If no discounts were applied has the same value as price<br/>Min lenght - 1; max lenght - 18|
 |quantity|Integer|Mandatory|Quantity of products in variation|
 |images|Array of Strings (url)|Mandatory|Images of the product variation<br/>Number of variations is limited only by PHP logic|
 |options|Array of objects|Mandatory|Size, colour, material etc. of the product<br/>Empty array by default; one product can have 2 options max|
 |options.id|Integer|Optional|System identifier of options (auto increment)|
-|options.name|String|Optional|Options name<br/>Min length - 1; max length - 255|
-|options.value|String|Optional|Options value<br/>Min length - 1; max length - 32|
+|options.name|String|Optional|Options name<br/>Min lenght - 1; max lenght - 255|
+|options.value|String|Optional|Options value<br/>Min lenght - 1; max lenght - 32|
 |blockedAt|Timestamp|Mandatory|Has *NULL* value if variation isn’t blocked<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |totalPages|Integer<br/>(Positive integer)|Mandatory|Number of pages (groups of items), controlled with pageSize parameter|
 |totalItems|Integer<br/>(Positive integer)|Mandatory|Total number of available items|
@@ -170,7 +170,7 @@ This operation allow to retrieve identifiers of all product variations in the sy
 |---|---|---|---|
 |collectionId|Integer|Optional|Perform filtration by assigned collection<br/>PHP system limitations|
 |productId|Integer|Optional|Perform filtration by product id|
-|searchTerm|String|Optional|Perform filtration by product name<br/>Min length - 1, max length - 255|
+|searchTerm|String|Optional|Perform filtration by product name<br/>Min lenght - 1, max lenght - 255|
 |idList|Array of integers|Optional|Perform filtration by list of variation ids<br/>PHP system limitations|
 |discountId|Integer|Integer<br/>(Bigint)|Optional|Perform filtration by discount id|
 |couponId|integer|Integer<br/>(Bigint)|Optional|Perform filtration by coupon id|
@@ -192,7 +192,7 @@ This operation allow to retrieve identifiers of all product variations in the sy
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|

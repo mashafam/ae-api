@@ -85,7 +85,7 @@ Request can be modified by using special parameters to retirieve definite brands
 |---|---|---|---|
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Oprional|Brand name|
-|filter|Object|Optional|searchTerm performs search by name parameter<br/>min length - 1; max length - 255|
+|filter|Object|Optional|searchTerm performs search by name parameter<br/>min lenght - 1; max lenght - 255|
 |sort|Object|String|System sorting options such as: <br/> - id:asc, id:desc, - name:asc, name:desc|
 
 #### Request example
@@ -167,8 +167,8 @@ This operation creates Brand that can be used to characterize Product.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Brand name <br/> min length - 1; max length - 255|
-|image|Href|Optional|Brand logo url <br/> min length - 1; max length - 255|
+|name|String|Mandatory|Brand name <br/> min lenght - 1; max lenght - 255|
+|image|Href|Optional|Brand logo url <br/> min lenght - 1; max lenght - 255|
 
 #### Request Example
 
@@ -228,8 +228,8 @@ This operation provides update of existing Brand.
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of brand to be updated (automatically generated)|
-|name|String|Mandatory|Brand name<br/> min length - 1; max length - 255|
-|image|Href|Optional|Brand logo url<br/> min length - 1; max length - 255|
+|name|String|Mandatory|Brand name<br/> min lenght - 1; max lenght - 255|
+|image|Href|Optional|Brand logo url<br/> min lenght - 1; max lenght - 255|
 
 #### Request Example
 

@@ -32,60 +32,60 @@ This operation retrieves a specific Order.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
-|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.cartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|cartDiscountDetails.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|cartDiscountDetails.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |couponDetails.id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|couponDetails.name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|couponDetails.name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |deliveryOptionDetails.id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |deliveryOptionDetails.type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 |customerId|Integer<br/>(Bigint)|Mandatory|Unique customer identifier|
 |customerDetails|Array of objects|Mandatory|Customer details<br/>Number of objects is limited only by PHP logic|
-|customerDetails.name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|customerDetails.name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |customerDetails.phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |customerDetails.email|String|Optional|Customer email<br/>64 symbols including "@" sign and domain|
-|customerDetails.country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|customerDetails.city|String|Optional|Customer city<br/>Min length - 1, max length - 255|
-|customerDetails.state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|customerDetails.address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
-|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min length - 1, max length - 3|
+|customerDetails.country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.city|String|Optional|Customer city<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|customerDetails.address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
+|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min lenght - 1, max lenght - 3|
 |cart|Array of objects|Mandatory|All products which are in the shopping cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Mandatory|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart|
-|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min length - 1; max length - 18|
-|cart.name|String|Mandatory|Product name<br/>Min length - 1, max length - 255|
-|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min length - 1; max length - 18;<br/>Default value - 0.5 kg|
+|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min lenght - 1; max lenght - 18|
+|cart.name|String|Mandatory|Product name<br/>Min lenght - 1, max lenght - 255|
+|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min lenght - 1; max lenght - 18;<br/>Default value - 0.5 kg|
 |cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product/products in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
-|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min length - 1, max length - 50|
-|paymentId|String|Optional|Payment method identifier<br/>Min length - 1, max length - 20|
-|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min length - 1, max length - 20|
-|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 30|
-|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 255|
-|paymentStatus|String|Mandatory|Status of order payment<br/>Min length - 1, max length - 20|
+|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min lenght - 1, max lenght - 50|
+|paymentId|String|Optional|Payment method identifier<br/>Min lenght - 1, max lenght - 20|
+|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min lenght - 1, max lenght - 20|
+|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 30|
+|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 255|
+|paymentStatus|String|Mandatory|Status of order payment<br/>Min lenght - 1, max lenght - 20|
 |createdAt|DateTime|Mandatory|Timestamp which shows date and time when order was created<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |isOneClick|Boolean|Mandatory|Shows whether order was created via Buy-in-one-click flow<br/>Possible values: *true, false*|
-|note|String|Optional|Order note<br/>Min length - 1, max length - 500|
+|note|String|Optional|Order note<br/>Min lenght - 1, max lenght - 500|
 
 #### Response example
 
@@ -182,7 +182,7 @@ This operation retrieves list of Orders satisfying to the search term and filter
 
 |**Name**|**Value Type**|**Value Limitation**|
 |---|---|---|
-|searchTerm|String|Perform filtration by Customer's full_name, phone_number, email,country, city, state, zip_postal, address<br/>Min length - 1, max length - 255|
+|searchTerm|String|Perform filtration by Customer's full_name, phone_number, email,country, city, state, zip_postal, address<br/>Min lenght - 1, max lenght - 255|
 |customerId|Integer<br/>Positive integers|Perform filtration by Customer ids|
 |paymentStatus|Array of strings|Perform filtration by payment statuses<br/>PHP system limitations|
 |deliveryStatuses|Array of strings|Perform filtration by delivery statuses<br/>PHP system limitations|
@@ -207,61 +207,61 @@ This operation retrieves list of Orders satisfying to the search term and filter
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of orders matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
-|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.cartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|cartDiscountDetails.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|cartDiscountDetails.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |couponDetails.id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|couponDetails.name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|couponDetails.name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |deliveryOptionDetails.id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |deliveryOptionDetails.type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 |customerId|Integer<br/>(Bigint)|Mandatory|Unique customer identifier|
 |customerDetails|Array of objects|Mandatory|Customer details<br/>Number of objects is limited only by PHP logic|
-|customerDetails.name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|customerDetails.name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |customerDetails.phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |customerDetails.email|String|Optional|Customer email<br/>64 symbols including "@" sign and domain|
-|customerDetails.country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|customerDetails.city|String|Optional|Customer city<br/>Min length - 1, max length - 255|
-|customerDetails.state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|customerDetails.address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
-|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min length - 1, max length - 3|
+|customerDetails.country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.city|String|Optional|Customer city<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|customerDetails.address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
+|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min lenght - 1, max lenght - 3|
 |cart|Array of objects|Mandatory|All products which are in the shopping cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Mandatory|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart|
-|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min length - 1; max length - 18|
-|cart.name|String|Mandatory|Product name<br/>Min length - 1, max length - 255|
-|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min length - 1; max length - 18;<br/>Default value - 0.5 kg|
+|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min lenght - 1; max lenght - 18|
+|cart.name|String|Mandatory|Product name<br/>Min lenght - 1, max lenght - 255|
+|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min lenght - 1; max lenght - 18;<br/>Default value - 0.5 kg|
 |cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product/products in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
-|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min length - 1, max length - 50|
-|paymentId|String|Optional|Payment method identifier<br/>Min length - 1, max length - 20|
-|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min length - 1, max length - 20|
-|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 30|
-|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 255|
-|paymentStatus|String|Mandatory|Status of order payment<br/>Min length - 1, max length - 20|
+|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min lenght - 1, max lenght - 50|
+|paymentId|String|Optional|Payment method identifier<br/>Min lenght - 1, max lenght - 20|
+|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min lenght - 1, max lenght - 20|
+|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 30|
+|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 255|
+|paymentStatus|String|Mandatory|Status of order payment<br/>Min lenght - 1, max lenght - 20|
 |createdAt|DateTime|Mandatory|Timestamp which shows date and time when order was created<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |isOneClick|Boolean|Mandatory|Shows whether order was created via Buy-in-one-click flow<br/>Possible values: *true, false*|
-|note|String|Optional|Order note<br/>Min length - 1, max length - 500|
+|note|String|Optional|Order note<br/>Min lenght - 1, max lenght - 500|
 |totalPages|Integer<br/>(Positive integer)|Mandatory|Number of pages in response|
 |totalItems|Integer<br/>(Positive integer)|Mandatory|Quantity of products in the list|
 
@@ -423,53 +423,53 @@ This operation creates an Order.
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
-|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.cartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|cartDiscountDetails.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|cartDiscountDetails.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |couponDetails.id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|couponDetails.name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|couponDetails.name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |deliveryOptionDetails.id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |deliveryOptionDetails.type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 |customerId|Integer<br/>(Bigint)|Mandatory|Unique customer identifier|
 |customerDetails|Array of objects|Mandatory|Customer details<br/>Number of objects is limited only by PHP logic|
-|customerDetails.name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|customerDetails.name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |customerDetails.phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |customerDetails.email|String|Optional|Customer email<br/>64 symbols including "@" sign and domain|
-|customerDetails.country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|customerDetails.city|String|Optional|Customer city<br/>Min length - 1, max length - 255|
-|customerDetails.state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|customerDetails.address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
-|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min length - 1, max length - 3|
+|customerDetails.country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.city|String|Optional|Customer city<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|customerDetails.address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
+|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min lenght - 1, max lenght - 3|
 |cart|Array of objects|Mandatory|All products which are in the shopping cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Mandatory|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart|
-|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min length - 1; max length - 18|
-|cart.name|String|Mandatory|Product name<br/>Min length - 1, max length - 255|
-|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min length - 1; max length - 18;<br/>Default value - 0.5 kg|
+|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min lenght - 1; max lenght - 18|
+|cart.name|String|Mandatory|Product name<br/>Min lenght - 1, max lenght - 255|
+|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min lenght - 1; max lenght - 18;<br/>Default value - 0.5 kg|
 |cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product/products in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
-|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min length - 1, max length - 50|
-|paymentId|String|Optional|Payment method identifier<br/>Min length - 1, max length - 20|
-|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min length - 1, max length - 20|
-|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 30|
-|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 255|
-|paymentStatus|String|Mandatory|Status of order payment<br/>Min length - 1, max length - 20|
+|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min lenght - 1, max lenght - 50|
+|paymentId|String|Optional|Payment method identifier<br/>Min lenght - 1, max lenght - 20|
+|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min lenght - 1, max lenght - 20|
+|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 30|
+|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 255|
+|paymentStatus|String|Mandatory|Status of order payment<br/>Min lenght - 1, max lenght - 20|
 |isOneClick|Boolean|Mandatory|Shows whether order was created via Buy-in-one-click flow<br/>Possible values: *true, false*|
-|note|String|Optional|Order note<br/>Min length - 1, max length - 500|
+|note|String|Optional|Order note<br/>Min lenght - 1, max lenght - 500|
 
 #### Request example
 
@@ -556,60 +556,60 @@ This operation creates an Order.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
-|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.cartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|cartDiscountDetails.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|cartDiscountDetails.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |couponDetails.id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|couponDetails.name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|couponDetails.name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |deliveryOptionDetails.id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |deliveryOptionDetails.type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 |customerId|Integer<br/>(Bigint)|Mandatory|Unique customer identifier|
 |customerDetails|Array of objects|Mandatory|Customer details<br/>Number of objects is limited only by PHP logic|
-|customerDetails.name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|customerDetails.name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |customerDetails.phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |customerDetails.email|String|Optional|Customer email<br/>64 symbols including "@" sign and domain|
-|customerDetails.country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|customerDetails.city|String|Optional|Customer city<br/>Min length - 1, max length - 255|
-|customerDetails.state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|customerDetails.address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
-|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min length - 1, max length - 3|
+|customerDetails.country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.city|String|Optional|Customer city<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|customerDetails.address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
+|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min lenght - 1, max lenght - 3|
 |cart|Array of objects|Mandatory|All products which are in the shopping cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Mandatory|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart|
-|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min length - 1; max length - 18|
-|cart.name|String|Mandatory|Product name<br/>Min length - 1, max length - 255|
-|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min length - 1; max length - 18;<br/>Default value - 0.5 kg|
+|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min lenght - 1; max lenght - 18|
+|cart.name|String|Mandatory|Product name<br/>Min lenght - 1, max lenght - 255|
+|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min lenght - 1; max lenght - 18;<br/>Default value - 0.5 kg|
 |cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product/products in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
-|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min length - 1, max length - 50|
-|paymentId|String|Optional|Payment method identifier<br/>Min length - 1, max length - 20|
-|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min length - 1, max length - 20|
-|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 30|
-|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 255|
-|paymentStatus|String|Mandatory|Status of order payment<br/>Min length - 1, max length - 20|
+|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min lenght - 1, max lenght - 50|
+|paymentId|String|Optional|Payment method identifier<br/>Min lenght - 1, max lenght - 20|
+|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min lenght - 1, max lenght - 20|
+|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 30|
+|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 255|
+|paymentStatus|String|Mandatory|Status of order payment<br/>Min lenght - 1, max lenght - 20|
 |createdAt|DateTime|Mandatory|Timestamp which shows date and time when order was created<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |isOneClick|Boolean|Mandatory|Shows whether order was created via Buy-in-one-click flow<br/>Possible values: *true, false*|
-|note|String|Optional|Order note<br/>Min length - 1, max length - 500|
+|note|String|Optional|Order note<br/>Min lenght - 1, max lenght - 500|
 
 #### Response example
 
@@ -714,53 +714,53 @@ This operation updates an existing Order.
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |updateCart|Boolean|Mandatory|Defines updates that causes cart update<br/>Possible values: *true, false*|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
-|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.cartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|cartDiscountDetails.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|cartDiscountDetails.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |couponDetails.id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|couponDetails.name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|couponDetails.name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |deliveryOptionDetails.id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |deliveryOptionDetails.type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 |customerId|Integer<br/>(Bigint)|Mandatory|Unique customer identifier|
 |customerDetails|Array of objects|Mandatory|Customer details<br/>Number of objects is limited only by PHP logic|
-|customerDetails.name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|customerDetails.name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |customerDetails.phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |customerDetails.email|String|Optional|Customer email<br/>64 symbols including "@" sign and domain|
-|customerDetails.country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|customerDetails.city|String|Optional|Customer city<br/>Min length - 1, max length - 255|
-|customerDetails.state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|customerDetails.address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
-|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min length - 1, max length - 3|
+|customerDetails.country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.city|String|Optional|Customer city<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|customerDetails.address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
+|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min lenght - 1, max lenght - 3|
 |cart|Array of objects|Mandatory|All products which are in the shopping cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Mandatory|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart|
-|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min length - 1; max length - 18|
-|cart.name|String|Mandatory|Product name<br/>Min length - 1, max length - 255|
-|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min length - 1; max length - 18;<br/>Default value - 0.5 kg|
+|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min lenght - 1; max lenght - 18|
+|cart.name|String|Mandatory|Product name<br/>Min lenght - 1, max lenght - 255|
+|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min lenght - 1; max lenght - 18;<br/>Default value - 0.5 kg|
 |cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product/products in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
-|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min length - 1, max length - 50|
-|paymentId|String|Optional|Payment method identifier<br/>Min length - 1, max length - 20|
-|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min length - 1, max length - 20|
-|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 30|
-|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 255|
-|paymentStatus|String|Mandatory|Status of order payment<br/>Min length - 1, max length - 20|
+|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min lenght - 1, max lenght - 50|
+|paymentId|String|Optional|Payment method identifier<br/>Min lenght - 1, max lenght - 20|
+|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min lenght - 1, max lenght - 20|
+|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 30|
+|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 255|
+|paymentStatus|String|Mandatory|Status of order payment<br/>Min lenght - 1, max lenght - 20|
 |isOneClick|Boolean|Mandatory|Shows whether order was created via Buy-in-one-click flow<br/>Possible values: *true, false*|
-|note|String|Optional|Order note<br/>Min length - 1, max length - 500|
+|note|String|Optional|Order note<br/>Min lenght - 1, max lenght - 500|
 
 #### Request example
 
@@ -835,60 +835,60 @@ This operation updates an existing Order.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Order unique identifier (auto increment)|
 |paymentDetails|Array of objects|Mandatory|Includes all discounts, deliveries and total sum<br/>Number of objects is limited only by PHP logic|
-|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|paymentDetails.subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|paymentDetails.total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.cartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|cartDiscountDetails.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|cartDiscountDetails.type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|cartDiscountDetails.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|cartDiscountDetails.result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |couponDetails.id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|couponDetails.name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|couponDetails.name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|couponDetails.result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |paymentDetails.deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |deliveryOptionDetails.id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|deliveryOptionDetails.name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |deliveryOptionDetails.type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|deliveryOptionDetails.result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 |customerId|Integer<br/>(Bigint)|Mandatory|Unique customer identifier|
 |customerDetails|Array of objects|Mandatory|Customer details<br/>Number of objects is limited only by PHP logic|
-|customerDetails.name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|customerDetails.name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |customerDetails.phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |customerDetails.email|String|Optional|Customer email<br/>64 symbols including "@" sign and domain|
-|customerDetails.country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|customerDetails.city|String|Optional|Customer city<br/>Min length - 1, max length - 255|
-|customerDetails.state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|customerDetails.address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
-|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min length - 1, max length - 3|
+|customerDetails.country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.city|String|Optional|Customer city<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|customerDetails.zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|customerDetails.address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
+|currency|String|Mandatory|Selected currency for the order (ISO code)<br/>Min lenght - 1, max lenght - 3|
 |cart|Array of objects|Mandatory|All products which are in the shopping cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Mandatory|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart|
-|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min length - 1; max length - 18|
-|cart.name|String|Mandatory|Product name<br/>Min length - 1, max length - 255|
-|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min length - 1; max length - 18;<br/>Default value - 0.5 kg|
+|cart.price|String<br/>(numeric)|Mandatory|Product price<br/>Min lenght - 1; max lenght - 18|
+|cart.name|String|Mandatory|Product name<br/>Min lenght - 1, max lenght - 255|
+|cart.weight|String<br/>(numeric)|Optional|Product weight<br/>Mandatory if 3rd party delivery service is activated<br/>Min lenght - 1; max lenght - 18;<br/>Default value - 0.5 kg|
 |cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product/products in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
-|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min length - 1, max length - 50|
-|paymentId|String|Optional|Payment method identifier<br/>Min length - 1, max length - 20|
-|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min length - 1, max length - 20|
-|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 30|
-|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min length - 1, max length - 255|
-|paymentStatus|String|Mandatory|Status of order payment<br/>Min length - 1, max length - 20|
+|salesChannel|String|Mandatory|Shows through which channel Buyer placed an order<br/>Min lenght - 1, max lenght - 50|
+|paymentId|String|Optional|Payment method identifier<br/>Min lenght - 1, max lenght - 20|
+|deliveryStatus|String|Mandatory|Status of order delivery<br/>Min lenght - 1, max lenght - 20|
+|externalDeliveryStatus|String|Optional|Status of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 30|
+|externalDeliveryReference|String|Optional|Unique identifier of the delivery via 3rd party delivery service<br/>Min lenght - 1, max lenght - 255|
+|paymentStatus|String|Mandatory|Status of order payment<br/>Min lenght - 1, max lenght - 20|
 |createdAt|DateTime|Mandatory|Timestamp which shows date and time when order was created<br/>Format: *YYYY-MM-DD HH:MM:SS*|
 |isOneClick|Boolean|Mandatory|Shows whether order was created via Buy-in-one-click flow<br/>Possible values: *true, false*|
-|note|String|Optional|Order note<br/>Min length - 1, max length - 500|
+|note|String|Optional|Order note<br/>Min lenght - 1, max lenght - 500|
 
 #### Response example
 
@@ -978,9 +978,9 @@ This operation updates an existing Order.
 |cart|Array of objects|Required|Contains brief info about product item(s) in the cart<br/>Number of objects is limited only by PHP logic|
 |cart.id|Integer<br/>(Bigint)|Required|Unique identifier of a product in cart|
 |cart.quantity|Integer<br/>Positive Integer|Mandatory|Product quantity in cart||cartDiscount|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20<br/>Possible values: *cash, percentage*|
-|cartDiscount.value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|cartDiscount.reason|String|Optional|Discount application reason<br/>Min length - 1, max length - 255|
+|cartDiscount.type|String|Optional|Two types: certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20<br/>Possible values: *cash, percentage*|
+|cartDiscount.value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|cartDiscount.reason|String|Optional|Discount application reason<br/>Min lenght - 1, max lenght - 255|
 |couponId|Integer<br/>(Bigint)|Optional|Unique identifier of the coupon applied to the product(s) in cart|
 |deliveryOptionId|Integer<br/>(Bigint)|Optional|Identifier of the delivery option|
 
@@ -1011,26 +1011,26 @@ This operation updates an existing Order.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
-|total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min length - 1; max length - 18|
+|subTotal|String<br/>(numeric)|Mandatory|Sum without coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
+|total|String<br/>(numeric)|Mandatory|Total sum incl. all products, coupons, deliveries and order discounts<br/>Min lenght - 1; max lenght - 18|
 |pcartDiscountDetails|Array of objects|Mandatory|Includes order discounts<br/>Number of objects is limited only by PHP logic|
-|type|String|Optional|Certain amount of money or percent of subTotal<br/>Min length - 1, max length - 20;<br/>Options: cash, percentage|
-|value|String|Optional|Discount value<br/>Min length - 1, max length - 255|
-|reason|String|Optional|Reason for giving order discount<br/>Min length - 1, max length - 255|
-|result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min length - 1; max length - 18|
+|type|String|Optional|Certain amount of money or percent of subTotal<br/>Min lenght - 1, max lenght - 20;<br/>Options: cash, percentage|
+|value|String|Optional|Discount value<br/>Min lenght - 1, max lenght - 255|
+|reason|String|Optional|Reason for giving order discount<br/>Min lenght - 1, max lenght - 255|
+|result|String<br/>(numeric)|Optional|Sum of order discount in the selected currency<br/>Min lenght - 1; max lenght - 18|
 |couponDetails|Array of objects|Mandatory|Coupon details<br/>Number of objects is limited only by PHP logic|
 |id|Integer<br/>(Bigint)|Optional|Unique identifier of coupon applied to the product(s) in order|
-|name|String|Optional|Coupon name<br/>Min length - 1, max length - 255|
-|result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min length - 1; max length - 18|
+|name|String|Optional|Coupon name<br/>Min lenght - 1, max lenght - 255|
+|result|String<br/>(numeric)|Optional|Sum of discount applied as a coupon to product(s)<br/>Min lenght - 1; max lenght - 18|
 |deliveryOptionDetails|Array of objects|Mandatory|Order delivery option details<br/>Number of objects is limited only by PHP logic|
 |id|Integer<br/>(Bigint)|Mandatory|Delivery option identifier|
-|name|String|Mandatory|Delivery option name<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Delivery option name<br/>Min lenght - 1, max lenght - 255|
 |type|String|Mandatory|Delivery type<br/>Possible values: *delivery, shiip, pickup*|
-|result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min length - 1; max length - 18|
+|result|String<br/>(numeric)|Mandatory|Cost of the delivery<br/>Min lenght - 1; max lenght - 18|
 
 #### Response example
 
@@ -1079,8 +1079,8 @@ This operation allows to update the order delivery status (if delivery is provid
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |orderId|Integer|Required|ID of order which delivery status should be sent to the 3rd party system|
-|deliveryService|String|Required|Delivery service identifier<br/>Min length - 1, max length - 255|
-|deliveryStatus|String|Required|Delivery status. Should be agreed with delivery service<br/>Min length - 1, max length - 255|
+|deliveryService|String|Required|Delivery service identifier<br/>Min lenght - 1, max lenght - 255|
+|deliveryStatus|String|Required|Delivery status. Should be agreed with delivery service<br/>Min lenght - 1, max lenght - 255|
 
 #### Request example
 

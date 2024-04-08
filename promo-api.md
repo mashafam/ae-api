@@ -20,8 +20,8 @@ Such operation returns mixed list of discounts and coupons.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|filter|Object|Optional|System defined list of keys<br/>Min length - 1; max length - 255|
-|filter.searchTerm|String|Optional|searchTerm performs search by name parameter<br/>Min length - 1; max length - 255|
+|filter|Object|Optional|System defined list of keys<br/>Min lenght - 1; max lenght - 255|
+|filter.searchTerm|String|Optional|searchTerm performs search by name parameter<br/>Min lenght - 1; max lenght - 255|
 |filter.type|Array of strings|Optional|Defines type of promo type to be retrieved<br/> Possible values: *discount*, *coupon*|
 |filter.startDate|Datetime|Optional|Start date of promo validity, if permanent parameter is false<br/>Empty string, if not provided|
 |filter.endDate|Datetime|Optional|End date of promo validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -59,7 +59,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of promo to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount* or *coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the promo|
-|name|String|Mandatory|Promo code provided by User<br/>Min length - 1, max length -255; should be unique among the entity|
+|name|String|Mandatory|Promo code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for promo<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the promo validity|
 |startDate|Datetime|Mandatory|Start date of promo validity, if permanent parameter is false<br/>Empty string, if not provided|

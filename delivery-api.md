@@ -34,28 +34,28 @@ This operation returns specific delivery option details using its id.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Delivery option unique identifier (auto increment)|
-|name|String|Mandatory|Delivery option name provided by User<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Delivery option name provided by User<br/>Min lenght - 1, max lenght - 255|
 |type|String|Mandatory|Describes type of delivery option<br/>Possible values: *delivery, shiip, pickup*|
-|price|String<br/>(Numeric)|Mandatory|Delivery option price<br/>Min length - 1, max length - 18|
+|price|String<br/>(Numeric)|Mandatory|Delivery option price<br/>Min lenght - 1, max lenght - 18|
 |useBusinessAddress|Boolean|Mandatory|Defines source of address for “pickup” delivery type|
 |isGlobal|Boolean|Mandatory|Defines available countries for “delivery” type of Delivery options|
-|description|String|Mandatory|Delivery option description provided by User<br/>Min length - 1, max length - 255|
+|description|String|Mandatory|Delivery option description provided by User<br/>Min lenght - 1, max lenght - 255|
 |country|String|Mandatory|Country code list, used value from User profile|
-|zipPostal|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 16|
-|city|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|state|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|address|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 1024|
+|zipPostal|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 16|
+|city|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|state|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|address|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 1024|
 |sortIndex|Integer|Mandatory|System value, auto increment on creation|
-|secretKey|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User<br/>Min length - 1, max length - 255|
-|userName|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|phone|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max length - 16|
-|email|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|defaultWeight|String<br/>(Numeric)|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max length - 18|
+|secretKey|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User<br/>Min lenght - 1, max lenght - 255|
+|userName|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|phone|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max lenght - 16|
+|email|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|defaultWeight|String<br/>(Numeric)|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max lenght - 18|
 
 #### Response example
 
@@ -106,29 +106,29 @@ The body is no needed to perform the operation.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of retrieved delivery options<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Delivery option unique identifier (auto increment)|
-|name|String|Mandatory|Delivery option name provided by User<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Delivery option name provided by User<br/>Min lenght - 1, max lenght - 255|
 |type|String|Mandatory|Describes type of delivery option<br/>Possible values: *delivery, shiip, pickup*|
-|price|String<br/>(Numeric)|Mandatory|Delivery option price<br/>Min length - 1, max length - 18|
+|price|String<br/>(Numeric)|Mandatory|Delivery option price<br/>Min lenght - 1, max lenght - 18|
 |useBusinessAddress|Boolean|Mandatory|Defines source of address for “pickup” delivery type|
 |isGlobal|Boolean|Mandatory|Defines available countries for “delivery” type of Delivery options|
-|description|String|Mandatory|Delivery option description provided by User<br/>Min length - 1, max length - 255|
+|description|String|Mandatory|Delivery option description provided by User<br/>Min lenght - 1, max lenght - 255|
 |country|String|Mandatory|Country code list, used value from User profile|
-|zipPostal|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 16|
-|city|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|state|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|address|String|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 1024|
+|zipPostal|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 16|
+|city|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|state|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|address|String|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 1024|
 |sortIndex|Integer|Mandatory|System value, auto increment on creation|
-|secretKey|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User<br/>Min length - 1, max length - 255|
-|userName|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|phone|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max length - 16|
-|email|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|defaultWeight|String<br/>(Numeric)|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max length - 18|
+|secretKey|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User<br/>Min lenght - 1, max lenght - 255|
+|userName|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|phone|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max lenght - 16|
+|email|String|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|defaultWeight|String<br/>(Numeric)|Mandatory<br/>for *Shiip* delivery type|Value provided by User, depends on delivery type<br/>Max lenght - 18|
 
 #### Response example
 
@@ -199,22 +199,22 @@ Request body could include following parameters:
 
 |**Attribute Name**|**Type**|**Behavior for *delivery***|**Behavior for *pickup***|**Behavior for *shiip***|**Description**|
 |---|---|---|---|---|---|
-|name|String|Mandatory|Mandatory|Mandatory<br/>*SHiiP* by hardcode|Delivery option name provided by User<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Mandatory|Mandatory<br/>*SHiiP* by hardcode|Delivery option name provided by User<br/>Min lenght - 1, max lenght - 255|
 |type|String|Mandatory|Mandatory|Mandatory|Describes type of delivery option<br/>Possible values: *delivery, shiip, pickup*|
-|price|String<br/>(Numeric)|Mandatory|Ignored|Mandatory<br/>always equal to **0**|Delivery option price<br/>Min length - 1, max length - 18|
+|price|String<br/>(Numeric)|Mandatory|Ignored|Mandatory<br/>always equal to **0**|Delivery option price<br/>Min lenght - 1, max lenght - 18|
 |useBusinessAddress|Boolean|Mandatory|Mandatory<br/>always *false*|Mandatory|Defines source of address for “pickup” delivery type|
 |isGlobal|Boolean|Mandatory|Ignored|Ignored|Defines available countries for “delivery” type of Delivery options|
-|description|String|Optional|Optional|Ignored|Delivery option description provided by User<br/>Min length - 1, max length - 255|
+|description|String|Optional|Optional|Ignored|Delivery option description provided by User<br/>Min lenght - 1, max lenght - 255|
 |country|String|Ignored|Mandatory|Mandatory|Country code list, used value from User profile|
-|zipPostal|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 16|
-|city|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|state|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|address|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 1024|
-|secretKey|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|userName|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|phone|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max length - 16|
-|email|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|defaultWeight|String<br/>(Numeric)|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max length - 18|
+|zipPostal|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 16|
+|city|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|state|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|address|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 1024|
+|secretKey|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|userName|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|phone|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max lenght - 16|
+|email|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|defaultWeight|String<br/>(Numeric)|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max lenght - 18|
 
 #### Request example
 
@@ -286,7 +286,7 @@ Shiip type represents the integration with 3rd party delivery service. It's assu
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior for *delivery***|**Behavior for *pickup***|**Behavior for *shiip***|**Description**|
 |---|---|---|---|---|---|
@@ -411,23 +411,23 @@ Request body could include following parameters:
 |**Attribute Name**|**Type**|**Behavior for *delivery***|**Behavior for *pickup***|**Behavior for *shiip***|**Description**|
 |---|---|---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Mandatory|Mandatory|Delivery option unique identifier (auto increment)|
-|name|String|Mandatory|Mandatory|Mandatory<br/>*SHiiP* by hardcode|Delivery option name provided by User<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Mandatory|Mandatory<br/>*SHiiP* by hardcode|Delivery option name provided by User<br/>Min lenght - 1, max lenght - 255|
 |type|String|Mandatory|Mandatory|Mandatory|Describes type of delivery option<br/>Possible values: *delivery, shiip, pickup*|
-|price|String<br/>(Numeric)|Mandatory|Ignored|Mandatory<br/>always equal to **0**|Delivery option price<br/>Min length - 1, max length - 18|
+|price|String<br/>(Numeric)|Mandatory|Ignored|Mandatory<br/>always equal to **0**|Delivery option price<br/>Min lenght - 1, max lenght - 18|
 |useBusinessAddress|Boolean|Mandatory|Mandatory<br/>always *false*|Mandatory|Defines source of address for “pickup” delivery type|
 |isGlobal|Boolean|Mandatory|Ignored|Ignored|Defines available countries for “delivery” type of Delivery options|
-|description|String|Optional|Optional|Ignored|Delivery option description provided by User<br/>Min length - 1, max length - 255|
+|description|String|Optional|Optional|Ignored|Delivery option description provided by User<br/>Min lenght - 1, max lenght - 255|
 |country|String|Ignored|Mandatory|Mandatory|Country code list, used value from User profile|
-|zipPostal|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 16|
-|city|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|state|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|address|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 1024|
+|zipPostal|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 16|
+|city|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|state|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|address|String|Ignored|Mandatory|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 1024|
 |sortIndex|Integer|Mandatory|Mandatory|Mandatory|System value, auto increment on creation|
-|secretKey|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|userName|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 255|
-|phone|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max length - 16|
-|email|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min length - 1, max length - 64|
-|defaultWeight|String<br/>(Numeric)|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max length - 18|
+|secretKey|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|userName|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 255|
+|phone|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max lenght - 16|
+|email|String|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Min lenght - 1, max lenght - 64|
+|defaultWeight|String<br/>(Numeric)|Ignored|Ignored|Mandatory|Value provided by User, depends on delivery type<br/>Max lenght - 18|
 
 #### Request example
 
@@ -496,7 +496,7 @@ Request body could include following parameters:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior for *delivery***|**Behavior for *pickup***|**Behavior for *shiip***|**Description**|
 |---|---|---|---|---|---|

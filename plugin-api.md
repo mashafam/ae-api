@@ -27,7 +27,7 @@ There is no body required.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
@@ -158,7 +158,7 @@ Success response comes with HTTP code 200 (OK) and include specific body structu
 |customize.iconColor|String|Mandatory|Defines colour of chat icon|
 |channels|Array of Objects|Mandatory|Communication channel used as a chat data|
 |channels.type|String|Optional|Defines type of channel to add: *"whatsapp", "messenger", "instagram”*|
-|channels.value|String|Optional|Defines chat channel identifier<br/>Max length - 1000|
+|channels.value|String|Optional|Defines chat channel identifier<br/>Max lenght - 1000|
 
 > Status: 200 (OK)
 
@@ -200,7 +200,7 @@ Success response comes with HTTP code 200 (OK) and include specific body structu
 |---|---|---|---|
 |google_search_console|Object|Mandatory|Name of plugin|
 |status|String|Mandatory|Indicates plugin activation status<br/>Possible values: *active, inactive*|
-|id|String|Mandatory|Returns Google Search Console id provided by Google<br/>Max length - 1000|
+|id|String|Mandatory|Returns Google Search Console id provided by Google<br/>Max lenght - 1000|
 
 > Status: 200 (OK)
 
@@ -223,7 +223,7 @@ Success response comes with HTTP code 200 (OK) and include specific body structu
 |---|---|---|---|
 |google_tag_manager|Object|Mandatory|Name of plugin|
 |status|String|Mandatory|Indicates plugin activation status<br/>Possible values: *active, inactive*|
-|id|String|Mandatory|Returns Google Tag Manager id provided by Google<br/>Max length - 1000|
+|id|String|Mandatory|Returns Google Tag Manager id provided by Google<br/>Max lenght - 1000|
 
 > Status: 200 (OK)
 
@@ -246,7 +246,7 @@ Success response comes with HTTP code 200 (OK) and include specific body structu
 |---|---|---|---|
 |google_analytics|Object|Mandatory|Name of plugin|
 |status|String|Mandatory|Indicates plugin activation status<br/>Possible values: *active, inactive*|
-|id|String|Mandatory|Returns Google Analytics id provided by Google<br/>Max length - 1000|
+|id|String|Mandatory|Returns Google Analytics id provided by Google<br/>Max lenght - 1000|
 
 > Status: 200 (OK)
 
@@ -270,14 +270,14 @@ Success response comes with HTTP code 200 (OK) and include specific body structu
 |seo_settings|Object|Mandatory|Return name of plugin|
 |status|String|Mandatory|active, inactive|Indicates active plugin or not|
 |product|Object|Mandatory|Returns set of settings for SEO settings for products|
-|product.metaTitle|String|Mandatory|Defines pattern for meta title for the products<br/>Max length - 90|
-|product.metaDescription|String|Mandatory|Defines pattern for meta description for the products<br/>Max length - 160|
+|product.metaTitle|String|Mandatory|Defines pattern for meta title for the products<br/>Max lenght - 90|
+|product.metaDescription|String|Mandatory|Defines pattern for meta description for the products<br/>Max lenght - 160|
 |collection|Object|Mandatory|Returns set of settings for SEO settings for collections|
-|collection.metaTitle|String|Mandatory|Defines pattern for meta title for the collections<br/>Max length - 90|
-|collection.metaDescription|String|Mandatory|Defines pattern for meta description for the collections<br/>Max length - 160|
+|collection.metaTitle|String|Mandatory|Defines pattern for meta title for the collections<br/>Max lenght - 90|
+|collection.metaDescription|String|Mandatory|Defines pattern for meta description for the collections<br/>Max lenght - 160|
 |homePage|Object|Mandatory|Returns set of settings for SEO settings for home page|
-|homePage.metaTitle|String|Mandatory|Defines pattern for meta title for the home page<br/>Max length - 90|
-|homePage.metaDescription|String|Mandatory|Defines pattern for meta description for the home page<br/>Max length - 160|
+|homePage.metaTitle|String|Mandatory|Defines pattern for meta title for the home page<br/>Max lenght - 90|
+|homePage.metaDescription|String|Mandatory|Defines pattern for meta description for the home page<br/>Max lenght - 160|
 
 > Status: 200 (OK)
 
@@ -335,7 +335,7 @@ This operation allows to activate (deactivate) specific plugin for Merchant's On
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Field name**|**Type**|**Requirements**|**Description**|
 |---|---|---|---|
@@ -384,7 +384,7 @@ his operation allows to update specific plugin settings.
 |settings.customize.iconColor|String|Mandatory|Defines colour of chat icon|
 |settings.channels|Array of Objects|Mandatory|Communication channel used as a chat data|
 |settings.channels.type|String|Optional|Defines type of channel to add: *"whatsapp", "messenger", "instagram”*|
-|settings.channels.value|String|Optional|Defines chat channel identifier<br/>Max length - 1000|
+|settings.channels.value|String|Optional|Defines chat channel identifier<br/>Max lenght - 1000|
 
 ```json
 {
@@ -425,7 +425,7 @@ his operation allows to update specific plugin settings.
 |---|---|---|---|
 |google_search_console|Object|Mandatory|Name of plugin|
 |settings|Object|Mandatory|Set of setting depending on plugin type|
-|settings.id|String|Mandatory|Returns Google Search Console id provided by Google<br/>Max length - 1000|
+|settings.id|String|Mandatory|Returns Google Search Console id provided by Google<br/>Max lenght - 1000|
 
 ```json
 {
@@ -446,7 +446,7 @@ his operation allows to update specific plugin settings.
 |---|---|---|---|
 |google_tag_manager|Object|Mandatory|Name of plugin|
 |settings|Object|Mandatory|Set of setting depending on plugin type|
-|settings.id|String|Mandatory|Returns Google Tag Manager id provided by Google<br/>Max length - 1000|
+|settings.id|String|Mandatory|Returns Google Tag Manager id provided by Google<br/>Max lenght - 1000|
 
 ```json
 {
@@ -467,7 +467,7 @@ his operation allows to update specific plugin settings.
 |---|---|---|---|
 |google_analytics|Object|Mandatory|Name of plugin|
 |settings|Object|Mandatory|Set of setting depending on plugin type|
-|settings.id|String|Mandatory|Returns Google Analytics id provided by Google<br/>Max length - 1000|
+|settings.id|String|Mandatory|Returns Google Analytics id provided by Google<br/>Max lenght - 1000|
 
 ```json
 {
@@ -489,14 +489,14 @@ his operation allows to update specific plugin settings.
 |seo_settings|Object|Mandatory|Return name of plugin|
 |settings|Object|Mandatory|Set of setting depending on plugin type|
 |settings.product|Object|Mandatory|Returns set of settings for SEO settings for products|
-|settings.product.metaTitle|String|Mandatory|Defines pattern for meta title for the products<br/>Max length - 90|
-|settings.product.metaDescription|String|Mandatory|Defines pattern for meta description for the products<br/>Max length - 160|
+|settings.product.metaTitle|String|Mandatory|Defines pattern for meta title for the products<br/>Max lenght - 90|
+|settings.product.metaDescription|String|Mandatory|Defines pattern for meta description for the products<br/>Max lenght - 160|
 |settings.collection|Object|Mandatory|Returns set of settings for SEO settings for collections|
-|settings.collection.metaTitle|String|Mandatory|Defines pattern for meta title for the collections<br/>Max length - 90|
-|settings.collection.metaDescription|String|Mandatory|Defines pattern for meta description for the collections<br/>Max length - 160|
+|settings.collection.metaTitle|String|Mandatory|Defines pattern for meta title for the collections<br/>Max lenght - 90|
+|settings.collection.metaDescription|String|Mandatory|Defines pattern for meta description for the collections<br/>Max lenght - 160|
 |settings.homePage|Object|Mandatory|Returns set of settings for SEO settings for home page|
-|settings.homePage.metaTitle|String|Mandatory|Defines pattern for meta title for the home page<br/>Max length - 90|
-|settings.homePage.metaDescription|String|Mandatory|Defines pattern for meta description for the home page<br/>Max length - 160|
+|settings.homePage.metaTitle|String|Mandatory|Defines pattern for meta title for the home page<br/>Max lenght - 90|
+|settings.homePage.metaDescription|String|Mandatory|Defines pattern for meta description for the home page<br/>Max lenght - 160|
 
 
 > Single object “product”, “collection”, “homePage” should be applied to settings.

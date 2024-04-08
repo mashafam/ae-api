@@ -31,19 +31,19 @@ This operation returns specific Customer info.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
-|name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |email|String|Optional|Customer email<br/>Max 64 symbols including "@" sign and domain|
-|country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|city|String|Optional|Customer city/town<br/>Min length - 1, max length - 255|
-|state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
+|country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|city|String|Optional|Customer city/town<br/>Min lenght - 1, max lenght - 255|
+|state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
 
 #### Response example
 
@@ -105,20 +105,20 @@ Request body could contain following parameters:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of products matched filter criteria is returned<br/>Php system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
-|name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |email|String|Optional|Customer email<br/>Max 64 symbols including "@" sign and domain|
-|country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|city|String|Optional|Customer city/town<br/>Min length - 1, max length - 255|
-|state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
+|country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|city|String|Optional|Customer city/town<br/>Min lenght - 1, max lenght - 255|
+|state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
 |totalPages|Integer<br/>(Positive integer)|Mandatory|Number of pages in response|
 |totalItems|Integer<br/>(Positive integer)|Mandatory|Quantity of Customers in the list|
 
@@ -177,14 +177,14 @@ Request body should contain following parameters:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |email|String|Optional|Customer email<br/>Max 64 symbols including "@" sign and domain|
-|country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|city|String|Optional|Customer city/town<br/>Min length - 1, max length - 255|
-|state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
+|country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|city|String|Optional|Customer city/town<br/>Min lenght - 1, max lenght - 255|
+|state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
 
 #### Request example
 
@@ -207,19 +207,19 @@ Request body should contain following parameters:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
-|name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |email|String|Optional|Customer email<br/>Max 64 symbols including "@" sign and domain|
-|country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|city|String|Optional|Customer city/town<br/>Min length - 1, max length - 255|
-|state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
+|country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|city|String|Optional|Customer city/town<br/>Min lenght - 1, max lenght - 255|
+|state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
 
 #### Response example
 
@@ -260,14 +260,14 @@ Request body should contain following parameters:
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
-|name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |email|String|Optional|Customer email<br/>Max 64 symbols including "@" sign and domain|
-|country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|city|String|Optional|Customer city/town<br/>Min length - 1, max length - 255|
-|state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
+|country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|city|String|Optional|Customer city/town<br/>Min lenght - 1, max lenght - 255|
+|state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
 
 #### Request example
 
@@ -285,19 +285,19 @@ Request body should contain following parameters:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Customer unique ID. System identifier (auto increment)|
-|name|String|Mandatory|Customer name<br/>Min length - 1, max length - 1024|
+|name|String|Mandatory|Customer name<br/>Min lenght - 1, max lenght - 1024|
 |phoneNumber|String|Mandatory|Customer phone number<br/>Max 16 symbols including "+" sign and phone mask|
 |email|String|Optional|Customer email<br/>Max 64 symbols including "@" sign and domain|
-|country|String|Optional|Customer country<br/>Min length - 1, max length - 255|
-|city|String|Optional|Customer city/town<br/>Min length - 1, max length - 255|
-|state|String|Optional|Customer state/region<br/>Min length - 1, max length - 255|
-|zipPostal|String|Optional|Customer postal code<br/>Min length - 1, max length - 16|
-|address|String|Optional|Customer address<br/>Min length - 1, max length - 1024|
+|country|String|Optional|Customer country<br/>Min lenght - 1, max lenght - 255|
+|city|String|Optional|Customer city/town<br/>Min lenght - 1, max lenght - 255|
+|state|String|Optional|Customer state/region<br/>Min lenght - 1, max lenght - 255|
+|zipPostal|String|Optional|Customer postal code<br/>Min lenght - 1, max lenght - 16|
+|address|String|Optional|Customer address<br/>Min lenght - 1, max lenght - 1024|
 
 #### Response example
 
@@ -350,7 +350,7 @@ Request body should contain following parameters:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|

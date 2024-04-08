@@ -40,7 +40,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min lenght - 1, max lenght - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -82,7 +82,7 @@ This operation returns full list of coupons information.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|filter|Object|Optional|searchTerm performs search by name parameter<br/>Min length - 1; max length - 255|
+|filter|Object|Optional|searchTerm performs search by name parameter<br/>Min lenght - 1; max lenght - 255|
 
 #### Request example
 
@@ -108,7 +108,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min lenght - 1, max lenght - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -163,7 +163,7 @@ This operation creates new coupon.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min lenght - 1, max lenght - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -196,7 +196,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min lenght - 1, max lenght - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -237,7 +237,7 @@ This operation updates existing coupon.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min lenght - 1, max lenght - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -270,7 +270,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of coupon to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*coupon*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the coupon|
-|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min length - 1, max length - 255|
+|name|String|Mandatory|Coupon code provided by User. Should be unique among the entity<br/>Min lenght - 1, max lenght - 255|
 |percentage|Integer|Mandatory|Percentage amount provided for coupon<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the coupon validity|
 |startDate|Datetime|Mandatory|Start date of coupon validity, if permanent parameter is false<br/>Empty string, if not provided|

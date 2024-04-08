@@ -33,7 +33,7 @@ Success response code is 200 (OK); the response should include a body described 
 |---|---|---|---|
 |items|Array of objects|Mandatory|Array of options objects<br/>PHP system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Option name provided by User<br/>Min lenght - 1; max lenght - 255|
 |system|Boolean|Mandatory|Indicates weather option is system defined or custom<br/>Only *false* for custom-made|
 
 #### Response example
@@ -93,7 +93,7 @@ Request body is waiting for following content:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Option name provided by User<br/>Min lenght - 1; max lenght - 255|
 
 #### Request example
 
@@ -107,12 +107,12 @@ Request body is waiting for following content:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Option name provided by User<br/>Min lenght - 1; max lenght - 255|
 |system|Boolean|Mandatory|Indicates weather option is system defined or custom<br/>Only *false* for custom-made|
 
 #### Response example
@@ -148,7 +148,7 @@ Request body is waiting for following content:
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Option name provided by User<br/>Min lenght - 1; max lenght - 255|
 
 #### Request example
 
@@ -166,12 +166,12 @@ Request body is waiting for following content:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier (auto increment)|
-|name|String|Mandatory|Option name provided by User<br/>Min length - 1; max length - 255|
+|name|String|Mandatory|Option name provided by User<br/>Min lenght - 1; max lenght - 255|
 |system|Boolean|Mandatory|Indicates weather option is system defined or custom<br/>Only *false* for custom-made|
 
 #### Response example

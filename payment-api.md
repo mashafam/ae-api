@@ -30,14 +30,14 @@ This operation retrieves a specific payment option by its id.
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Payment option unique identifier (auto increment)|
-|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min length - 1, max length - 255|
-|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min length - 1, max length - 255|
-|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min length - 1, max length - 30|
+|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min lenght - 1, max lenght - 255|
+|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min lenght - 1, max lenght - 255|
+|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min lenght - 1, max lenght - 30|
 |connected|Boolean|Mandatory|Defines payment method activation status|
 |sortIndex|Integer|Mandatory|Identifies displaying order|
 |config|JSON|Mandatory|Payment methods configuration container|
@@ -82,15 +82,15 @@ Request performs with no body
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of retrieved payment options<br/>PHP system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Payment option unique identifier (auto increment)|
-|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min length - 1, max length - 255|
-|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min length - 1, max length - 255|
-|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min length - 1, max length - 30|
+|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min lenght - 1, max lenght - 255|
+|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min lenght - 1, max lenght - 255|
+|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min lenght - 1, max lenght - 30|
 |connected|Boolean|Mandatory|Defines payment method activation status|
 |sortIndex|Integer|Mandatory|Identifies displaying order|
 |config|JSON|Mandatory|Payment methods configuration container|
@@ -166,9 +166,9 @@ Request body could include following parameters:
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|Payment option unique identifier (auto increment)|
-|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min length - 1, max length - 255|
-|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min length - 1, max length - 255|
-|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min length - 1, max length - 30|
+|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min lenght - 1, max lenght - 255|
+|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min lenght - 1, max lenght - 255|
+|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min lenght - 1, max lenght - 30|
 |connected|Boolean|Mandatory|Defines payment method activation status|
 |sortIndex|Integer|Mandatory|Identifies displaying order|
 |config|JSON|Optional|Payment methods configuration container|
@@ -195,15 +195,15 @@ Request body could include following parameters:
 
 ### Output
 
-Success response comes with HTTP code 200 (OK) and include following body stucture:
+Success response comes with HTTP code 200 (OK) and include following body structure:
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of integers|Mandatory|Array of retrieved payment options<br/>PHP system limitations|
 |id|Integer<br/>(Bigint)|Mandatory|Payment option unique identifier (auto increment)|
-|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min length - 1, max length - 255|
-|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min length - 1, max length - 255|
-|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min length - 1, max length - 30|
+|name|String|Mandatory|Payment option name<br/>There are following default payment options: *Cash on Delivery, POS, Bank transfer*<br/>Min lenght - 1, max lenght - 255|
+|description|String|Mandatory|Payment option description<br/>Every default payment options has pre-defined descriptions<br/>Min lenght - 1, max lenght - 255|
+|type|String|Mandatory|Pre-defined parameter<br/>Possible values: *cash_on_delivery, pos, banking_account_transfer*<br/>Min lenght - 1, max lenght - 30|
 |connected|Boolean|Mandatory|Defines payment method activation status|
 |sortIndex|Integer|Mandatory|Identifies displaying order|
 |config|JSON|Mandatory|Payment methods configuration container|
