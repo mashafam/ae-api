@@ -36,6 +36,15 @@ List of operations for composing Online Shop based on User's configurations.
 **Unsubscribe from Order emails**
 - [Unsubscribe from Order emails](#unsubscribe-from-order-emails)
 
+**Slides operations**
+
+- [Get all Slides](#get-all-slides)
+- [Get all slides (search)](#get-slides-search)
+- [Create slide](#create-slide)
+- [Update slide](#update-slide)
+- [Update slides order](#update-slides-order)
+- [Delete slides](#delete-slides)
+
 
 ## Get store uuid by domain
 
@@ -43,12 +52,12 @@ Returns store uuid by domain to pull in the appropriate Online shop config.
 
 > **GET** api/v3/shop/uuid<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: Domain 
 
 ### Request example
 
-> **GET** api/v3/shop/uuid
+> **GET** api/v3/shop/uuid<br/>
 > **Header**: Domain = 1921.dev.myexpress.shop
 
 ### Output
@@ -157,7 +166,7 @@ Retrieves sitemap entities of particular Online shop.
 
 > **GET** api/v3/shop/sitemap/get<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: Uuid = {shop_uuid}
 
 ### Input
@@ -205,12 +214,12 @@ Returns Online shop complex data like: contact details, business data, static pa
 
 > **GET** api/v3/shop/<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: Uuid = {shop_uuid}
 
 ### Request example
 
-> **GET** api/v3/shop/state
+> **GET** api/v3/shop/state<br/>
 > **Header**: Uuid = {shop_uuid}
 
 ### Output
@@ -815,7 +824,7 @@ Retrieves Online shop page data set by its slug.
 
 > **GET** api/v3/shop/page/get/{slug}<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**:  Uuid = {shop_uuid}
 
 ### Request example
@@ -863,12 +872,12 @@ Retrieves Online shop plugins' data set.
 
 > **GET**  api/v3/shop/plugins/get-list<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**:  Uuid = {shop_uuid}
 
 ### Request example
 
-> **GET**  api/v3/shop/plugins/get-list
+> **GET**  api/v3/shop/plugins/get-list<br/>
 > **Header**:  Uuid = 398ee2b0-5a61-4e84-8e84-813fe6eb77dd
 
 ### Output
@@ -1041,7 +1050,7 @@ This operation retrieves list of all products in Online shop using search engine
 
 > **POST** api/v3/product/get-list<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Input
@@ -1143,7 +1152,7 @@ This operation retrieves related products to recommend it while Buyer purchased 
 
 > **GET** api/v3/shop/product/get-related-list/{slug}<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Request example
@@ -1210,7 +1219,7 @@ This operation retrieves available variations of specific product.
 
 > **POST** api/v3/shop/product/get-entries<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Input
@@ -1308,7 +1317,7 @@ This operation retrieves available variations of specific product.
 
 > **GET** api/v3/shop/product/get/{slug}<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Request example
@@ -1405,7 +1414,7 @@ Retrieves all FAQs content of particular Online shop.
 
 > **GET** api/v3/shop/faq/get-list<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Request example
@@ -1461,7 +1470,7 @@ Places the order from Online shop cart.
 
 > **POST** api/v3/shop/order/create<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Input
@@ -1542,7 +1551,7 @@ Calculates order total including promos, delivery fee.
 
 > **POST** api/v3/shop/order/calculate<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 ### Input
@@ -1667,7 +1676,7 @@ Buyer has an ability to unsubscribe from emails that order has been placed in On
 
 > **POST** api/v3/shop/email/unsubscribe<br/>
 > **Authorization:** Bearer<br/>
-> **Content-type**: application/json
+> **Content-type**: application/json<br/>
 > **Header**: uuid = {shop_uuid}
 
 #### Request example
@@ -1701,4 +1710,499 @@ Success response comes with HTTP code 200 (OK) with following body structure:
 }
 ```
 
+## Get all slides
 
+Returns all available slides structure created by User.
+
+> **GET** api/v3/shop/slide/get-list<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json<br/>
+> **Header**: uuid = {shop_uuid}
+
+#### Request example
+
+> **GET** api/v3/shop/slide/get-list<br/>
+> **Header**: uuid = {4355-kt594-5ut30-5938}
+
+### Output
+
+Success response comes with HTTP code 200 (OK) with following body structure:
+
+**Body parameters**
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|**Description**|
+|---|---|---|---|---|
+|items|array of objects|Require|Php system limitation|List of existing slides, empty array if no slides created|
+|id|integer|Required|Bigint|System identifier (auto increment)|
+|isVisible|boolean|Required|True, false|Visibility of slide in the shop|
+|title|string|Required|Min - 1, max - 255|Slide title (visible on slide)|
+|description|string|Optional|Min - 1, max - 1000|Slide description (visible on slide)|
+|useBgImage|boolean|Required|True, false|Shows whether background image is used or not|
+|bgImage|string|Optional|Min - 1, max - 255|Link to the background image|
+|bgImageOpacity|double(8,2)|Optional|8 - total number of digits and 2 - number of digits following the decimal point|Background image opacity|
+|bgColor|string|Optional|Min - 1, max - 255|Background color|
+|sortIndex|integer|Required|Int|Defines the slide display order|
+|useLink|boolean|Required|True, false|Shows whether link is used on slide or not|
+|linkObjectType|string|Optional|Min - 1, max - 255|Object on which link specifies|
+|linkObjectId|integer|Optional|Bigint|Identifier of the object|
+|linkObjectName|string|Optional|Min - 1, max - 255|Name of the object|
+|linkObjectSlug|string|Optional|Min - 1, max - 255|Descriptive unique text that identifies the object|
+
+#### Response example
+
+> Status: 200 (OK)
+
+```json
+{
+   "data": {
+       "items": [
+           {
+               "id": 1,
+               "isVisible": true,
+               "title": "Slide title",
+               "description": "Slide description",
+               "useBgImage": false,
+               "bgImage": "",
+               "bgImageOpacity": 1,
+               "bgColor": "#ffffff",
+               "fontColor": "#000000",
+               "sortIndex": 0,
+               "useLink": true,
+               "linkObjectType": "collection",
+               "linkObjectId": 2,
+               "linkObjectName": "Cars",
+               "linkObjectSlug": "cars"
+           }
+       ]
+   }
+}
+```
+
+## Get slides (search)
+
+Returns all slides structure that satisfy mentioned search term
+
+> **POST** api/v3/slide/get-list<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json<br/>
+> **Header**: uuid = {shop_uuid}
+
+### Input
+
+Request could include following parameters: 
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|**Description**|
+|---|---|---|---|---|
+|page|integer|Optional|bigint|Number of the returned page with customers|
+|pageSize|integer|Optional|bigint|Number of customers per page|
+|filter|object|Optional|Limited system values|searchTerm performs search by title parameter|
+|sort|string|Optional|id:asc, id:desc,<br/> name:asc, name:desc,<br/> sortIndex:asc, sortIndex:desc|System sorting options|
+
+#### Request example
+
+> **POST** api/v3/slide/get-list<br/>
+> **Header**: uuid = {4355-kt594-5ut30-5938}
+
+```json
+{
+    "data": {
+        "page": 1,
+        "pageSize": 3,
+        "filter": {"searchTerm": "name"},
+        "sort": "id:desc"
+    }
+}
+```
+
+### Output
+
+Success response comes with HTTP code 200 (OK) with following body structure:
+
+**Body parameters**
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|**Description**|
+|---|---|---|---|---|
+|items|array of objects|Required|Php system limitations|Array of customers matched filter criteria is returned|
+|id|integer|Required|Bigint|System identifier (auto increment)|
+|isVisible|boolean|Required|True, false|Visibility of slide in the shop|
+|title|string|Required|Min - 1, max - 255|Slide title (visible on slide)|
+|description|string|Optional|Min - 1, max - 1000|Slide description (visible on slide)|
+|useBgImage|boolean|Required|True, false|Shows whether background image is used or not|
+|bgImage|string|Optional|Min - 1, max - 255|Link to the background image|
+|bgImageOpacity|double(8,2)|Optional|8 - total number of digits and 2 - number of digits following the decimal point|Background image opacity|
+|bgColor|string|Optional|Min - 1, max - 255|Background color|
+|sortIndex|integer|Required|Int|Defines the slide display order|
+|useLink|boolean|Required|True, false|Shows whether link is used on slide or not|
+|linkObjectType|string|Optional|"product", "page", "collection"|Object on which link specifies|
+|linkObjectId|integer|Optional|Bigint|Identifier of the object|
+|linkObjectName|string|Optional|Min - 1, max - 255|Name of the object|
+|linkObjectSlug|string|Optional|Min - 1, max - 255|Descriptive unique text that identifies the object|
+|totalPages|integer|Required|Positive integer|Quantity of pages in response|
+|totalItems|integer|Required|Positive integer|Quantity of slides in the list|
+
+
+#### Response example
+
+> Status: 200 (OK)
+
+<details>
+  <summary>Expand to see response body</summary>
+
+```json
+{
+    "data": {
+        "items": [
+            {
+                "id": 9,
+                "isVisible": false,
+                "title": "name slide test",
+                "description": "description test",
+                "useBgImage": true,
+                "bgImage": "img.jpg",
+                "bgImageOpacity": 0.5,
+                "bgColor": "#000000",
+                "fontColor": "#000000",
+                "sortIndex": 7,
+                "useLink": true,
+                "linkObjectType": "product",
+                "linkObjectId": null,
+                "linkObjectName": "aut",
+                "linkObjectSlug": "voluptatum"
+            },
+            {
+                "id": 8,
+                "isVisible": true,
+                "title": "",
+                "description": "",
+                "useBgImage": true,
+                "bgImage": "https://static.dev.alephexpress.com/api/file/get/8e571555-aa73-4cb2-b588-9cb5285795b2/05b57c37b1813f2bd362c813241b2f42_1708081950.jpg",
+                "bgImageOpacity": 1,
+                "bgColor": "#ffffff",
+                "fontColor": "#000000",
+                "sortIndex": 0,
+                "useLink": false,
+                "linkObjectType": null,
+                "linkObjectId": null,
+                "linkObjectName": "",
+                "linkObjectSlug": ""
+            },
+            {
+                "id": 7,
+                "isVisible": true,
+                "title": "",
+                "description": "",
+                "useBgImage": true,
+                "bgImage": "https://static.dev.alephexpress.com/api/file/get/8e571555-aa73-4cb2-b588-9cb5285795b2/ad152541f9f85e1fc754486db4254dc2_1708081486.jpeg",
+                "bgImageOpacity": 1,
+                "bgColor": "#ffffff",
+                "fontColor": "#000000",
+                "sortIndex": 1,
+                "useLink": false,
+                "linkObjectType": null,
+                "linkObjectId": null,
+                "linkObjectName": "",
+                "linkObjectSlug": ""
+            }
+        ],
+        "totalPages": 3,
+        "totalItems": 8
+    }
+}
+```
+</details>
+
+## Create slide
+
+Allows to create slide to represent Online shop pages, actual news and promos.
+
+> **POST** api/v3/slide/create<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json<br/>
+> **Header**: uuid = {shop_uuid}
+
+### Input
+
+Request could include following parameters: 
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|
+|---|---|---|---|
+|isVisible|boolean|Required|True, false|
+|title|string|Required|Min - 1, max - 255|
+|description|string|Optional|Min - 1, max - 1000|
+|useBgImage|boolean|Required|True, false|
+|bgImage|string|Optional|Min - 1, max - 255|
+|bgImageOpacity|double(8,2)|Optional|8 - total number of digits and 2 - number of digits following the decimal point|
+|bgColor|string|Optional|Min - 1, max - 255|
+|sortIndex|integer|Required|Int|
+|useLink|boolean|Required|True, false|
+|linkObjectType|string|Required|"product", "page", "collection"|
+|linkObjectId|integer|Required|Bigint|
+|linkObjectName|string|Required|Min - 1, max - 255|
+|linkObjectSlug|string|Required|Min - 1, max - 255|
+
+#### Request example
+
+> **POST** api/v3/slide/create<br/>
+> **Header**: uuid = {4355-kt594-5ut30-5938}
+
+```json
+{
+    "data": {
+        "isVisible": false,
+        "title": "name slide",
+        "description": "description",
+        "useBgImage": true,
+        "bgImage": "img.jpg",
+        "bgImageOpacity": 0.5,
+        "bgColor": "#000000",
+        "fontColor": "#000000",
+        "sortIndex": 0,
+        "useLink": true,
+        "linkObjectType": "product",
+        "linkObjectId": 2,
+        "linkObjectName": "aut",
+        "linkObjectSlug": "voluptatum"
+    }
+}
+```
+
+### Output
+
+Success response comes with HTTP code 200 (OK) with following body structure:
+
+**Body parameters**
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|**Description**|
+|---|---|---|---|---|
+|id|integer|Required|Bigint|System identifier (auto increment)|
+|isVisible|boolean|Required|True, false|Visibility of slide in the shop|
+|title|string|Required|Min - 1, max - 255|Slide title (visible on slide)|
+|description|string|Optional|Min - 1, max - 1000|Slide description (visible on slide)|
+|useBgImage|boolean|Required|True, false|Shows whether background image is used or not|
+|bgImage|string|Optional|Min - 1, max - 255|Link to the background image|
+|bgImageOpacity|double(8,2)|Optional|8 - total number of digits and 2 - number of digits following the decimal point|Background image opacity|
+|bgColor|string|Optional|Min - 1, max - 255|Background color|
+|sortIndex|integer|Required|Int|Defines the slide display order|
+|useLink|boolean|Required|True, false|Shows whether link is used on slide or not|
+|linkObjectType|string|Optional|"product", "page", "collection"|Object on which link specifies|
+|linkObjectId|integer|Optional|Bigint|Identifier of the object|
+|linkObjectName|string|Optional|Min - 1, max - 255|Name of the object|
+|linkObjectSlug|string|Optional|Min - 1, max - 255|Descriptive unique text that identifies the object|
+
+#### Response example
+
+> Status: 200 (OK)
+
+```json
+{
+    "data": {
+        "id": 9,
+        "isVisible": false,
+        "title": "name slide",
+        "description": "description",
+        "useBgImage": true,
+        "bgImage": "img.jpg",
+        "bgImageOpacity": 0.5,
+        "bgColor": "#000000",
+        "fontColor": "#000000",
+        "sortIndex": 7,
+        "useLink": true,
+        "linkObjectType": "product",
+        "linkObjectId": null,
+        "linkObjectName": "aut",
+        "linkObjectSlug": "voluptatum"
+    }
+}
+```
+
+## Update slide
+
+Allows to update existing slide structure
+
+> **POST** api/v3/slide/update<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json<br/>
+> **Header**: uuid = {shop_uuid}
+
+### Input
+
+Request could include following parameters: 
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|
+|---|---|---|---|
+|id|integer|Required|Bigint|
+|isVisible|boolean|Required|True, false|
+|title|string|Required|Min - 1, max - 255|
+|description|string|Optional|Min - 1, max - 1000|
+|useBgImage|boolean|Required|True, false|
+|bgImage|string|Optional|Min - 1, max - 255|
+|bgImageOpacity|double(8,2)|Optional|8 - total number of digits and 2 - number of digits following the decimal point|
+|bgColor|string|Optional|Min - 1, max - 255|
+|sortIndex|integer|Required|Int|
+|useLink|boolean|Required|True, false|
+|linkObjectType|string|Required|"product", "page", "collection"|
+|linkObjectId|integer|Required|Bigint|
+|linkObjectName|string|Required|Min - 1, max - 255|
+|linkObjectSlug|string|Required|Min - 1, max - 255|
+
+#### Request example
+
+> **POST** api/v3/slide/update
+
+```json
+{
+    "data": {
+        "id": 9,
+        "isVisible": false,
+        "title": "name slide test",
+        "description": "description test",
+        "useBgImage": true,
+        "bgImage": "img.jpg",
+        "bgImageOpacity": 0.5,
+        "bgColor": "#000000",
+        "fontColor": "#000000",
+        "sortIndex": 7,
+        "useLink": true,
+        "linkObjectType": "product",
+        "linkObjectId": null,
+        "linkObjectName": "aut",
+        "linkObjectSlug": "voluptatum"
+    }
+}
+```
+
+### Output
+
+Success response comes with HTTP code 200 (OK) with following body structure:
+
+**Body parameters**
+
+|**Field name**|**Type**|**Requirements**|**Limitations**|**Description**|
+|---|---|---|---|---|
+|id|integer|Required|Bigint|System identifier (auto increment)|
+|isVisible|boolean|Required|True, false|Visibility of slide in the shop|
+|title|string|Required|Min - 1, max - 255|Slide title (visible on slide)|
+|description|string|Optional|Min - 1, max - 1000|Slide description (visible on slide)|
+|useBgImage|boolean|Required|True, false|Shows whether background image is used or not|
+|bgImage|string|Optional|Min - 1, max - 255|Link to the background image|
+|bgImageOpacity|double(8,2)|Optional|8 - total number of digits and 2 - number of digits following the decimal point|Background image opacity|
+|bgColor|string|Optional|Min - 1, max - 255|Background color|
+|sortIndex|integer|Required|Int|Defines the slide display order|
+|useLink|boolean|Required|True, false|Shows whether link is used on slide or not|
+|linkObjectType|string|Optional|"product", "page", "collection"|Object on which link specifies|
+|linkObjectId|integer|Optional|Bigint|Identifier of the object|
+|linkObjectName|string|Optional|Min - 1, max - 255|Name of the object|
+|linkObjectSlug|string|Optional|Min - 1, max - 255|Descriptive unique text that identifies the object|
+
+#### Response example
+
+> Status: 200 (OK)
+
+```json
+{
+    "data": {
+        "id": 9,
+        "isVisible": false,
+        "title": "name slide test",
+        "description": "description test",
+        "useBgImage": true,
+        "bgImage": "img.jpg",
+        "bgImageOpacity": 0.5,
+        "bgColor": "#000000",
+        "fontColor": "#000000",
+        "sortIndex": 7,
+        "useLink": true,
+        "linkObjectType": "product",
+        "linkObjectId": null,
+        "linkObjectName": "aut",
+        "linkObjectSlug": "voluptatum"
+    }
+}
+```
+
+## Update slides order
+
+This operation allows to set custom order for slides' displaying in Online shop.
+
+> **POST** api/v3/slide/update-order<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json
+
+### Input
+
+Request should contain body with following content:
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|items|Array of objects|Mandatory|Contains the array of slides' ids - order number pairs.<br/>Number of items is limited only by PHP logic|
+|id|Integer<br/>(Bigint)|Mandatory|Delivery option unique identifier (auto increment)|
+|sortIndex|Integer|Mandatory|Defines the item display order|
+
+#### Request example
+
+> **POST** api/v3/slide/update-order
+
+```json
+{
+    "data": {
+        "items": [
+        {
+            "id": 9,
+            "sortIndex" : 7
+        },
+        {
+            "id": 7,
+            "sortIndex": 9
+        }
+        ]
+    }
+}
+```
+
+### ### Output
+
+Success response comes with HTTP code 200 (OK). Empty object returns in case of successful slides order change.
+
+#### Response example
+
+> Status: 200 (OK)
+```json
+{}
+```
+
+## Delete slides
+
+This operation performs slide deletion. Also can be used for bulk deletion.
+
+> **POST** api/v3/slide/delete<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json
+
+### Input
+
+Request should contain body with following content:
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|items|Array of objects|Mandatory|Contains the array of slides' IDs.<br/>Number of items is limited only by PHP logic|
+
+#### Request example
+
+```json
+{
+    "data": {
+        "items": [1, 2]
+    }
+}
+```
+
+### Output
+
+Success response comes with HTTP code 200 (OK). Empty object returns in case of successful deletion.
+
+#### Response example
+
+> Status: 200 (OK)
+```json
+{}
+```
