@@ -2,192 +2,34 @@
 
 This page present list of operations for **Brand** entity.
 
+- [Get brand](#get-brand)
+- [Get all brands](#get-all-brands)
 - [Create brand](#create-brand)
 - [Update brand](#update-brand)
 - [Delete brand](#delete-brand)
-- [Get brand]()
-- [Get all brands]()
-
-## Create brand
-
-### Description
-
-> **POST** api/v3/brand/create
-> 
-> **Content-Type**: application/json
-
-This operation creates Brand that can be used to characterize Product.
-
-### Input
-
-**Body Parameters**
-
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
-|---|---|---|---|
-|name|String|Mandatory|Brand name <br/> min length - 1; max length - 255|
-|image|Href|Optional|Brand logo url <br/> min length - 1; max length - 255|
-
-#### Request Example
-
-> **POST** api/v3/brand/create 
-> 
-> **Content-Type**: application/json
-
-```json
-{
-    "data": {
-        "name": "Nike",
-        "image": "img.jpg"
-    }
-}
-```
-
-### Output
-
-Success response code is 201 (Created); the response should include a body described below:
-
-**Body Parameters**
-
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
-|---|---|---|---|
-|id|Integer<br/>(Bigint)|Mandatory|System identifier (automatically generated)|
-|name|String|Mandatory|Brand name provided in request|
-|image|Href|Optional|Brand logo url provided in request|
-
-#### Response example
-
-> Status: 201 (Created) 
-
-```json
-{
-   "data": {
-       "id": 4,
-       "name": "Adidas",
-       "image": "img.jpg"
-   }
-}
-```
-
-
-## Update brand
-
-### Description
-
-> **POST** api/v3/brand/update
-> 
-> **Content-type**: application/json
-
-This operation provides update of existing Brand.
-
-### Input
-
-**Body Parameters**
-
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
-|---|---|---|---|
-|id|Integer<br/>(Bigint)|Mandatory|System identifier of brand to be updated (automatically generated)|
-|name|String|Mandatory|Brand name<br/> min length - 1; max length - 255|
-|image|Href|Optional|Brand logo url<br/> min length - 1; max length - 255|
-
-#### Request Example
-
-> **POST** api/v3/brand/update 
-> 
-> **Content-Type**: application/json
-
-```json
-{
-    "data": {
-        "id": 1,
-        "name": "Nikeee",
-        "image": "img.jpg"
-    }
-}
-```
-
-### Output
-
-Success response code is 200 (OK); the response should include a body described below:
-
-**Body Parameters**
-
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
-|---|---|---|---|
-|id|Integer<br/>(Bigint)|Mandatory|System identifier (automatically generated)|
-|name|String|Mandatory|Brand name provided in request|
-|image|Href|Mandatory|Brand logo url provided in request|
-
-#### Response example
-
-> Status: 200 (OK) 
-
-```json
-{
-   "data": {
-       "id": 1,
-       "name": "Nikeee",
-       "image": "img.jpg"
-   }
-}
-```
-
-## Delete brand
-
-### Description
-
-> **POST** api/v3/brand/delete
-> 
-> **Content-type**: application/json
-
-This operation provides deletion of existing Brand.
-
-### Input
-
-**Body Parameters**
-
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
-|---|---|---|---|
-|items|Array of integers|Mandatory|System identifier(s) of brand to be deleted<br/>Number of items is limited only by PHP logic|
-
-#### Request Example
-
-> **POST** api/v3/brand/delete 
-> 
-> **Content-Type**: application/json
-
-Example request: 
-{
-    "data": {
-        "items": [1, 2]
-    }
-}
-
-### Output
-
-In case of success, the system returns **200(OK)** without response body.
 
 ## Get brand
 
 ### Description
 
-> **GET** api/v3/brand/get?fields={fields}
->
+This operation returns a specific brand information.
+
+> **GET** api/v3/brand/get?fields={fields}<br/>
+> **Authorization:** Bearer<br/>
 > **Content-type**: application/json
 
-This operation returns a specific brand.
 
 ### Input
 
 **Path variables**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integers|Mandatory|System identifier of brand to be deleted|
 
 #### Request example
 
-> **GET** api/v3/brand/get?id=4
->
+> **GET** api/v3/brand/get?id=4<br/>
 > **Content-type**: application/json
 
 ### Output
@@ -196,14 +38,14 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body Parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of brand to be returned (automatically generated)|
 |name|String|Mandatory|Brand name|
 |image|Href|Optional|Brand logo url|
 
 #### Response example
-
+         
 > Status: 200 (OK)
 
 ```json
@@ -220,11 +62,12 @@ Success response code is 200 (OK); the response should include a body described 
 
 ### Description
 
-> **POST** api/v3/brand/get-list
-> 
+This operation returns a list of brands created by User.
+
+> **POST** api/v3/brand/get-list <br/>
+> **Authorization:** Bearer <br/>
 > **Content-type**: application/json
 
-This operation returns a list brands created by User.
 
 ### Input
 
@@ -238,17 +81,16 @@ Request can be modified by using special parameters to retirieve definite brands
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Oprional|Brand name|
-|filter|Object|Optional|searchTerm performs search by name parameter<br/>min length - 1; max length - 255|
+|filter|Object|Optional|searchTerm performs search by name parameter<br/>min lenght - 1; max lenght - 255|
 |sort|Object|String|System sorting options such as: <br/> - id:asc, id:desc, - name:asc, name:desc|
 
 #### Request example
 
-> **GET** api/v3/brand/get-list
->
+> **GET** api/v3/brand/get-list<br/>
 > **Content-type**: application/json
 
 ```json
@@ -268,7 +110,7 @@ Success response code is 200 (OK); the response should include a body described 
 
 **Body parameters**
 
-|**Attribute Name**|**Type**|**Behavior in Request**|**Description**|
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
 |items|Array of objects|Mandatory|List of brand objects|
 |id|Integer<br/>(Bigint)|Mandatory|System identifier(s) of brand(s) to be returned (automatically generated)|
@@ -308,3 +150,159 @@ Success response code is 200 (OK); the response should include a body described 
     }
 ```
 
+
+## Create brand
+
+### Description
+
+This operation creates Brand that can be used to characterize Product.
+
+> **POST** api/v3/brand/create<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json
+
+### Input
+
+**Body Parameters**
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|name|String|Mandatory|Brand name <br/> min lenght - 1; max lenght - 255|
+|image|Href|Optional|Brand logo url <br/> min lenght - 1; max lenght - 255|
+
+#### Request Example
+
+> **POST** api/v3/brand/create<br/>
+> **Content-type**: application/json
+
+```json
+{
+    "data": {
+        "name": "Nike",
+        "image": "img.jpg"
+    }
+}
+```
+
+### Output
+
+Success response code is 201 (Created); the response should include a body described below:
+
+**Body Parameters**
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|id|Integer<br/>(Bigint)|Mandatory|System identifier (automatically generated)|
+|name|String|Mandatory|Brand name provided in request|
+|image|Href|Optional|Brand logo url provided in request|
+
+#### Response example
+
+> Status: 201 (Created) 
+
+```json
+{
+   "data": {
+       "id": 4,
+       "name": "Adidas",
+       "image": "img.jpg"
+   }
+}
+```
+
+
+## Update brand
+
+### Description
+
+This operation provides update of existing Brand.
+
+> **POST** api/v3/brand/update<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json
+
+### Input
+
+**Body Parameters**
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|id|Integer<br/>(Bigint)|Mandatory|System identifier of brand to be updated (automatically generated)|
+|name|String|Mandatory|Brand name<br/> min lenght - 1; max lenght - 255|
+|image|Href|Optional|Brand logo url<br/> min lenght - 1; max lenght - 255|
+
+#### Request Example
+
+> **POST** api/v3/brand/update<br/>
+> **Content-type**: application/json
+
+```json
+{
+    "data": {
+        "id": 1,
+        "name": "Nikeee",
+        "image": "img.jpg"
+    }
+}
+```
+
+### Output
+
+Success response code is 200 (OK); the response should include a body described below:
+
+**Body Parameters**
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|id|Integer<br/>(Bigint)|Mandatory|System identifier (automatically generated)|
+|name|String|Mandatory|Brand name provided in request|
+|image|Href|Mandatory|Brand logo url provided in request|
+
+#### Response example
+
+> Status: 200 (OK) 
+
+```json
+{
+   "data": {
+       "id": 1,
+       "name": "Nikeee",
+       "image": "img.jpg"
+   }
+}
+```
+
+## Delete brand
+
+### Description
+
+This operation provides deletion of existing Brand.
+
+> **POST** api/v3/brand/delete<br/>
+> **Authorization:** Bearer<br/>
+> **Content-type**: application/json
+
+### Input
+
+**Body Parameters**
+
+|**Attribute Name**|**Type**|**Behavior**|**Description**|
+|---|---|---|---|
+|items|Array of integers|Mandatory|System identifier(s) of brand to be deleted<br/>Number of items is limited only by PHP logic|
+
+#### Request Example
+
+> **POST** api/v3/brand/delete<br/>
+> **Content-type**: application/json
+
+```json
+{
+    "data": {
+        "items": [1, 2]
+    }
+}
+```
+
+### Output
+
+In case of success, the system returns **200(OK)** without response body.
