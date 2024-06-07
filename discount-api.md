@@ -42,7 +42,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the discount|
-|name|String|Mandatory|discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
+|name|String|Mandatory|Discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the discount validity|
 |startDate|Datetime|Mandatory|Start date of discount validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -110,7 +110,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the discount|
-|name|String|Mandatory|discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
+|name|String|Mandatory|Discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the discount validity|
 |startDate|Datetime|Mandatory|Start date of discount validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -165,7 +165,7 @@ This operation creates new discount.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
+|name|String|Mandatory|Discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the discount validity|
 |startDate|Datetime|Mandatory|Start date of discount validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -198,7 +198,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the discount|
-|name|String|Mandatory|discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
+|name|String|Mandatory|Discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the discount validity|
 |startDate|Datetime|Mandatory|Start date of discount validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -239,7 +239,7 @@ This operation updates existing discount.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|name|String|Mandatory|discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
+|name|String|Mandatory|Discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the discount validity|
 |startDate|Datetime|Mandatory|Start date of discount validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -272,7 +272,7 @@ Success response code is 200 (OK); the response should include a body described 
 |id|Integer<br/>(Bigint)|Mandatory|System identifier of discount to be returned (automatically generated)|
 |type|String|Mandatory|Describes type of promo (*discount*)|
 |productEntriesCount|Integer<br/>(Bigint)|Mandatory|Number of product variations applied to the discount|
-|name|String|Mandatory|discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
+|name|String|Mandatory|Discount code provided by User<br/>Min lenght - 1, max lenght -255; should be unique among the entity|
 |percentage|Integer|Mandatory|Percentage amount provided for discount<br/>Max value - 100|
 |permanent|Boolean|Mandatory|Determines the duration of the discount validity|
 |startDate|Datetime|Mandatory|Start date of discount validity, if permanent parameter is false<br/>Empty string, if not provided|
@@ -313,7 +313,7 @@ This operation allows to link discount and product variations.
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|id|Integer|Mandatory|discount ID (exists in the system)|
+|id|Integer|Mandatory|Discount ID (exists in the system)|
 |productEntries|Array of integers|Mandatory|Product variation identifiers existing in the system.<br/>Could be retrieved on “Get all Products entries list” endpoint|
 
 #### Request example
