@@ -317,7 +317,7 @@ This operation allows to activate (deactivate) specific plugin for Merchant's On
 
 |**Attribute Name**|**Type**|**Behavior**|**Description**|
 |---|---|---|---|
-|type|String|Mandatory|Available plugin type:<br/> - "reviews",<br/> - "chat_widget",<br/> - "google_search_console",<br/> - "google_tag_manager",<br/> - "google_analytics",<br/> - "seo_settings"|
+|type|String|Mandatory|Available plugin type:<li> "reviews",<li/> "chat_widget",<li> "google_search_console",<li/> "google_tag_manager",<li/> "google_analytics",<li> "seo_settings"|
 |status|String|Mandatory|Indicates status of plugin connection<br/>Possible values: *active, inactive*|
 
 #### Request example
