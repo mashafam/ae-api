@@ -41,8 +41,7 @@ Success response comes with HTTP code 200 (OK) and include following body struct
 |slug|string|Required|Max - 255|Auto generated URI based on page name|
 |isVisible|boolean|Required|boolean|Indicates page visibility on the store|
 |name|string|Required|Max 255|User provided page name, or system defined page name|
-|description|string|Required|Max 16B|User provided page description, or system defined page
-description|
+|description|string|Required|Max 16B|User provided page description, or system defined page description|
 |sortIndex|integer|Required|int|Defines displaying order of the pages|
 |type|string|Required|Predefined system list|Type of page<br/>Possible values: *custom, default*|
 |config|json|Required|json|Used to fill in legal documents with store data automatically|
@@ -111,13 +110,11 @@ Success response comes with HTTP code 200 (OK) and include following body struct
 |slug|string|Required|Max - 255|Auto generated URI based on page name|
 |isVisible|boolean|Required|boolean|Indicates page visibility on the store|
 |name|string|Required|Max 255|User provided page name, or system defined page name|
-|description|string|Required|Max 16B|User provided page description, or system defined page
-description|
+|description|string|Required|Max 16B|User provided page description, or system defined page description|
 |sortIndex|integer|Required|int|Defines displaying order of the pages|
 |type|string|Required|Predefined system list|Type of page|
 |config|json|Required|json|Used to fill in legal documents with store data automatically|
-|totalPages|integer|Required|bigint|Number of pages (groups of items), controlled with pageSize
-parameter|
+|totalPages|integer|Required|bigint|Number of pages (groups of items), controlled with pageSize parameter|
 |totalItems|integer|Required|bigint|Total number of available items|
 
 #### Response example
@@ -176,8 +173,7 @@ Request should contain body with following content:
 |---|---|---|---|---|
 |isVisible|boolean|Required|boolean|Indicates page visibility on the store|
 |name|string|Required|Max 255|User provided page name, or system defined page name|
-|description|string|Required|Max 16B|User provided page description, or system defined page
-description|
+|description|string|Required|Max 16B|User provided page description, or system defined page description|
 
 #### Request example
 
@@ -203,8 +199,7 @@ Success response comes with HTTP code 200 (OK) and include following body struct
 |slug|string|Required|Max - 255|Auto generated URI based on page name|
 |isVisible|boolean|Required|boolean|Indicates page visibility on the store|
 |name|string|Required|Max 255|User provided page name, or system defined page name|
-|description|string|Required|Max 16B|User provided page description, or system defined page
-description|
+|description|string|Required|Max 16B|User provided page description, or system defined page description|
 |sortIndex|integer|Required|int|Defines displaying order of the pages|
 |type|string|Required|Predefined system list|Type of page<br/>Possible values: *custom, default*|
 |config|json|Required|json|Used to fill in legal documents with store data automatically|
@@ -246,8 +241,7 @@ Request should contain body with following content:
 |slug|string|Required|Max - 255|Auto generated URI based on page name|
 |isVisible|boolean|Required|boolean|Indicates page visibility on the store|
 |name|string|Required|Max 255|User provided page name, or system defined page name|
-|description|string|Required|Max 16B|User provided page description, or system defined page
-description|
+|description|string|Required|Max 16B|User provided page description, or system defined page description|
 |sortIndex|integer|Required|int|Defines displaying order of the pages|
 |type|string|Required|Predefined system list|Type of page<br/>Possible values: *custom, default*|
 |config|json|Required|json|Used to fill in legal documents with store data automatically|
