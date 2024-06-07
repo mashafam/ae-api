@@ -86,7 +86,7 @@ Request can be modified by using special parameters to retirieve definite brands
 |page|Integer<br/>(Bigint)|Optional|Number of the returned page with items|
 |pageSize|Integer<br/>(Bigint)|Oprional|Brand name|
 |filter|Object|Optional|searchTerm performs search by name parameter<br/>min lenght - 1; max lenght - 255|
-|sort|Object|String|System sorting options such as: <br/> - id:asc, id:desc, - name:asc, name:desc|
+|sort|Object|String|System sorting options such as: <br/> - id:asc, id:desc, <br/> - name:asc, name:desc|
 
 #### Request example
 
