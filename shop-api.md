@@ -11,13 +11,6 @@ List of operations for composing Online Shop based on User's configurations.
 - [Get sitemap](#get-sitemap)
 - [Get Shop state](#get-shop-state)
 
-**Shop config**
-- [Get shop configuration](#get-shop-configuration)
-- [Update shop configuration](#update-shop-config)
-
-**Plugins and pages**
-- [Get page by slug](#get-page-by-slug)
-- [Get Shop Plugins](#get-shop-plugins)
 
 **Products**
 - [Get main products](#get-main-products)
@@ -26,8 +19,6 @@ List of operations for composing Online Shop based on User's configurations.
 - [Get product entries](#get-product-entries)
 - [Get full product information by slug](#get-full-product-information-by-slug)
 
-**FAQ**
-- [Get all FAQ items](#get-all-faq-items)
 
 **Place order from cart**
 - [Create Order](#create-order)
