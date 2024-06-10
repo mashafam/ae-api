@@ -1212,7 +1212,7 @@ Request should contain body with following content:
 }
 ```
 
-### ### Output
+### Output
 
 Success response comes with HTTP code 200 (OK). Empty object returns in case of successful slides order change.
 
